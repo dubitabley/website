@@ -1,0 +1,37 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+:root[data-theme="dark"] {
+  --background-color: rgb(36, 36, 36);
+  --primary-color: rgb(230, 230, 230);
+  --primary-lightness: 10%;
+  --secondary-lightness: 80%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background-color: rgb(36, 36, 36);
+    --primary-color: rgb(230, 230, 230);
+    --primary-lightness: 10%;
+    --secondary-lightness: 80%;
+  }
+}
+
+:root[data-theme="light"] {
+  --background-color: rgb(207, 207, 207);
+  --primary-color: rgb(31, 31, 31);
+  --primary-lightness: 90%;
+  --secondary-lightness: 20%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --background-color: rgb(207, 207, 207);
+    --primary-color: rgb(31, 31, 31);
+    --primary-lightness: 90%;
+    --secondary-lightness: 20%;
+  }
+}
