@@ -8,7 +8,7 @@
 <div class="header">
     <h1 class="header-text">
         {#each headerTitle.normalize("NFC") as character, index}
-            <span class="header-char" style:animation-delay="0.{index}s">{character}</span>
+            <span class="header-rotate-char"><span class="header-char" style:animation-delay="0.{index}s">{character}</span></span>
         {/each}
     </h1>
     <div class="header-theming">
@@ -26,7 +26,8 @@
     .header {
         display: flex;
         flex-direction: row;
-        
+        height: 150px;
+        border-bottom: 3px dashed var(--primary-color);
     }
 
     .header-theming {
@@ -41,15 +42,21 @@
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
+
+        background-color: transparent;
     }
 
-    .header-char {
+    .header-rotate-char {
         display: inline-block;
         background-color: transparent;
     }
 
-    .header-char:hover {
-        animation: 1s linear 0s rotate;
+    .header-rotate-char:hover {
+        animation-name: rotate;
+        animation-delay: 0;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
     }
 
     @keyframes rotate {

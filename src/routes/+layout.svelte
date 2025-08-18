@@ -6,10 +6,21 @@
 	let { children } = $props();
 </script>
 
+<style>
+	.main {
+		margin-top: 20px;
+	}
+</style>
+
 <svelte:head>
 	<title>dubitable</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<Header />
-{@render children?.()}
+<span class="header-class">
+	<Header />
+</span>
+
+<div class="main">
+	{@render children?.()}
+</div>
