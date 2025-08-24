@@ -1,6 +1,6 @@
 <script lang="ts">
     import { getContext, onDestroy, onMount } from "svelte";
-    import { Context, type CanvasContext, type Vector2 } from "./types.js";
+    import { Context, type CanvasContext, type GameContext, type GameParams, type PhysicsContext, type Vector2 } from "./types.js";
 
     type BallProps = {
         position: Vector2,
@@ -14,7 +14,16 @@
         imagePath = null
     }: BallProps = $props();
 
+    let rotation = $state(0);
+
     let image: HTMLImageElement | null = null;
+
+    const gameContext: GameContext = getContext(Context.Game);
+    const physicsContext: PhysicsContext = getContext(Context.Physics);
+
+    gameContext.addGameLoopFunction((params: GameParams) => {
+        rotation -= params.deltaTime * physicsContext.velocity.x;
+    });
 
     const canvasContext: CanvasContext = getContext(Context.Canvas);
 
@@ -31,13 +40,17 @@
     });
 
     function draw(ctx: CanvasRenderingContext2D) {
+        ctx.save();
         if (imagePath && image != null && image.complete) {
-            ctx.drawImage(image, position.x, position.y, radius * 2, radius * 2);
+            ctx.translate(position.x, position.y);
+            ctx.rotate(rotation);
+            ctx.drawImage(image, -radius, -radius, radius * 2, radius * 2);
         } else {
             ctx.beginPath();
             ctx.arc(position.x, position.y, radius, 0, 2 * Math.PI);
             ctx.lineWidth = 4;
             ctx.stroke();
         }
+        ctx.restore();
     }
 </script>

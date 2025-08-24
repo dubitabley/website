@@ -7,6 +7,8 @@
     import HudText from "$lib/dubi-canvas/hud-text.svelte";
     import { BALL_RADIUS, CANVAS_HEIGHT, CANVAS_WIDTH, type ClickEvent, type GameParams } from "$lib/dubi-canvas/types.js";
     
+    import BallPath from "$lib/assets/ball-game/ball.svg";
+
     const startHeight = 300; 
 
     let ballPosition = $state({
@@ -87,8 +89,8 @@
     <Game gameLoopFunctions={[canvasFollowBall]}>
         <HudText x={10} y={10} text={`Height: ${ballHeight}`} />
         <Physics bind:position={ballPosition} bind:velocity={ballVelocity}>
-            <Ball position={ballPosition} radius={BALL_RADIUS} />
+            <Ball position={ballPosition} radius={BALL_RADIUS} imagePath={BallPath} />
         </Physics>
-        <Line start={{x: -1000, y: 0}} end={{x: 3000, y: 0}} width={10} /> 
+        <Line start={{x: -canvasOffset.x - 1000, y: 0}} end={{x: canvasOffset.x + 3000, y: 0}} width={10} /> 
     </Game>
 </DubiCanvas>
