@@ -1,11 +1,17 @@
-<script>
+<script lang="ts">
     import Theming from "./theming.svelte";
+    import Splodge from "$lib/components/splodge.svelte";
 
     const headerTitle = "dubitable";
 
 </script>
 
 <div class="header">
+    <div class="header-left">
+        <Splodge>
+            <a class="header-home" href="/">Home</a>
+        </Splodge>
+    </div>
     <h1 class="header-text">
         {#each headerTitle.normalize("NFC") as character, index}
             <span class="header-rotate-char"><span class="header-char" style:animation-delay="0.{index}s">{character}</span></span>
@@ -19,13 +25,49 @@
 <style>
     h1 {
         text-align: center;
-        justify-content: center;
         width: 100%;
+    }
+
+    .header-home {
+        position: relative;
+        left: 40px;
+        top: -100px;
+        background-color: transparent;
+        text-decoration: none;
+        font-size: 30px;
+        color: var(--background-color-2);
+        font-weight: bold;
+    }
+
+    .header-left {
+        flex-grow: 0;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+    }
+
+    @media (width < 400px) {
+        .header-left {
+            aspect-ratio: 1 / 1;
+            height: 50%;
+        }
+
+        .header-home {
+            font-size: 20px;
+            left: 10px;
+            top: -50px;
+        }
+    }
+
+    .header-text {
+        flex-grow: 1;
     }
 
     .header {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
         height: 150px;
         border-bottom: 3px dashed var(--primary-color);
     }
