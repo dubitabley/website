@@ -4,6 +4,22 @@
     import Header from './header.svelte';
 
 	let { children } = $props();
+
+	const changingFavicon = true;
+	const faviconText = "dubitable";
+	
+	let currentCharIndex = $state(0);
+	let currentChar = $derived(faviconText[currentCharIndex]);
+	let currentCharFavicon = $derived(`/favicon-dynamic/favicon_${currentChar}.png`);
+
+	if (changingFavicon) {
+		setInterval(() => {
+			currentCharIndex += 1;
+			if (currentCharIndex >= faviconText.length) {
+				currentCharIndex = 0;
+			} 
+		}, 300);
+	}
 </script>
 
 <style>
@@ -14,7 +30,11 @@
 
 <svelte:head>
 	<title>dubitable</title>
-	<link rel="icon" href={favicon} />
+	{#if changingFavicon}
+		<link rel="icon" href={currentCharFavicon} />
+	{:else}
+		<link rel="icon" href={favicon} />
+	{/if}
 </svelte:head>
 
 <span class="header-class">

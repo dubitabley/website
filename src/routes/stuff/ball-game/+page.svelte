@@ -85,12 +85,22 @@
 
 </script>
 
+<style>
+    .ball-game-header {
+        text-align: center;
+    }
+</style>
+
+<h2 class="ball-game-header">
+    Ball game
+</h2>
+
 <DubiCanvas onClick={onClick} offset={canvasOffset}>
     <Game gameLoopFunctions={[canvasFollowBall]}>
         <HudText x={10} y={10} text={`Height: ${ballHeight}`} />
         <Physics bind:position={ballPosition} bind:velocity={ballVelocity}>
             <Ball position={ballPosition} radius={BALL_RADIUS} imagePath={BallPath} />
         </Physics>
-        <Line start={{x: -canvasOffset.x - 1000, y: 0}} end={{x: canvasOffset.x + 3000, y: 0}} width={10} /> 
+        <Line start={{x: -canvasOffset.x, y: 0}} end={{x: -canvasOffset.x + 3000, y: 0}} width={10} /> 
     </Game>
 </DubiCanvas>
