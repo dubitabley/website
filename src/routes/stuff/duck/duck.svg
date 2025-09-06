@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="duck" width="500mm" height="500mm" version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+ <g stroke="#000">
+  <g stroke-width="10">
+   <path d="m234.02 351.03-18.094 69.964-77.201 26.538 6.0314-15.682-14.475-3.6188 9.6502-12.063-14.475-12.063 63.932-18.094 32.569-45.838z" fill="#3b913c" stop-color="#000000" style="-inkscape-stroke:none;font-variation-settings:normal"/>
+   <path d="m360.71 354.87-18.094 69.964-77.201 26.538 6.0314-15.682-14.475-3.6188 9.6502-12.063-14.475-12.063 63.932-18.094 32.569-45.838z" fill="#3b913c" stop-color="#000000" style="-inkscape-stroke:none;font-variation-settings:normal"/>
+   <path d="m65.381 151.59 15.398-50.046 47.81-15.928 39.57 21.42 27.628 40.185 107.47 11.752 94.889-38.205 39.325 62.166 18.301 97.369-60.356 79.553-130.74 24.461c-2.3714 0.44368-100.18-39.607-100.18-39.607l-6.324-132.08-42.491 4.2951-41.638-18.735z" fill="#d9e045" stop-color="#000000" style="-inkscape-stroke:none;font-variation-settings:normal"/>
+   <path d="m247.89 201.45 58.504-7.8408-29.554 66.345z" fill="#bd2424" stop-color="#000000" style="-inkscape-stroke:none;font-variation-settings:normal"/>
+  </g>
+  <path d="m131.11 115.87-13.937 22.528 24.405 0.70684z" fill="#fff" stop-color="#000000" stroke-width="4.7315" style="-inkscape-stroke:none;font-variation-settings:normal"/>
+  <path d="m88.058 172.5-71.17 12.063-12.063 22.919 6.0314 18.094 22.919 2.4125 67.551-38.601z" fill="#1830de" stop-color="#000000" stroke-width="10" style="-inkscape-stroke:none;font-variation-settings:normal"/>
+ </g>
+</svg>
