@@ -2,12 +2,14 @@
     import { onMount } from 'svelte';
     import type { PageProps } from './$types';
     import Duck from "./duck.svg?raw";
+    import DuckSound from "./duck_sound.wav";
 
     let { data }: PageProps = $props();
 
     let canvasObject: HTMLCanvasElement;
 
     let duckImage: HTMLImageElement; 
+    
 
     onMount(() => {
         duckImage = new Image();
@@ -17,6 +19,8 @@
             console.error("error loading duck");
         });
         duckImage.src = `data:image/svg+xml; charset=utf8, ${encodeURIComponent(encodedSvg)}`;
+
+        
 
         canvasObject.addEventListener("click", addDuck);
         const rect = canvasObject.getBoundingClientRect();
@@ -30,6 +34,11 @@
         const width = (Math.random() - 0.5) * 150 + 200;
         const height = (Math.random() - 0.5) * 150 + 200;
 
+        let duckSound: HTMLAudioElement = new Audio();
+        duckSound.src = DuckSound;
+        duckSound.volume = 0.05;
+
+        duckSound.play();
         context.drawImage(duckImage, event.offsetX - width / 2, event.offsetY - height / 2, width, height);
     }
 </script>
