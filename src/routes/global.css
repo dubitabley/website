@@ -1,7 +1,17 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   color: var(--primary-color);
+}
+
+html {
+  background: repeating-linear-gradient(
+    20deg,
+    var(--background-color) 0px,
+    var(--background-color-2) 15px
+  );
+
+  min-height: 100vh;
 }
 
 a {
