@@ -1,4 +1,4 @@
 export type BookInfo = {
-    book_name: string
-    author: string,
-}
+  book_name: string;
+  author: string;
+};

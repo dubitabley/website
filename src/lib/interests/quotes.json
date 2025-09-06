@@ -1,22 +1,22 @@
 {
-    "quotes": [
-        {
-            "quote": "They looked down  on her; and she looked up through them. Thus it had come about that she had read far more fiction, and far more poetry, those two sanctuaries of the lonely, than most of her kind.",
-            "from": "The French Lieutenant's Woman",
-            "by": "John Fowles",
-            "bookLink": "french-lieutenants-woman"
-        },
-        {
-            "quote": "It may be better for humanity that we should communicate more and more. But I am a heretic, I think our ancestors' isolation was like the greater space they enjoyed: it can only be envied. The world is only too literally too much with us now.",
-            "from": "The French Lieutenant's Woman",
-            "by": "John Fowles",
-            "bookLink": "french-lieutenants-woman"
-        },
-        {
-            "quote": "His statement to himself should have been, 'I possess this now, therefore I am happy', instead of what it so Victorianly was:`I cannot possess this for ever, and therefore am sad.'",
-            "from": "The French Lieutenant's Woman",
-            "by": "John Fowles",
-            "bookLink": "french-lieutenants-woman"
-        }
-    ]
+  "quotes": [
+    {
+      "quote": "They looked down  on her; and she looked up through them. Thus it had come about that she had read far more fiction, and far more poetry, those two sanctuaries of the lonely, than most of her kind.",
+      "from": "The French Lieutenant's Woman",
+      "by": "John Fowles",
+      "bookLink": "french-lieutenants-woman"
+    },
+    {
+      "quote": "It may be better for humanity that we should communicate more and more. But I am a heretic, I think our ancestors' isolation was like the greater space they enjoyed: it can only be envied. The world is only too literally too much with us now.",
+      "from": "The French Lieutenant's Woman",
+      "by": "John Fowles",
+      "bookLink": "french-lieutenants-woman"
+    },
+    {
+      "quote": "His statement to himself should have been, 'I possess this now, therefore I am happy', instead of what it so Victorianly was:`I cannot possess this for ever, and therefore am sad.'",
+      "from": "The French Lieutenant's Woman",
+      "by": "John Fowles",
+      "bookLink": "french-lieutenants-woman"
+    }
+  ]
 }
