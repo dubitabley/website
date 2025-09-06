@@ -7,11 +7,17 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  deploy:
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
+    runs-on: ubuntu-latest
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
@@ -21,17 +27,23 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Setup Deno
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
+
+      - name: Install dependencies
+        run: deno install
 
       - name: Build code
         run: deno task build
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/build
+          path: ./build
 
       - name: Deploy to GitHub Pages
         id: deployment
