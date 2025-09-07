@@ -24,22 +24,28 @@
         width: 400px;
     }
 
+    .text-bg {
+        background-color: var(--background-color-2);
+    }
+
     .panel-title {
         font-size: 30px;
     }
     
 </style>
 
-<div>
+<div >
     Hello and welcome to dubitable's website!
     <br />
     Idk what to put here.
+    <br />
+    <a href="/about">About me</a>
     <br />
     Some things I'm interested in I guess:
 </div>
 
 <div id="panel-wrapper">
-    <div class="panel">
+    <div class="panel text-bg">
         <span class="panel-title">Latest book</span>
         <div>
             <div>
@@ -56,7 +62,7 @@
         </div>
     </div>
 
-    <div class="panel">
+    <div class="panel text-bg">
         <span class="panel-title">Latest quote</span>
         <div>
             <div>
@@ -79,7 +85,7 @@
         </div>
     </div>
 
-    <div class="panel">
+    <div class="panel text-bg">
         <span class="panel-title">Latest song</span>
         <div>
             <div>

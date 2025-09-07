@@ -43,7 +43,6 @@
 
         let pathString = "";
         let lastPos: [number, number] = [0, 0];
-        let currentPos: [number, number] = [0, 0];
 
         for (let i = 0; i < NUM_SPOKES; i++) {
             if (i == 0) {
@@ -54,22 +53,19 @@
                 pathString += `${pathChar} ${pathStartPos[0]},${pathStartPos[1]} `;
 
                 lastPos = pathStartPos;
-                currentPos = getPos(i + 1);
             } else {
                 // cubic
                 const pathChar = "C";
 
-                const pathPos = currentPos;
-                const nextPos = getPos(i + 1);
+                const pathPos = getPos(i);
 
-                const lastControlPos = getControl(pathPos, lastPos);
-                const nextControlPos = getControl(pathPos, nextPos);
+                const lastControlPos = getControl(lastPos, pathPos);
+                const nextControlPos = getControl(pathPos, lastPos);
 
                 // this is wrong but it looks cool so rolling with it
-                pathString += `${pathChar} ${nextPos[0]},${nextPos[1]} ${lastPos[0]},${lastPos[1]} ${pathPos[0]},${pathPos[1]} `;
-                // pathString += `${pathChar} ${lastControlPos[0]},${lastControlPos[1]} ${nextControlPos[0]},${nextControlPos[1]} ${pathPos[0]},${pathPos[1]} `;
+                // pathString += `${pathChar} ${nextPos[0]},${nextPos[1]} ${lastPos[0]},${lastPos[1]} ${pathPos[0]},${pathPos[1]} `;
+                pathString += `${pathChar} ${lastControlPos[0]},${lastControlPos[1]} ${nextControlPos[0]},${nextControlPos[1]} ${pathPos[0]},${pathPos[1]} `;
                 lastPos = pathPos;
-                currentPos = nextPos;
             }
         }
 
@@ -81,11 +77,12 @@
     function getControl(pos1: [number, number], pos2: [number, number]): [number, number] {
         const dist: [number, number] = [pos2[0] - pos1[0], pos2[1] - pos1[1]];
         const normalizedDist = normalize(dist);
-        return [pos1[0] + normalizedDist[0] * 20, pos1[1] + normalizedDist[1] * 20];
+        const normal = [-normalizedDist[1], normalizedDist[0]];
+        return [pos1[0] + normal[0] * 200, pos1[1] + normal[1] * 200];
     }
 
     function normalize(pos: [number, number]): [number, number] {
-        const length = pos[0] + pos[1];
+        const length = Math.abs(pos[0]) + Math.abs(pos[1]);
         return [pos[0] / length, pos[1] / length];
     }
 

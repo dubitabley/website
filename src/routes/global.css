@@ -5,10 +5,10 @@ body {
 }
 
 html {
-  background: repeating-linear-gradient(
+  background: linear-gradient(
     20deg,
-    var(--background-color) 0px,
-    var(--background-color-2) 15px
+    var(--background-color) 0%,
+    var(--background-color-2) 100%
   );
 
   min-height: 100vh;
