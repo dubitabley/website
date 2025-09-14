@@ -9,7 +9,7 @@
 </h2>
 
 <h3>
-    <a href="https://en.wiktionary.org/wiki/dubitable">dubitable</a>
+    <a href="https://en.wiktionary.org/wiki/dubitable" target="_blank">dubitable</a>
 </h3>
 
 <div>
