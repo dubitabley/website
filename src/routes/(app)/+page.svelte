@@ -3,9 +3,9 @@
     import Quotes from "$lib/interests/quotes.json";
     import Songs from "$lib/interests/songs.json";
 
-    const latestBook = Books.books[0];
-    const latestQuote = Quotes.quotes[0];
-    const latestSong = Songs.songs[0];
+    const latestBook = Books.books[Books.books.length - 1];
+    const latestQuote = Quotes.quotes[Quotes.quotes.length - 1];
+    const latestSong = Songs.songs[Songs.songs.length - 1];
 </script>
 
 <style>

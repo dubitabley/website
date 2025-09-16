@@ -29,7 +29,7 @@
 </div>
 <br />
 <div class="book-all">
-    {#each Books.books as book}
+    {#each Books.books.reverse() as book}
         <div class="book-info">
             <span>
                 {book.book_name}

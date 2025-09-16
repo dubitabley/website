@@ -14,9 +14,6 @@
     let x2 = $state(0);
     let y2 = $state(0);
     
-    let rotation = $state(0);
-    
-    const SPLODGE_SIZE = 150;
     const SPLODGE_WIDTH = 500;
 
     function animateSplodge() {
@@ -28,7 +25,6 @@
         x2 = Math.cos(time * 0.001 + Math.PI) * SPLODGE_WIDTH / 2 + SPLODGE_WIDTH / 2;
         y2 = Math.sin(time * 0.001 + Math.PI) * SPLODGE_WIDTH / 2 + SPLODGE_WIDTH / 2;
 
-        rotation += 1;
 
         requestAnimationFrame(animateSplodge);
     }
@@ -42,6 +38,7 @@
     function createPath(): string {
 
         let pathString = "";
+        let firstPos: [number, number] = [0, 0];
         let lastPos: [number, number] = [0, 0];
 
         for (let i = 0; i < NUM_SPOKES; i++) {
@@ -53,6 +50,7 @@
                 pathString += `${pathChar} ${pathStartPos[0]},${pathStartPos[1]} `;
 
                 lastPos = pathStartPos;
+                firstPos = lastPos;
             } else {
                 // cubic
                 const pathChar = "C";
@@ -62,14 +60,15 @@
                 const lastControlPos = getControl(lastPos, pathPos);
                 const nextControlPos = getControl(pathPos, lastPos);
 
-                // this is wrong but it looks cool so rolling with it
-                // pathString += `${pathChar} ${nextPos[0]},${nextPos[1]} ${lastPos[0]},${lastPos[1]} ${pathPos[0]},${pathPos[1]} `;
                 pathString += `${pathChar} ${lastControlPos[0]},${lastControlPos[1]} ${nextControlPos[0]},${nextControlPos[1]} ${pathPos[0]},${pathPos[1]} `;
                 lastPos = pathPos;
             }
         }
 
-        pathString += "Z";
+        const lastControlPos = getControl(lastPos, firstPos);
+        const nextControlPos = getControl(firstPos, lastPos);
+
+        pathString += `C ${lastControlPos[0]},${lastControlPos[1]} ${nextControlPos[0]},${nextControlPos[1]} ${firstPos[0]},${firstPos[1]} `;
 
         return pathString;
     }
@@ -123,6 +122,24 @@
         fill: url(#splodge-gradient);
     }
 
+    #splodge-path {
+        animation-name: rotate-anim;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        animation-direction: alternate;
+    }
+
+    @keyframes rotate-anim {
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: 360deg;
+        }
+    }
+
 </style>
 
 <div class="splodge-wrapper">
@@ -145,7 +162,6 @@
         </defs>
         <g>
             <path
-                style:transform="rotate({rotation}deg)"
                 style:transform-origin=center
                 d={createPath()}
                 id="splodge-path" 
