@@ -3,11 +3,14 @@
     {
       "book_name": "The French Lieutenant's Woman",
       "author": "John Fowles",
-      "link": "french-lieutenants-woman"
+      "link": "french-lieutenants-woman",
+      "rating": 5
     },
     {
       "book_name": "Watership Down",
-      "author": "Richard Adams"
+      "author": "Richard Adams",
+      "link": "watership-down",
+      "rating": 3
     }
   ]
 }
