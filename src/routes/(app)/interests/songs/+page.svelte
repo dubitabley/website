@@ -18,6 +18,10 @@
     .song-name {
         font-size: 30px;
     }
+
+    .song-written {
+        font-size: 13px;
+    }
 </style>
 
 <h2 class="songs-header">
@@ -32,9 +36,12 @@
 <div class="songs-wrapper">
     {#each Songs.songs as song}
         <div class="song-info">
-            <div class="song-name">{song.song_name}</div>
+            <div class="">
+                <span class="song-name">{song.song_name}</span>
+                <span class="song-written">by {song.written}</span>
+            </div>
             <a href={song.rendition}>Link to song</a>
-            <span>by {song.singer}</span>
+            <span>performed by {song.singer}</span>
             {#if song.links.length > 0}
                 <div>
                     <h4>Related links</h4>
