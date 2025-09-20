@@ -12,6 +12,12 @@
     }: StarRatingProps = $props();
 </script>
 
+<style>
+    .rating-wrapper {
+        display: inline;
+    }
+</style>
+
 <div class="rating-wrapper">
     {#each { length: MAX_RATING }, index }
         {#if index < rating}

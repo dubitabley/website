@@ -1,4 +1,5 @@
 <script lang="ts">
+    import StarRating from "$lib/components/star-rating.svelte";
     import Books from "$lib/interests/books.json";
     import Quotes from "$lib/interests/quotes.json";
     import Songs from "$lib/interests/songs.json";
@@ -55,6 +56,10 @@
             <div>
                 <span><b>Author:</b></span>
                 <span>{latestBook.author}</span>
+            </div>
+            <div>
+                <span>Rating: </span>
+                <StarRating rating={latestBook.rating} />
             </div>
             <div>
                 <a href="/interests/books">All books</a>
