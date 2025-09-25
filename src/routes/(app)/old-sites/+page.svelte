@@ -60,3 +60,21 @@
         </p>
     </div>
 </div>
+
+<div class="site-panel">
+    <a href="https://mudcat.org/">Mudcat cafe</a>
+    <br />
+    <a href="https://mainlynorfolk.info/folk/">Mainly norfolk</a>
+    <div>
+        <p>
+            I put these two together because they're very similar in that they're both 
+            old sites for older folk music which I really like. 
+            The mudcat cafe is an old forum for discussing folk music. Mainly Norfolk
+            is more of an English/Scottish focused folk music site. Both were founded 
+            in 1996 which is pretty impressive. 
+            There's so much on these sites I'm not sure I have anything in particular
+            to highlight but this <a href="https://mainlynorfolk.info/ewan.maccoll/songs/index.html">
+            full discography of Ewan Maccoll</a> is pretty neat.
+        </p>
+    </div>
+</div>

@@ -3,10 +3,12 @@
     import Books from "$lib/interests/books.json";
     import Quotes from "$lib/interests/quotes.json";
     import Songs from "$lib/interests/songs.json";
+    import Words from "$lib/interests/words.json";
 
     const latestBook = Books.books[Books.books.length - 1];
     const latestQuote = Quotes.quotes[Quotes.quotes.length - 1];
     const latestSong = Songs.songs[Songs.songs.length - 1];
+    const latestWord = Words.words[Words.words.length - 1];
 </script>
 
 <style>
@@ -103,6 +105,19 @@
             </div>
             <div>
                 <a href="/interests/songs">All songs</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel text-bg">
+        <span class="panel-title">Latest word</span>
+        <div>
+            <div>
+                <span><b>Word:</b></span>
+                <span>{latestWord.word}</span>
+            </div>
+            <div>
+                <a href="/interests/words">All words</a>
             </div>
         </div>
     </div>
