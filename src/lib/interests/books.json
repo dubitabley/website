@@ -16,6 +16,11 @@
       "book_name": "Senlin Ascends",
       "author": "Josiah Bancroft",
       "rating": 3
+    },
+    {
+      "book_name": "The Soul of a New Machine",
+      "author": "Tracy Kidder",
+      "rating": 4
     }
   ]
 }
