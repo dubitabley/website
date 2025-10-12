@@ -1,6 +1,6 @@
 <script lang="ts">
     import Theming from "./theming.svelte";
-    import Splodge from "$lib/components/splodge.svelte";
+    import SplodgeTile from "$lib/components/splodge-tile.svelte";
 
     const headerTitle = "dubitable";
 
@@ -8,9 +8,9 @@
 
 <div class="header">
     <div class="header-left">
-        <Splodge>
+        <SplodgeTile>
             <a class="header-home" href="/">Home</a>
-        </Splodge>
+        </SplodgeTile>
     </div>
     <h1 class="header-text">
         {#each headerTitle.normalize("NFC") as character, index}
@@ -45,7 +45,7 @@
         height: 100%;
     }
 
-    @media (width < 400px) {
+    @media (width < 420px) {
         .header-left {
             aspect-ratio: 1 / 1;
             height: 50%;
@@ -60,6 +60,7 @@
 
     .header-text {
         flex-grow: 1;
+        text-wrap: nowrap;
     }
 
     .header {
