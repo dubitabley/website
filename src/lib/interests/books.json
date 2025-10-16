@@ -21,6 +21,12 @@
       "book_name": "The Soul of a New Machine",
       "author": "Tracy Kidder",
       "rating": 4
+    },
+    {
+      "book_name": "Utopia",
+      "author": "Thomas More",
+      "rating": 4,
+      "link": "utopia"
     }
   ]
 }

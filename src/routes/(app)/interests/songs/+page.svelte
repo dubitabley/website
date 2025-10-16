@@ -22,6 +22,11 @@
     .song-written {
         font-size: 13px;
     }
+
+    .link-list {
+        /* en dash (longer than hyphen, shorter than em dash) */
+        list-style-type: "\02013   ";
+    }
 </style>
 
 <h2 class="songs-header">
@@ -45,9 +50,11 @@
             {#if song.links.length > 0}
                 <div>
                     <h4>Related links</h4>
-                    {#each song.links as link}
-                    <a href={link}>{link}</a>
-                    {/each}
+                    <ul class="link-list">
+                        {#each song.links as link}
+                        <li><a href={link}>{link}</a></li>
+                        {/each}
+                    </ul>
                 </div>
             {/if}
         </div>
