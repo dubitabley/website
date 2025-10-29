@@ -4,50 +4,46 @@
     import Quotes from "$lib/interests/quotes.json";
     import Songs from "$lib/interests/songs.json";
     import Words from "$lib/interests/words.json";
+    import Poems from "$lib/interests/poems.json";
+    import Posts from "$lib/interests/posts.json";
 
-    const latestBook = Books.books[Books.books.length - 1];
-    const latestQuote = Quotes.quotes[Quotes.quotes.length - 1];
-    const latestSong = Songs.songs[Songs.songs.length - 1];
-    const latestWord = Words.words[Words.words.length - 1];
+    function getLatest<T>(array: T[]): T {
+        return array[array.length - 1];
+    }
+
+    const latestBook = getLatest(Books.books);
+    const latestQuote = getLatest(Quotes.quotes);
+    const latestSong = getLatest(Songs.songs);
+    const latestWord = getLatest(Words.words);
+    const latestPoem = getLatest(Poems.poems);
+    const latestPost = getLatest(Posts.posts);
 </script>
 
-<style>
-
-    #panel-wrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .panel {
-        border: 5px double var(--primary-color);
-        border-radius: 10px;
-        padding: 10px;
-        margin: 20px;
-        width: 400px;
-    }
-
-    .text-bg {
-        background-color: var(--background-color-2);
-    }
-
-    .panel-title {
-        font-size: 30px;
-    }
-    
-</style>
-
-<div >
+<div class="summary">
     Hello and welcome to dubitable's website!
     <br />
     Idk what to put here.
     <br />
     <a href="/about">About me</a>
     <br />
+    <a href="/socials">Socials</a>
+    <br />
     Some things I'm interested in I guess:
 </div>
 
 <div id="panel-wrapper">
+    <div class="panel text-bg">
+        <span class="panel-title">Latest web log</span>
+        <div>
+            <div>
+                <a href="./posts/{latestPost.link}">{latestPost.summary}</a>
+            </div>
+            <div>
+                <a href="./posts">All posts</a>
+            </div>
+        </div>
+    </div>
+
     <div class="panel text-bg">
         <span class="panel-title">Latest book</span>
         <div>
@@ -82,9 +78,9 @@
             </div>
             {#if latestQuote.from != null}
                 <div>
-                <span>from </span>
-                <span>{latestQuote.from}</span>
-            </div>
+                    <span>from </span>
+                    <span>{latestQuote.from}</span>
+                </div>
             {/if}
             <div>
                 <a href="/interests/quotes">All quotes</a>
@@ -110,6 +106,17 @@
     </div>
 
     <div class="panel text-bg">
+        <span class="panel-title">Latest poem</span>
+        <div>
+            <span><b>Poem name:</b></span>
+            <span>{latestPoem.name}</span>
+        </div>
+        <div>
+            <span><a href="/poems/{latestPoem.link}">Link to poem</a></span>
+        </div>
+    </div>
+
+    <div class="panel text-bg">
         <span class="panel-title">Latest word</span>
         <div>
             <div>
@@ -123,3 +130,30 @@
     </div>
 </div>
 
+<style>
+    #panel-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .panel {
+        border: 5px double var(--primary-color);
+        border-radius: 10px;
+        padding: 10px;
+        margin: 20px;
+        width: 400px;
+    }
+
+    .text-bg {
+        background-color: var(--background-color-2);
+    }
+
+    .panel-title {
+        font-size: 30px;
+    }
+
+    .summary {
+        padding-left: 20px;
+    }
+</style>

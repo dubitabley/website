@@ -1,19 +1,28 @@
-<script lang="ts">
+<script module>
+    export { circle, rect };
+
+    type CircleData = { cx: number; cy: number; r: number };
+    type RectData = { x: number; y: number; width: number; height: number };
+</script>
+
+<script lang="ts" generics="T">
     import type { Snippet } from "svelte";
-    import type { AnyPath } from "./path-objects";
-    import { generatePath } from "./clip-path";
 
     type ClipMaskProps = {
         children?: Snippet;
-        clipObjects?: AnyPath[];
+        clipSnippets?: [Snippet<[T]>, T][];
     };
 
-    let { children, clipObjects = [] }: ClipMaskProps = $props();
-
-    function getPath(): string {
-        return generatePath(clipObjects);
-    }
+    let { children, clipSnippets }: ClipMaskProps = $props();
 </script>
+
+{#snippet circle(data: CircleData)}
+    <circle cx={data.cx} cy={data.cy} r={data.r} />
+{/snippet}
+
+{#snippet rect(data: RectData)}
+    <rect x={data.x} y={data.y} width={data.width} height={data.height} />
+{/snippet}
 
 <span>
     <svg width="0" height="0" style:position="absolute" id="mask-svg">
@@ -22,7 +31,9 @@
             <!-- for some reason 100% doesn't work so using this hack -->
             <rect fill="white" x="0" y="0" width="100000" height="100000" />
             <!-- make these invisible -->
-            <path fill="black" d={getPath()} />
+            {#each clipSnippets as clipSnippet}
+                {@render clipSnippet[0]?.(clipSnippet[1])}
+            {/each}
         </mask>
     </svg>
     <span class="mask-object">

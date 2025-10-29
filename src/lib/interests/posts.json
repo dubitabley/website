@@ -1,0 +1,9 @@
+{
+    "posts": [
+        {
+            "name": "A web log",
+            "summary": "In which I admit to succumbing to web logging and discuss the ramifications of this",
+            "link": "weblog"
+        }
+    ]
+}

@@ -4,6 +4,8 @@
     import { angleInterp } from "./angle";
     import { lerp, parabola } from "./utils";
 
+    const FROG_SPEED: number = 4;
+
     /** The discriminant for the enum for the mode the frog is currently in */
     const FrogMode = {
         Idle: 0,
@@ -97,11 +99,11 @@
 
     onMount(() => {
         document.documentElement.addEventListener("mousedown", (e) => {
-            const targetX = e.clientX;
-            const targetY = e.clientY;
+            const targetX = e.pageX;
+            const targetY = e.pageY;
             const xDiff = targetX - x;
             const yDiff = targetY - y;
-            const targetAngle = xDiff == 0 ? 0 : Math.atan2(yDiff, xDiff);
+            const targetAngle = Math.atan2(yDiff, xDiff);
             currentFrogMode = {
                 // turn towards target
                 frogMode: FrogMode.Turn,
@@ -145,7 +147,7 @@
                 // jump towards target
                 const jumpInfo = currentFrogMode.jumpInfo;
                 if (jumpInfo.jumpState == JumpStateType.Jumping) {
-                    jumpInfo.currentJumpDistance += 2;
+                    jumpInfo.currentJumpDistance += FROG_SPEED;
                     let finishedJump = false;
                     if (
                         jumpInfo.currentJumpDistance >=

@@ -1,32 +1,37 @@
 {
-  "books": [
-    {
-      "book_name": "The French Lieutenant's Woman",
-      "author": "John Fowles",
-      "link": "french-lieutenants-woman",
-      "rating": 5
-    },
-    {
-      "book_name": "Watership Down",
-      "author": "Richard Adams",
-      "link": "watership-down",
-      "rating": 3
-    },
-    {
-      "book_name": "Senlin Ascends",
-      "author": "Josiah Bancroft",
-      "rating": 3
-    },
-    {
-      "book_name": "The Soul of a New Machine",
-      "author": "Tracy Kidder",
-      "rating": 4
-    },
-    {
-      "book_name": "Utopia",
-      "author": "Thomas More",
-      "rating": 4,
-      "link": "utopia"
-    }
-  ]
+    "books": [
+        {
+            "book_name": "The French Lieutenant's Woman",
+            "author": "John Fowles",
+            "link": "french-lieutenants-woman",
+            "rating": 5
+        },
+        {
+            "book_name": "Watership Down",
+            "author": "Richard Adams",
+            "link": "watership-down",
+            "rating": 3
+        },
+        {
+            "book_name": "Senlin Ascends",
+            "author": "Josiah Bancroft",
+            "rating": 3
+        },
+        {
+            "book_name": "The Soul of a New Machine",
+            "author": "Tracy Kidder",
+            "rating": 4
+        },
+        {
+            "book_name": "Utopia",
+            "author": "Thomas More",
+            "rating": 4,
+            "link": "utopia"
+        },
+        {
+            "book_name": "Arm of the Sphinx",
+            "author": "Josiah Bancroft",
+            "rating": 2
+        }
+    ]
 }
