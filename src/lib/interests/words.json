@@ -1,22 +1,32 @@
 {
-  "words": [
-    {
-      "word": "eleemosynary"
-    },
-    {
-      "word": "concupiscence"
-    },
-    {
-      "word": "susurration"
-    },
-    {
-      "word": "encomium"
-    },
-    {
-      "word": "internecine"
-    },
-    {
-      "word": "vituperative"
-    }
-  ]
+    "words": [
+        {
+            "word": "eleemosynary"
+        },
+        {
+            "word": "concupiscence"
+        },
+        {
+            "word": "susurration"
+        },
+        {
+            "word": "encomium"
+        },
+        {
+            "word": "internecine"
+        },
+        {
+            "word": "vituperative"
+        }
+    ],
+    "bad_words": [
+        {
+            "word": "learnings",
+            "reason": "This word is extremely uncomfortable to hear, just say teachings..."
+        },
+        {
+            "word": "orientated",
+            "reason": "This word sounds clumsy with the extra syllable, I think oriented means the same thing and sounds much more natural"
+        }
+    ]
 }
