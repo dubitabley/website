@@ -15,9 +15,16 @@
     {#each Words.words as word}
         <div class="word-info">
             <p class="word">{word.word}</p>
-            <a href="https://en.wiktionary.org/wiki/{word.word}"
-                >Wiktionary link</a
+            <a
+                class="wiktionary-link"
+                href="https://en.wiktionary.org/wiki/{word.word}"
             >
+                <img
+                    class="wiktionary-icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/1024px-Wiktionary-logo-en-v2.svg.png"
+                    alt="Wiktionary link"
+                />
+            </a>
         </div>
     {/each}
 </div>
@@ -27,28 +34,48 @@
 <div>
     {#each Words.bad_words as badWord}
         <div class="bad-word-info">
-            <p class="word">{badWord.word}</p>
-            <p>{badWord.reason}</p>
-            <a href="https://en.wiktionary.org/wiki/{badWord.word}"
-                >Wiktionary link</a
+            <div>
+                <p class="word">{badWord.word}</p>
+                <p>{badWord.reason}</p>
+            </div>
+
+            <a
+                class="wiktionary-link"
+                href="https://en.wiktionary.org/wiki/{badWord.word}"
             >
+                <img
+                    class="wiktionary-icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/1024px-Wiktionary-logo-en-v2.svg.png"
+                    alt="Wiktionary link"
+                />
+            </a>
         </div>
     {/each}
 </div>
 
 <style>
+    .bad-word-info,
+    .word-info {
+        padding: 2px;
+        max-width: 400px;
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .bad-word-info {
         background-color: hsl(359, 95%, var(--primary-lightness));
-        display: block;
-        max-width: 400px;
     }
 
     .word-info {
         background-color: var(--background-color-2);
-        display: block;
-        padding: 2px;
-        max-width: 400px;
-        margin: 5px;
+    }
+
+    .wiktionary-icon {
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color-2);
     }
 
     p {
@@ -58,5 +85,7 @@
     .word {
         text-align: center;
         font-size: 25px;
+        align-self: center;
+        width: 100%;
     }
 </style>
