@@ -47,7 +47,7 @@
     .main {
         margin-top: 20px;
         height: 100%;
-        min-width: 500px;
+        min-width: min(500px, 100%);
         max-width: 1000px;
     }
 
