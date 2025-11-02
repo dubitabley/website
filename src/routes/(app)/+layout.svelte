@@ -5,7 +5,7 @@
 
     let { children } = $props();
 
-    const changingFavicon = true;
+    const changingFavicon = false;
     const faviconText = "dubitable";
 
     let currentCharIndex = $state(0);

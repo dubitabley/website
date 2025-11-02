@@ -1,9 +1,13 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
+    const THEME_STORAGE_KEY: string = "theme";
 
     const Theme = {
-        System: 0,
-        Light: 1,
-        Dark: 2,
+        System: "system",
+        Light: "light",
+        Dark: "dark",
+        Purple: "purple",
     } as const;
 
     type ThemeType = (typeof Theme)[keyof typeof Theme];
@@ -18,6 +22,13 @@
         }
     }
 
+    onMount(() => {
+        const themeValue = localStorage.getItem(THEME_STORAGE_KEY);
+        if (themeValue) {
+            theme = <ThemeType>themeValue;
+        }
+    });
+
     $effect(() => {
         const rootElement = document.documentElement;
 
@@ -25,20 +36,47 @@
             case Theme.System:
                 delete rootElement.dataset.theme;
                 break;
-            case Theme.Light:
-                rootElement.dataset.theme = "light";
-                break;
-            case Theme.Dark:
-                rootElement.dataset.theme = "dark";
+            default:
+                rootElement.dataset.theme = theme;
                 break;
         }
+
+        // save to localstorage
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
     });
 </script>
 
+<span class="theme-wrapper">
+    <p>Theme:</p>
+    <label>
+        <input
+            type="checkbox"
+            onclick={(e) => selectTheme(Theme.Light, e.currentTarget)}
+            checked={theme == Theme.Light}
+        />
+        <span>Light</span>
+    </label>
+    <label>
+        <input
+            type="checkbox"
+            onclick={(e) => selectTheme(Theme.Dark, e.currentTarget)}
+            checked={theme == Theme.Dark}
+        />
+        <span>Dark</span>
+    </label>
+    <label>
+        <input
+            type="checkbox"
+            onclick={(e) => selectTheme(Theme.Purple, e.currentTarget)}
+            checked={theme == Theme.Purple}
+        />
+        <span>Purple</span>
+    </label>
+</span>
+
 <style>
-    
     /* Hide inputs so we can apply custom style */
-    input[type=checkbox] {
+    input[type="checkbox"] {
         opacity: 0;
         width: 0;
         height: 0;
@@ -69,18 +107,4 @@
     .theme-wrapper > * {
         margin: 0;
     }
-
-    
 </style>
-
-<span class="theme-wrapper">
-    <p>Theme:</p>
-    <label>
-        <input type="checkbox" onclick="{(e) => selectTheme(Theme.Light, e.currentTarget)}" checked={theme == Theme.Light} />
-        <span>Light</span>
-    </label>
-    <label>
-        <input type="checkbox" onclick="{(e) => selectTheme(Theme.Dark, e.currentTarget)}" checked={theme == Theme.Dark} />
-        <span>Dark</span>
-    </label>
-</span>
