@@ -32,6 +32,11 @@
             "book_name": "Arm of the Sphinx",
             "author": "Josiah Bancroft",
             "rating": 2
+        },
+        {
+            "book_name": "Nocturnal Animals / Tony And Susan",
+            "author": "Austin Wright",
+            "rating": 3
         }
     ]
 }
