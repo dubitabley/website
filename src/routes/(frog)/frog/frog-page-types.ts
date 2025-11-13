@@ -12,7 +12,7 @@ export type GameStateInfo = {
 
 export type FrogPageContext = {
     setGameState(gameState: GameState): void;
-    setFrogSnippet(snippet: Snippet): void;
+    setFrogSnippet(snippet: Snippet | null): void;
 }
 
 export const [getFrogPageContext, setFrogPageContext] = createContext<FrogPageContext>();

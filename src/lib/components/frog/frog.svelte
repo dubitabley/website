@@ -1,7 +1,7 @@
 <script lang="ts">
     import FrogImage from "$lib/assets/frog/frog2.webp";
-    import { getClipContext } from "./clip-types";
-    import { circle } from "./clip-mask.svelte";
+    import { getClipContext } from "./clip/clip-types";
+    import { circle } from "./clip/clip-mask.svelte";
     import { setFrogContext, type FrogContext } from "./frog-types";
     import type { Snippet } from "svelte";
 

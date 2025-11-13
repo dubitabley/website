@@ -1,9 +1,12 @@
 <script lang="ts">
-    import ClipMask, { circle } from "$lib/components/frog/clip-mask.svelte";
-    import type { ClipObject } from "$lib/components/frog/clip-types";
+    import ClipMask, { circle } from "$lib/components/frog/clip/clip-mask.svelte";
+    import type { ClipObject } from "$lib/components/frog/clip/clip-types";
     import FrogHop from "$lib/components/frog/frog-hop.svelte";
     import type { FrogInfo } from "$lib/components/frog/frog-types";
-    import { getFrogPageContext } from "./frog-page-types";
+    import { onMount } from "svelte";
+    import { GameState, getFrogPageContext } from "./frog-page-types";
+
+    const CIRCLE_SIZE: number = 50;
 
     type StartProps = {
         clipObjects: ClipObject[],
@@ -14,10 +17,40 @@
     }: StartProps = $props();
 
     const frogPage = getFrogPageContext();
-    frogPage.setFrogSnippet(frog);
+
+    onMount(() => {
+        frogPage.setFrogSnippet(frog);
+    });
 
     function onHopEnd(frogInfo: FrogInfo) {
-        clipObjects.push([circle, {cx: frogInfo.x, cy: frogInfo.y, r: 50}]);
+
+        let circleAttributes = $state({
+            cx: frogInfo.x,
+            cy: frogInfo.y,
+            r: CIRCLE_SIZE}
+        );
+
+        // if we land on an existing clip object, just move to next state
+        for (const clipObject of clipObjects) {
+            if (Math.hypot(clipObject[1].cy - frogInfo.y, clipObject[1].cx - frogInfo.x) < CIRCLE_SIZE) {
+                let speed = 2.0;
+                let updateFunc = () => {
+                    circleAttributes.r += speed;
+                    speed += 0.1;
+
+                    if (circleAttributes.r > Math.max(window.innerWidth, window.innerHeight)) {
+                        frogPage.setGameState(GameState.Transition);
+                    } else {
+                        requestAnimationFrame(updateFunc);
+                    }
+                }
+                frogPage.setFrogSnippet(null);
+                requestAnimationFrame(updateFunc);
+                break;
+            }
+        }
+
+        clipObjects.push([circle, circleAttributes]);
     }
 </script>
 
@@ -27,17 +60,21 @@
 
 <ClipMask clipSnippets={clipObjects}>
     <div class="background">
-        <div class="first-block">Tap on the screen!</div>
+        <div class="info-wrapper">
+
+        </div>
+        <div class="info-block">Tap on the screen!</div>
     </div>
 </ClipMask>
 
 <style>
-    .first-block {
+    .info-block {
         padding: 10px;
         text-align: center;
         display: inline-block;
-        color: white;
-        border: 2px solid white;
+        color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border: 3px solid black;
         border-radius: 100px;
     }
 
@@ -50,7 +87,7 @@
     .background {
         min-width: 100vw;
         min-height: 100vh;
-        background-color: seagreen;
+        background-color: #ffddaa;
     }
 
     :global(html) {

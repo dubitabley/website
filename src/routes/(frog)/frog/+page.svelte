@@ -1,8 +1,7 @@
 <script lang="ts">
     import type { PageProps } from "./$types";
     import Frog from "$lib/components/frog/frog.svelte";
-    import { setClipContext, type ClipContext } from "$lib/components/frog/clip-types";
-    import ClipMask from "$lib/components/frog/clip-mask.svelte";
+    import { setClipContext, type ClipContext } from "$lib/components/frog/clip/clip-types";
     import Transition from "./transition.svelte";
     import Start from "./start.svelte";
     import { GameState, setFrogPageContext, type FrogPageContext } from "./frog-page-types";
@@ -19,14 +18,14 @@
     let gameState: GameState = $state(GameState.Start);
     let frogSnippet: Snippet | null = $state(null);
 
-    const frogPageContext: FrogPageContext = {
+    const frogPageContext: FrogPageContext = $state({
         setGameState: (newState: GameState) => {
             gameState = newState;
         },
         setFrogSnippet: (snippet: Snippet) => {
             frogSnippet = snippet;
         }
-    }
+    });
     setFrogPageContext(frogPageContext);
 
 </script>

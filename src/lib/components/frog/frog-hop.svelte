@@ -2,8 +2,8 @@
 
 <script lang="ts">
     import { onDestroy, onMount } from "svelte";
-    import { angleInterp } from "./angle";
-    import { lerp, parabola } from "./utils";
+    import { angleInterp } from "./util/angle";
+    import { lerp, parabola } from "./util/numbers";
     import { getFrogContext, type FrogInfo } from "./frog-types";
 
     type FrogHopProps = {
@@ -102,27 +102,35 @@
         frogMode: FrogMode.Idle,
     });
 
+    function onMouseDown(e: MouseEvent) {
+        const targetX = e.pageX;
+        const targetY = e.pageY;
+        const xDiff = targetX - frog.x;
+        const yDiff = targetY - frog.y;
+        const targetAngle = Math.atan2(yDiff, xDiff);
+        currentFrogMode = {
+            // turn towards target
+            frogMode: FrogMode.Turn,
+            targetX,
+            targetY,
+            targetAngle,
+        };
+    }
+
+    let animationFrame: number | null = $state(null);
+
     onMount(() => {
-        document.documentElement.addEventListener("mousedown", (e) => {
-            const targetX = e.pageX;
-            const targetY = e.pageY;
-            const xDiff = targetX - frog.x;
-            const yDiff = targetY - frog.y;
-            const targetAngle = Math.atan2(yDiff, xDiff);
-            currentFrogMode = {
-                // turn towards target
-                frogMode: FrogMode.Turn,
-                targetX,
-                targetY,
-                targetAngle,
-            };
-        });
+        document.documentElement.addEventListener("mousedown", onMouseDown);
 
-        update();
-    });
+        animationFrame = requestAnimationFrame(update);
 
-    onDestroy(() => {
-        // clean up
+        return () => {
+            document.documentElement.removeEventListener("mousedown", onMouseDown);
+
+            if (animationFrame) {
+                cancelAnimationFrame(animationFrame);
+            }
+        };
     });
 
     function update() {
@@ -220,6 +228,6 @@
                 break;
         }
 
-        requestAnimationFrame(update);
+        animationFrame = requestAnimationFrame(update);
     }
 </script>
