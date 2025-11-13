@@ -25,7 +25,7 @@
     <a href="https://www.dragonflycave.com/">The Dragonfly Cave</a>
     <div>
         <p>
-            Really cool pokémon themed website which features a lot of really interesting 
+            Really cool pokémon themed website which features a lot of really interesting
             things. Actively maintained and cared for to this day, updated and nicely styled.
             My favourite part of it is the articles explaining the game mechanics, especially
             <a href="https://www.dragonflycave.com/mechanics/gen-i-capturing">this page explaining the strange mechanics of capturing pokemon in generation 1.</a>
@@ -37,10 +37,10 @@
     <a href="https://victorianweb.org/">The Victorian Web</a>
     <div>
         <p>
-            This website does show its age but it's an interesting look at various aspects of life in 
+            This website does show its age but it's an interesting look at various aspects of life in
             Victorian times, all the way through social, political, literary, educational, scientific and
             everything else.
-            There's so much to explore here, one interesting thing is <a href="https://victorianweb.org/history/pms/gladov.html">the biography 
+            There's so much to explore here, one interesting thing is <a href="https://victorianweb.org/history/pms/gladov.html">the biography
             and other information on William Gladstone, the GOM (Grand Old Man (or God's Only Mistake)).</a>
         </p>
     </div>
@@ -50,12 +50,12 @@
     <a href="https://www.exclassics.com/">The Ex-Classics Site</a>
     <div>
         <p>
-            I love this because of how obscure it is. It's so cool to feature texts that were classics 
-            when the books we regard as classics today. The most interesting text to me is 
+            I love this because of how obscure it is. It's so cool to feature texts that were classics
+            when the books we regard as classics today. The most interesting text to me is
             <a href="https://www.exclassics.com/pamphlets/pamph003.htm">
                 A fiery flying roll by Abiezer Coppe.
             </a>
-            Abiezer Coppe was one of a group called the ranters which was definitely crazy but 
+            Abiezer Coppe was one of a group called the ranters which was definitely crazy but
             no more crazy than society writ large.
         </p>
     </div>
@@ -67,14 +67,25 @@
     <a href="https://mainlynorfolk.info/folk/">Mainly norfolk</a>
     <div>
         <p>
-            I put these two together because they're very similar in that they're both 
-            old sites for older folk music which I really like. 
+            I put these two together because they're very similar in that they're both
+            old sites for older folk music which I really like.
             The mudcat cafe is an old forum for discussing folk music. Mainly Norfolk
-            is more of an English/Scottish focused folk music site. Both were founded 
-            in 1996 which is pretty impressive. 
+            is more of an English/Scottish focused folk music site. Both were founded
+            in 1996 which is pretty impressive.
             There's so much on these sites I'm not sure I have anything in particular
             to highlight but this <a href="https://mainlynorfolk.info/ewan.maccoll/songs/index.html">
             full discography of Ewan Maccoll</a> is pretty neat.
+        </p>
+        <p>
+            Also for mudcat, one awesome thing is <a href="https://mudcat.org/thread.cfm?threadid=13706&messages=200&page=1">
+                this thread on mudcat
+            </a> about the origins of the song "Wellerman". The thread was started in 1999, more than 20 years before
+            it became very popular on TikTok. It helped to add some info on the origins of the song, 
+            as the poem it originated from and where it may have come from musically.
+            <a href="https://www.ngataonga.org.nz/explore-stories/stories/sound/soon-may-the-wellerman-come/">
+                This page on Ngā Taonga 
+            </a>
+            has some fascinating details on how the song may have come to be.
         </p>
     </div>
 </div>
