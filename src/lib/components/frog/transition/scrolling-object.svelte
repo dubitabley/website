@@ -23,8 +23,8 @@
 
 </script>
 
-{#snippet dataBlock()}
-    <DataBlock lines={10} />
+{#snippet dataBlock(lines?: number)}
+    <DataBlock lines={lines ?? 10} />
 {/snippet}
 
 <div class={[

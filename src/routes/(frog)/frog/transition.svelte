@@ -6,9 +6,9 @@
     import BackgroundObject, { generateRandomBackgroundObject } from "$lib/components/frog/transition/background-object.svelte";
     import { SvelteMap } from "svelte/reactivity";
     import { ScrollingInfo } from "$lib/components/frog/transition/scrolling-info";
-    import { ScrollingObjectType, type GenericScrollingObject } from "$lib/components/frog/transition/scrolling-type";
+    import { ScrollingObjectType, type GenericScrollingObject, type SnippetWithParams } from "$lib/components/frog/transition/scrolling-type";
 
-    let scrollingBlocks: Snippet[] = $state([]);
+    let scrollingBlocks: SnippetWithParams<any>[] = $state([]);
 
     let counter = 0;
     let backgroundObjects: SvelteMap<number, Snippet> = new SvelteMap();
@@ -24,6 +24,7 @@
 
         if (scrollingObjectIndex < ScrollingInfo.length) {
             const objectToAdd = ScrollingInfo[scrollingObjectIndex];
+            scrollingObjectIndex += 1;
             addScrollingObject(objectToAdd);
         }
 
@@ -33,7 +34,7 @@
     function addScrollingObject(scrollingObject: GenericScrollingObject) {
         switch (scrollingObject.objectType) {
             case ScrollingObjectType.DataBlock:
-                scrollingBlocks.push(dataBlock);
+                scrollingBlocks.push([dataBlock, scrollingObject.lines]);
                 break;
         }
     }
@@ -53,7 +54,7 @@
     });
 
     function update() {
-        if (Math.random() < 0.05) {
+        if (Math.random() < 0.02) {
             // generate new background object
             const backgroundSnippet = generateRandomBackgroundObject();
             let index = counter++;
@@ -82,9 +83,9 @@
         {/each}
     </div>
     <div class="scrolling-objects">
-        {#each scrollingBlocks as block}
+        {#each scrollingBlocks as [snippet, args]}
             <ScrollingObject rotatePositive={true}>
-                {@render block()}
+                {@render snippet(args)}
             </ScrollingObject>
         {/each}
     </div>

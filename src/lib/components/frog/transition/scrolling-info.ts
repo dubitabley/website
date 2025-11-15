@@ -2,6 +2,7 @@ import type { GenericScrollingObject } from "./scrolling-type";
 
 export const ScrollingInfo: GenericScrollingObject[] = [
     {
-        "objectType": "data-block"
+        "objectType": "data-block",
+        lines: 8
     }
 ];
