@@ -101,6 +101,7 @@
     .theme-wrapper {
         display: flex;
         flex-direction: column;
+        margin: 5px;
         gap: 2px;
     }
 

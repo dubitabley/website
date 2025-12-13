@@ -1,20 +1,24 @@
 <script lang="ts">
     import Theming from "./theming.svelte";
     import SplodgeTile from "$lib/components/splodge-tile.svelte";
+    import HomeButton from "$lib/components/home-button.svelte";
 
     const headerTitle = "dubitable";
-
 </script>
 
 <div class="header">
     <div class="header-left">
-        <SplodgeTile>
+        <HomeButton>
             <a class="header-home" href="/">Home</a>
-        </SplodgeTile>
+        </HomeButton>
     </div>
     <h1 class="header-text">
         {#each headerTitle.normalize("NFC") as character, index}
-            <span class="header-rotate-char"><span class="header-char" style:animation-delay="0.{index}s">{character}</span></span>
+            <span class="header-rotate-char"
+                ><span class="header-char" style:animation-delay="0.{index}s"
+                    >{character}</span
+                ></span
+            >
         {/each}
     </h1>
     <div class="header-theming">
@@ -26,17 +30,6 @@
     h1 {
         text-align: center;
         width: 100%;
-    }
-
-    .header-home {
-        position: relative;
-        left: 40px;
-        top: -100px;
-        background-color: transparent;
-        text-decoration: none;
-        font-size: 30px;
-        color: var(--background-color-2);
-        font-weight: bold;
     }
 
     .header-left {
@@ -113,7 +106,7 @@
     }
 
     @property --hue {
-        syntax: '<number>';
+        syntax: "<number>";
         initial-value: 0;
         inherits: false;
     }
@@ -132,5 +125,3 @@
         }
     }
 </style>
-
-

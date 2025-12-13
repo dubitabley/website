@@ -2,6 +2,7 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     /* background-color: var(--background-color); */
     color: var(--primary-color);
+    margin: 0;
 }
 
 html {
@@ -11,7 +12,7 @@ html {
         var(--background-color-2) 100%
     );
 
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 a {
