@@ -1,55 +1,60 @@
 {
-  "quotes": [
-    {
-      "quote": "They looked down  on her; and she looked up through them. Thus it had come about that she had read far more fiction, and far more poetry, those two sanctuaries of the lonely, than most of her kind.",
-      "from": "The French Lieutenant's Woman",
-      "by": "John Fowles",
-      "bookLink": "french-lieutenants-woman"
-    },
-    {
-      "quote": "It may be better for humanity that we should communicate more and more. But I am a heretic, I think our ancestors' isolation was like the greater space they enjoyed: it can only be envied. The world is only too literally too much with us now.",
-      "from": "The French Lieutenant's Woman",
-      "by": "John Fowles",
-      "bookLink": "french-lieutenants-woman"
-    },
-    {
-      "quote": "His statement to himself should have been, 'I possess this now, therefore I am happy', instead of what it so Victorianly was:`I cannot possess this for ever, and therefore am sad.'",
-      "from": "The French Lieutenant's Woman",
-      "by": "John Fowles",
-      "bookLink": "french-lieutenants-woman"
-    },
-    {
-      "quote": "'But you're an Efrafan. Do you think like that too?' 'I'm a doe,' said Hyzenthlay.",
-      "from": "Watership Down",
-      "by": "Richard Adams",
-      "bookLink": "watership-down"
-    },
-    {
-      "quote": "Many human beings say that they enjoy the winter, but what they really enjoy is feeling proof against it. For them there is no winter food problem. They have fires and warm clothes. The winter cannot hurt them and therefore increases their sense of cleverness and security.",
-      "from": "Watership Down",
-      "by": "Richard Adams",
-      "bookLink": "watership-down"
-    },
-    {
-      "quote": "[Computers] make fine tools for the centralization of power, if that's what those who buy them want to do with them. They are handy greed-extenders.",
-      "from": "The Soul of a New Machine",
-      "by": "Tracy Kidder"
-    },
-    {
-      "quote": "Where money is the measure of everything, many completely futile and superfluous crafts must be practiced just to support over-indulgence and wanton luxury.",
-      "from": "Utopia",
-      "by": "Thomas More",
-      "bookLink": "utopia"
-    },
-    {
-      "quote": "Howl, rich men, for the miseries that are (just now) coming upon you, the rust of your silver is rising up in judgment against you, burning your flesh like fire",
-      "from": "A Fiery Flying Roll",
-      "by": "Abiezer Coppe"
-    },
-    {
-      "quote": "To the liege subjects of Labour, the England of those days was a continent, and a mile a geographical degree",
-      "from": "The Mayor of Casterbridge",
-      "by": "Thomas Hardy"
-    }
-  ]
+    "quotes": [
+        {
+            "quote": "They looked down  on her; and she looked up through them. Thus it had come about that she had read far more fiction, and far more poetry, those two sanctuaries of the lonely, than most of her kind.",
+            "from": "The French Lieutenant's Woman",
+            "by": "John Fowles",
+            "bookLink": "french-lieutenants-woman"
+        },
+        {
+            "quote": "It may be better for humanity that we should communicate more and more. But I am a heretic, I think our ancestors' isolation was like the greater space they enjoyed: it can only be envied. The world is only too literally too much with us now.",
+            "from": "The French Lieutenant's Woman",
+            "by": "John Fowles",
+            "bookLink": "french-lieutenants-woman"
+        },
+        {
+            "quote": "His statement to himself should have been, 'I possess this now, therefore I am happy', instead of what it so Victorianly was:`I cannot possess this for ever, and therefore am sad.'",
+            "from": "The French Lieutenant's Woman",
+            "by": "John Fowles",
+            "bookLink": "french-lieutenants-woman"
+        },
+        {
+            "quote": "'But you're an Efrafan. Do you think like that too?' 'I'm a doe,' said Hyzenthlay.",
+            "from": "Watership Down",
+            "by": "Richard Adams",
+            "bookLink": "watership-down"
+        },
+        {
+            "quote": "Many human beings say that they enjoy the winter, but what they really enjoy is feeling proof against it. For them there is no winter food problem. They have fires and warm clothes. The winter cannot hurt them and therefore increases their sense of cleverness and security.",
+            "from": "Watership Down",
+            "by": "Richard Adams",
+            "bookLink": "watership-down"
+        },
+        {
+            "quote": "[Computers] make fine tools for the centralization of power, if that's what those who buy them want to do with them. They are handy greed-extenders.",
+            "from": "The Soul of a New Machine",
+            "by": "Tracy Kidder"
+        },
+        {
+            "quote": "Where money is the measure of everything, many completely futile and superfluous crafts must be practiced just to support over-indulgence and wanton luxury.",
+            "from": "Utopia",
+            "by": "Thomas More",
+            "bookLink": "utopia"
+        },
+        {
+            "quote": "Howl, rich men, for the miseries that are (just now) coming upon you, the rust of your silver is rising up in judgment against you, burning your flesh like fire",
+            "from": "A Fiery Flying Roll",
+            "by": "Abiezer Coppe"
+        },
+        {
+            "quote": "To the liege subjects of Labour, the England of those days was a continent, and a mile a geographical degree",
+            "from": "The Mayor of Casterbridge",
+            "by": "Thomas Hardy"
+        },
+        {
+            "quote": "From Saturday to Saturday was as from day to day with the two young women now. In an emotional sense they did not live at all during the intervals.",
+            "from": "The Mayor of Casterbridge",
+            "by": "Thomas Hardy"
+        }
+    ]
 }

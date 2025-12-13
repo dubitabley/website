@@ -27,7 +27,7 @@
 
 <style>
     .post {
-        border: 5px dashed var(--primary-color-2);
+        border: 10px solid var(--primary-color-2);
         --inset-amount: 18px;
         clip-path: polygon(
             var(--inset-amount) 0px,
@@ -41,5 +41,6 @@
         );
         background-color: var(--background-color-2);
         padding: 10px;
+        margin-bottom: 10px;
     }
 </style>
