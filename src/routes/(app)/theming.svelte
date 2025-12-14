@@ -97,6 +97,10 @@
             box-shadow: 3px 3px 0px 0px
                 hsl(117, 80%, var(--secondary-lightness));
         }
+
+        &:hover {
+            background-color: hsl(150, 100%, var(--secondary-lightness));
+        }
     }
 
     .theme-wrapper {

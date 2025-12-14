@@ -1,14 +1,24 @@
 <script>
     import Footnote from "$lib/components/post/footnote.svelte";
     import Post from "$lib/components/post/post.svelte";
+
+    import WebBadges from "./web-badges.png";
 </script>
 
 <Post>
-    <h1>Notes on attempts at reviving the Web</h1>
+    <h1>Reviving the Web</h1>
     <p>
         People have noticed that the web hasn't been great for a lot of reasons
-        and have tried various projects to try to "fix" the internet. Here I
-        want to look at a few instances and where they succeeded and didn't.
+        and have tried various projects to try to "fix" the internet; mostly by
+        trying to revive the old customs and ways of the web closer to its
+        inception. <a
+            href="https://thoughts.melonking.net/guides/introduction-to-the-web-revival-1-what-is-the-web-revival"
+        >
+            This page by Melon
+        </a> is probably the most comprehensive guide and round-up of what it is that
+        I'm aware of so you may want to check that out if you're interested. In this
+        post I want to look at a few attempts at trying something different and where
+        they succeeded and didn't.
     </p>
     <hgroup>
         <h3>The Indie Web</h3>
@@ -93,7 +103,23 @@
         as you want it to be. It makes it cheap and relatively easy to do, you can
         get going by just writing HTML and change it as you want.
     </p>
-
+    <p>
+        One of the primary "languages" of these websites is a callback to
+        websites of old: the web badge. They will often have something like
+        this:
+    </p>
+    <img
+        src={WebBadges}
+        alt="Some web badges showing things such as preferred browser, OS, W3C compliance"
+    />
+    <p>
+        They can be used for various things, such as demonstrating allegiance to
+        a particular technology, philosophy, software, hardware or even link to
+        your friend's websites. These are pretty fun; they fit the aesthetic of
+        old websites which a lot try to adher to, recalling nostalgia for how
+        the internet used to look: very custom and human instead of corporate
+        and managed.
+    </p>
     <hgroup>
         <h3>Federated Services</h3>
         <h5>
