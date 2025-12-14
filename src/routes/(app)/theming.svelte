@@ -78,34 +78,39 @@
     /* Hide inputs so we can apply custom style */
     input[type="checkbox"] {
         opacity: 0;
-        width: 0;
-        height: 0;
+        position: absolute;
     }
 
     label {
-        flex: 1;
-        display: flex;
-    }
-
-    label > span {
         background-color: var(--primary-color);
         color: var(--background-color);
-        border: 2px solid var(--background-color);
-        padding: 4px;
-    }
+        padding-left: 8px;
+        padding-right: 8px;
 
-    input:checked + span {
-        background-color: hsl(117, 100%, var(--secondary-lightness));
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        text-align: center;
+
+        &:has(input:checked) {
+            background-color: hsl(117, 100%, var(--secondary-lightness));
+            box-shadow: 3px 3px 0px 0px
+                hsl(117, 80%, var(--secondary-lightness));
+        }
     }
 
     .theme-wrapper {
         display: flex;
         flex-direction: column;
-        margin: 5px;
-        gap: 2px;
-    }
+        margin: 10px;
+        gap: 5px;
+        & * {
+            margin: 0;
+        }
 
-    .theme-wrapper > * {
-        margin: 0;
+        & p {
+            font-weight: bold;
+            font-size: 25px;
+        }
     }
 </style>

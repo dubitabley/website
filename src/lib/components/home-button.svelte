@@ -9,7 +9,9 @@
 </script>
 
 <div class="home-wrapper">
-    <div class="home-upper"></div>
+    <div class="home-upper-wrapper">
+        <div class="home-upper"></div>
+    </div>
     <div class="home-border">
         {@render children()}
     </div>
@@ -22,13 +24,19 @@
         justify-content: center;
         align-items: center;
         margin-left: 15px;
+        height: 100%;
+    }
+    .home-upper-wrapper {
+        position: relative;
+        width: 70%;
     }
     .home-upper {
-        position: relative;
+        position: absolute;
         border-left: 5px double var(--primary-color);
         border-right: 5px double var(--primary-color);
-        height: 30px;
-        width: 70%;
+        height: 3000px;
+        bottom: 0;
+        width: 100%;
     }
     .home-border {
         border: 5px double var(--primary-color);
