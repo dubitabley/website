@@ -6,6 +6,7 @@
     import Words from "$lib/interests/words.json";
     import Poems from "$lib/interests/poems.json";
     import Posts from "$lib/interests/posts.json";
+    import Misc from "$lib/interests/misc.json";
 
     function getLatest<T>(array: T[]): T {
         return array[array.length - 1];
@@ -17,6 +18,7 @@
     const latestWord = getLatest(Words.words);
     const latestPoem = getLatest(Poems.poems);
     const latestPost = getLatest(Posts.posts);
+    const latestMiscPage = getLatest(Misc.pages);
 </script>
 
 <div class="summary">
@@ -40,6 +42,18 @@
             </div>
             <div>
                 <a href="./posts">All posts</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel text-bg">
+        <span class="panel-title">Latest misc page</span>
+        <div>
+            <div>
+                <a href={latestMiscPage.link}>{latestMiscPage.page_name}</a>
+            </div>
+            <div>
+                <a href="./misc">All misc pages</a>
             </div>
         </div>
     </div>

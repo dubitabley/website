@@ -12,6 +12,5 @@
 <p>
     Currently: <br />
 
-    Working on some posts I guess. Doomspiralling a little. (I don't think
-    that's a word but you get the gist anyway)
+    Confuzzled (a word I both like and hate simultaneously)
 </p>
