@@ -3,13 +3,10 @@
 </script>
 
 <div class="post-brief">
-    An outpouring of my thoughts that transfer from the medium of my brain into
-    words on this website. I am not using the word "blog" because I think it's
-    cool not to at this point: the neologism has outgrown its etymology. I write
-    these texts (I don't have a more extravagant word for what they are) for
-    myself; primarily to practise writing and expounding my thoughts into
-    coherent arguments. Feel free to not read them. If you wish to discuss or
-    comment on anything I write, please don't. :)
+    An outpouring of my thoughts into words on this website. Feel free to not
+    read them. They are primarily for me personally to practise writing and
+    actually finishing things (kinda). If you wish to discuss or comment on
+    anything I write, please don't. :)
 </div>
 
 <h2>Posts</h2>

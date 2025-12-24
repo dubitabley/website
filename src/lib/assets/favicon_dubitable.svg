@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg1052"
+   sodipodi:docname="favicon_dubitable.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:export-filename="favicon_e.png"
+   inkscape:export-xdpi="12"
+   inkscape:export-ydpi="12"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1056">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient512">
+      <stop
+         style="stop-color:#2a1ad9;stop-opacity:1;"
+         offset="0"
+         id="stop508" />
+      <stop
+         style="stop-color:#2a1ad9;stop-opacity:0;"
+         offset="1"
+         id="stop510" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient512"
+       id="linearGradient514"
+       x1="366.8613"
+       y1="-75.348618"
+       x2="247.04463"
+       y2="135.87454"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1054"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.8095703"
+     inkscape:cx="416.27021"
+     inkscape:cy="221.10495"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1052" />
+  <title
+     id="title1046">svelte-logo</title>
+  <g
+     id="d1"
+     class="letter">
+    <ellipse
+       style="fill:none;stroke:#000adb;stroke-width:17.4821;stroke-dasharray:none;stroke-opacity:1"
+       id="path2474"
+       cx="68.485474"
+       cy="80.696754"
+       rx="28.75672"
+       ry="28.625111" />
+    <path
+       style="font-variation-settings:normal;opacity:1;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       d="M 97.357637,7.1558719 97.537757,82.986505"
+       id="path2539"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="b1"
+     class="letter">
+    <ellipse
+       style="fill:none;stroke:#000adb;stroke-width:17.4821;stroke-dasharray:none;stroke-opacity:1"
+       id="path2474-0"
+       cx="-302.77744"
+       cy="75.535614"
+       rx="28.75672"
+       ry="28.625111"
+       transform="scale(-1,1)" />
+    <path
+       style="font-variation-settings:normal;fill:url(#linearGradient514);fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 273.90528,1.9947354 273.72516,77.825368"
+       id="path2539-9"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="b2"
+     class="letter">
+    <ellipse
+       style="fill:none;stroke:#000adb;stroke-width:17.4821;stroke-dasharray:none;stroke-opacity:1"
+       id="path2474-0-1"
+       cx="-674.57965"
+       cy="78.006073"
+       rx="28.75672"
+       ry="28.625111"
+       transform="scale(-1,1)" />
+    <path
+       style="font-variation-settings:normal;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 645.70747,4.4651843 645.52735,80.295818"
+       id="path2539-9-0"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <path
+     style="font-variation-settings:normal;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.482;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+     d="M 752.64977,6.5527184 753.08726,110.79346"
+     id="l1"
+     sodipodi:nodetypes="cc"
+     class="letter" />
+  <g
+     id="t1"
+     class="letter">
+    <path
+       style="font-variation-settings:normal;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 475.03337,6.2439105 475.47086,110.48467"
+       id="path2539-9-6-9"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="font-variation-settings:normal;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 508.69321,41.75658 441.81103,42.238596"
+       id="path2539-9-6-9-1"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <g
+     id="i1"
+     class="letter">
+    <path
+       style="font-variation-settings:normal;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 390.42058,52.873586 390.24046,109.55826"
+       id="path2539-9-6"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="font-variation-settings:normal;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 389.18536,16.125699 390.24046,32.665616"
+       id="path2539-9-6-2"
+       sodipodi:nodetypes="cc" />
+  </g>
+  <path
+     style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+     d="M 150.60717,46.079861 C 150.04306,61.870245 152.28019,105.43078 181.13841,106.49614 207.54484,107.47099 216.49556,74.910086 216.25412,47.797106"
+     id="u1"
+     sodipodi:nodetypes="csc"
+     class="letter" />
+  <g
+     id="a1"
+     class="letter">
+    <path
+       style="font-variation-settings:normal;fill:#2a1ad9;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 591.17539,34.677549 592.0496,112.00677"
+       id="path2539-9-6-0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#0a00e0;stroke-width:17.4821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="M 563.42042,45.283692 C 549.55091,46.385157 538.23455,58.134828 539.24254,72.367152 540.20526,85.960362 549.26621,102.06572 563.68869,101.37668 582.06617,100.4987 589.16406,90.171822 591.39307,69.234955 591.39307,69.234955 580.09594,45.283693 563.42042,45.283692 Z"
+       id="path623"
+       sodipodi:nodetypes="csscc" />
+  </g>
+  <metadata
+     id="metadata685">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>svelte-logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#0a00e0;stroke-width:17.482;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+     d="M 800.72323,67.844166 865.01801,67.407449 C 865.01801,67.407449 857.93835,35.584869 833.91264,36.345975 807.67295,37.177217 801.46323,53.052183 800.97905,66.027692 799.92472,94.282642 820.06482,100.75383 835.50323,100.995 852.29113,101.25725 866.93934,85.118007 866.93934,85.118007"
+     id="e1"
+     sodipodi:nodetypes="ccsssc"
+     class="letter" />
+</svg>

@@ -1,6 +1,5 @@
 <script lang="ts">
     import Theming from "./theming.svelte";
-    import SplodgeTile from "$lib/components/splodge-tile.svelte";
     import HomeButton from "$lib/components/home-button.svelte";
 
     const headerTitle = "dubitable";
