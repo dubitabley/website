@@ -39,19 +39,19 @@
  <style>
     .letter {
         animation: move-left 2s linear infinite, colours 3s linear infinite alternate;
-    }
-
-    .letter > * {
-        animation: colours 3s linear infinite alternate;
+        /* apply to child as well */
+        * {
+            animation: colours 3s linear infinite alternate;
+        }
     }
 
     @keyframes move-left {
         from {
-            translate: 0px;
+            translate: 100px;
         }
 
         to {
-            translate: -850px;
+            translate: -930px;
         }
     }
 

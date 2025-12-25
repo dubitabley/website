@@ -4,6 +4,11 @@
             "page_name": "Old websites",
             "link": "/old-sites",
             "summary": "Some old websites that are still around that I find interesting."
+        },
+        {
+            "page_name": "Cool sites",
+            "link": "/cool-sites",
+            "summary": "Some cool indie websites for reference."
         }
     ]
 }
