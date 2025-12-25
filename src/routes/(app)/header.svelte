@@ -1,11 +1,13 @@
 <script lang="ts">
     import Theming from "./theming.svelte";
     import HomeButton from "$lib/components/home-button.svelte";
+    import HeaderBackground from "$lib/components/header-background.svelte";
 
     const headerTitle = "dubitable";
 </script>
 
 <div class="header">
+    <HeaderBackground />
     <div class="header-left">
         <HomeButton>
             <a class="header-home" href="/">Home</a>
@@ -59,7 +61,6 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        justify-items: center;
         align-items: center;
         height: 150px;
         border-bottom: 3px dashed var(--primary-color);
@@ -84,14 +85,14 @@
     .header-rotate-char {
         display: inline-block;
         background-color: transparent;
-    }
 
-    .header-rotate-char:hover {
-        animation-name: rotate;
-        animation-delay: 0;
-        animation-timing-function: linear;
-        animation-duration: 0.5s;
-        animation-iteration-count: infinite;
+        &:hover {
+            animation-name: rotate;
+            animation-delay: 0;
+            animation-timing-function: linear;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+        }
     }
 
     @keyframes rotate {
