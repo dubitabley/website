@@ -33,5 +33,6 @@
     <ol>
         <li><a href="web/technical">The technical history</a></li>
         <li><a href="web/revival">Attempts at revival</a></li>
+        <li><a href="web/non-profits">Non profits and the web</a></li>
     </ol>
 </Post>
