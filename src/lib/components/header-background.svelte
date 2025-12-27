@@ -19,10 +19,13 @@
     */
     .header-background {
         position: absolute;
+        overflow: hidden;
         top: 0;
+        width: 100vw;
+        height: 150px;
 
         & i {
-            position: absolute;
+            position: relative;
             display: inline-block;
             height: 16px;
             width: 16px;
