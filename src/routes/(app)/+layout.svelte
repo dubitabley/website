@@ -9,6 +9,11 @@
 <svelte:head>
     <title>dubitable</title>
     <link rel="icon" href={favicon} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dubitable.xyz/" />
+    <meta property="og:title" content="dubitable's website" />
+    <meta property="og:description" content="hi discord!" />
+    <meta property="og:image" content="https://i.redd.it/tart0f3h1ewd1.jpg" />
 </svelte:head>
 
 <span class="header-class">
