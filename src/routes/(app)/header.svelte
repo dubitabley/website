@@ -80,6 +80,19 @@
         animation-direction: alternate;
 
         background-color: transparent;
+
+        --small-font-size: 30px;
+        --large-font-size: 50px;
+
+        @media (width <= 500px) {
+            --small-font-size: 20px;
+            --large-font-size: 30px;
+        }
+
+        @media (width <= 300px) {
+            --small-font-size: 10px;
+            --large-font-size: 20px;
+        }
     }
 
     .header-rotate-char {
@@ -115,13 +128,13 @@
         0% {
             --hue: 0;
             --saturation: 100%;
-            font-size: 30px;
+            font-size: var(--small-font-size);
         }
 
         100% {
             --hue: 360;
             --saturation: 100%;
-            font-size: 50px;
+            font-size: var(--large-font-size);
         }
     }
 </style>
