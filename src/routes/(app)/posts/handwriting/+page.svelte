@@ -43,6 +43,39 @@
         There's a lot of interactive media that I really like and it's possible
         to do some incredible and beautiful things.
     </p>
+    <p>
+        An example of the power of fonts and custom styles is video games which
+        use their own fonts. <span class="tf2"
+            >This sentence is written using the primary TF2 font which is
+            immediately recognisable to anyone who knows it.</span
+        >
+        <span class="tf2-secondary"
+            >TF2 has multiple fonts that it can use for different purposes which
+            really helps it to build its own brand for the purpose of
+            differentiating it.</span
+        >
+        There's also other fonts associated with certain games, Overwatch has a fairly
+        well known one. Even the first pokemon games had a font which is still more
+        associated with them; even though it was partially born out of the technical
+        limitations it still has its own styling that jibes with the rest of the game.
+        <span class="pokemon"
+            >This is the red/blue pokemon text which even now I associate with
+            iconic phrases like "It hurt itself in its confusion" or "I like
+            shorts! They're comfy and easy to wear!"</span
+        >
+        However, modern pokemon games use generic fonts which are easy to read but
+        they lose a lot of the iconic nature of the older pokemon font.
+        <Footnote
+            >I do not own these fonts, Valve owns the TF2 fonts which I found
+            here: <a href="https://www.teamfortress.com/artwork.php"
+                >https://www.teamfortress.com/artwork.php</a
+            >
+            and Game Freak owns the pokemon font which I found here:
+            <a href="https://www.dafont.com/pkmn-rbygsc.font"
+                >https://www.dafont.com/pkmn-rbygsc.font</a
+            > although the actual pokemon font was monospaced.</Footnote
+        >
+    </p>
     <p class="dubitable">
         One way to try to inject your own style is to use a specific font. I
         actually created the one used for this paragraph based off my own
@@ -50,7 +83,8 @@
         <Footnote
             >I used the program <a href="https://fontforge.org/en-US/"
                 >FontForge</a
-            > to create this which is a pretty cool program.</Footnote
+            > to create this which was very cool and relatively easy to use. There
+            are quite a few online tools but I wanted to use an open source one</Footnote
         >
         However, it's a laborious process and quite difficult to make it layout in
         a way that looks good. I did a decent amount of cleanup but even so there's
@@ -74,8 +108,32 @@
         src: url("$lib/assets/fonts/dubitable.woff2") format("woff2");
     }
 
+    @font-face {
+        font-family: "tf2";
+        src: url("$lib/assets/fonts/TF2.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "tf2-secondary";
+        src: url("$lib/assets/fonts/TF2secondary.woff2") format("woff2");
+    }
+    @font-face {
+        font-family: "pokemon";
+        src: url("$lib/assets/fonts/pokemon.woff2") format("woff2");
+    }
+
     .dubitable {
         font-family: dubitable;
+    }
+
+    .tf2 {
+        font-family: tf2;
+    }
+    .tf2-secondary {
+        font-family: tf2-secondary;
+    }
+
+    .pokemon {
+        font-family: pokemon;
     }
 
     .orange {
