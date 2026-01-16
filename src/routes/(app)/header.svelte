@@ -1,13 +1,11 @@
 <script lang="ts">
     import Theming from "./theming.svelte";
     import HomeButton from "$lib/components/home-button.svelte";
-    import HeaderBackground from "$lib/components/header-background.svelte";
 
     const headerTitle = "dubitable";
 </script>
 
 <div class="header">
-    <HeaderBackground />
     <div class="header-left">
         <HomeButton>
             <a class="header-home" href="/">Home</a>

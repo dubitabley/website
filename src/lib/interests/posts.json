@@ -9,6 +9,11 @@
             "name": "The web",
             "summary": "Lamentations of an internet tragic",
             "link": "web"
+        },
+        {
+            "name": "Fonts and Handwriting",
+            "summary": "Ruminations on how we write our text in the world today",
+            "link": "handwriting"
         }
     ]
 }
