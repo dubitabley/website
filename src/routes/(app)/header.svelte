@@ -24,6 +24,35 @@
         <Theming />
     </div>
 </div>
+{#snippet decorSvg(amount: number)}
+    <svg
+        class="header-decor-svg"
+        viewBox="0 0 100 100"
+        width="100mm"
+        height="100mm"
+    >
+        <g>
+            {#each { length: amount }, index}
+                {#each { length: index + 1 }, index2}
+                    <rect
+                        x="0"
+                        y="0"
+                        width={100 - 100 * ((index + 1) / (amount + 1))}
+                        height={100 * ((index2 + 1) / (amount + 1))}
+                    />
+                {/each}
+            {/each}
+        </g>
+    </svg>
+{/snippet}
+<div class="header-decor-wrapper">
+    <div class="header-decor decor-left">
+        {@render decorSvg(5)}
+    </div>
+    <div class="header-decor decor-right">
+        {@render decorSvg(5)}
+    </div>
+</div>
 
 <style>
     h1 {
@@ -61,7 +90,7 @@
         justify-content: center;
         align-items: center;
         height: 150px;
-        border-bottom: 3px dashed var(--primary-color);
+        border-bottom: 3px solid var(--primary-color);
     }
 
     .header-theming {
@@ -133,6 +162,29 @@
             --hue: 360;
             --saturation: 100%;
             font-size: var(--large-font-size);
+        }
+    }
+
+    .header-decor-wrapper {
+        position: relative;
+    }
+
+    .header-decor {
+        position: absolute;
+    }
+
+    .decor-right {
+        right: 0;
+        scale: -1 1;
+    }
+
+    .header-decor-svg {
+        width: 50px;
+        height: 50px;
+
+        & rect {
+            fill: var(--primary-color);
+            opacity: 0.3;
         }
     }
 </style>
