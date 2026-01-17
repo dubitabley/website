@@ -69,10 +69,12 @@
                 <span><b>Author:</b></span>
                 <span>{latestBook.author}</span>
             </div>
-            <div>
-                <span>Rating: </span>
-                <StarRating rating={latestBook.rating} />
-            </div>
+            {#if latestBook.rating}
+                <div>
+                    <span>Rating: </span>
+                    <StarRating rating={latestBook.rating} />
+                </div>
+            {/if}
             <div>
                 <a href="/interests/books">All books</a>
             </div>

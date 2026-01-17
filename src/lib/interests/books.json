@@ -37,6 +37,11 @@
             "book_name": "Nocturnal Animals / Tony And Susan",
             "author": "Austin Wright",
             "rating": 3
+        },
+        {
+            "book_name": "Gravity's Rainbow",
+            "author": "Thomas Pynchon",
+            "confusion": 5
         }
     ]
 }

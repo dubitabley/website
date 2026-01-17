@@ -54,10 +54,11 @@
             really helps it to build its own brand for the purpose of
             differentiating it.</span
         >
-        There's also other fonts associated with certain games, Overwatch has a fairly
-        well known one. Even the first pokemon games had a font which is still more
-        associated with them; even though it was partially born out of the technical
-        limitations it still has its own styling that jibes with the rest of the game.
+        There's also other fonts associated with certain games, Overwatch and Minecraft
+        have very distinct ones. Even the first pokemon games had a font which is
+        very characteristic of those games; even though it was partially born out
+        of the technical limitations it still has its own styling that jibes with
+        the rudimentary graphics of those games.
         <span class="pokemon"
             >This is the red/blue pokemon text which even now I associate with
             iconic phrases like "It hurt itself in its confusion" or "I like

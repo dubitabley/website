@@ -2,6 +2,7 @@
     import type { PageProps } from "./$types";
     import Books from "$lib/interests/books.json";
     import StarRating from "$lib/components/star-rating.svelte";
+    import ConfusionRating from "$lib/components/confusion-rating.svelte";
 
     let { data }: PageProps = $props();
 </script>
@@ -21,6 +22,9 @@
             </div>
             {#if book.rating}
                 <StarRating rating={book.rating} />
+            {/if}
+            {#if book.confusion}
+                <ConfusionRating amount={book.confusion} />
             {/if}
             {#if book.link}
                 <div>
