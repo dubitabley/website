@@ -91,6 +91,12 @@
         align-items: center;
         height: 150px;
         border-bottom: 3px solid var(--primary-color);
+        /* todo: do something here */
+        background: radial-gradient(
+            circle at 50%,
+            var(--background-color),
+            var(--background-color-2)
+        );
     }
 
     .header-theming {
