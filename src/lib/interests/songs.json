@@ -33,17 +33,10 @@
         },
         {
             "song_name": "Sunny Road",
-            "singer": "Emilíana Torrini",
+            "singer": "moderndaywarrior3",
             "written": "Emilíana Torrini",
-            "rendition": "https://youtu.be/i97b6brnWCc",
+            "rendition": "https://youtu.be/_uwLbjzWV10",
             "links": ["https://en.wikipedia.org/wiki/Emil%C3%ADana_Torrini"]
-        },
-        {
-            "song_name": "Another Age",
-            "singer": "Phil Ochs",
-            "written": "Phil Ochs",
-            "rendition": "https://youtu.be/iP4tZ8p4iwc",
-            "links": []
         }
     ]
 }
