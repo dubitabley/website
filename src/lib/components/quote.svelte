@@ -1,16 +1,18 @@
 <script lang="ts">
+    import type { Snippet } from "svelte";
+
     type QuoteProps = {
-        quote: string;
+        children: Snippet;
         by: string;
         from: string | null;
     };
 
-    let { quote, by, from }: QuoteProps = $props();
+    let { children, by, from }: QuoteProps = $props();
 </script>
 
 <div class="quote-wrapper">
     <div class="quote">
-        {quote}
+        {@render children()}
     </div>
     <div class="quote-by">
         - {by}

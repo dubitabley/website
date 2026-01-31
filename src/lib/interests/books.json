@@ -42,6 +42,12 @@
             "book_name": "Gravity's Rainbow",
             "author": "Thomas Pynchon",
             "confusion": 5
+        },
+        {
+            "book_name": "Foundation Trilogy",
+            "author": "Isaac Asimov",
+            "rating": 4,
+            "link": "foundation"
         }
     ]
 }

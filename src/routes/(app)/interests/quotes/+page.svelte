@@ -13,6 +13,8 @@
 
 <div class="all-quote-wrapper">
     {#each Quotes.quotes as quote}
-        <Quote quote={quote.quote} by={quote.by} from={quote.from} />
+        <Quote by={quote.by} from={quote.from}>
+            <span>{quote.quote}</span>
+        </Quote>
     {/each}
 </div>
