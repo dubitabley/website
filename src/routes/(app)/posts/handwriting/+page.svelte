@@ -25,8 +25,8 @@
             bold
         </span>, <span class="italic"> italic </span>
         <Footnote>
-            Fun fact: The term italic originates from the font originally being
-            from Italy.
+            Fun fact: The term italic originates from the font that spawned the
+            style associated with it coming from Italy.
         </Footnote>, or even combine
         <span class="bold italic">bold and italics.</span>
         You can change <span class="orange">text colour</span> or

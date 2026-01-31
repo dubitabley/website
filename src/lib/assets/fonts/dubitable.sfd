@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1768377677
-ModificationTime: 1768542951
+ModificationTime: 1769857695
 OS2TypoAscent: 0
 OS2TypoAOffset: 1
 OS2TypoDescent: 0
@@ -36,7 +36,6 @@ HheadAscent: 0
 HheadAOffset: 1
 HheadDescent: 0
 HheadDOffset: 1
-OS2Vendor: 'PfEd'
 MarkAttachClasses: 1
 DEI: 91125
 Encoding: ISO8859-1
@@ -45,10 +44,10 @@ NameList: AGL For New Fonts
 DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 0 16 4
+WinInfo: 32 16 4
 BeginPrivate: 0
 EndPrivate
-BeginChars: 256 70
+BeginChars: 256 74
 
 StartChar: A
 Encoding: 65 65 0
@@ -1764,7 +1763,7 @@ EndChar
 StartChar: parenright
 Encoding: 41 41 69
 Width: 367
-Flags: HWO
+Flags: HW
 LayerCount: 2
 Fore
 SplineSet
@@ -1773,6 +1772,72 @@ SplineSet
  233 525 283 352 237 98 c 0
  234.126553728 82.1335792783 190.270170614 78.2003571567 195 94 c 0
  289 408 149 550 83 704 c 0
+EndSplineSet
+EndChar
+
+StartChar: hyphen
+Encoding: 45 45 70
+Width: 406
+Flags: HWO
+LayerCount: 2
+Fore
+SplineSet
+34 395 m 0
+ 23 390.875 11.0001508109 332.00027145 20 327 c 0
+ 28.2470703125 322.41796875 321 299 364 305 c 0
+ 372 306.116210938 371 369.571289062 366 371 c 0
+ 345 377 42 398 34 395 c 0
+EndSplineSet
+EndChar
+
+StartChar: comma
+Encoding: 44 44 71
+Width: 264
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+140 212 m 0
+ 162 233 177.665039062 249.908203125 186 220 c 0
+ 203 159 200.13671875 98.9296875 148 62 c 0
+ 100 28 40 35 43 62 c 0
+ 45.568359375 85.1171875 128.208984375 113.92578125 142 153 c 0
+ 148 170 127.202148438 199.784179688 140 212 c 0
+EndSplineSet
+EndChar
+
+StartChar: slash
+Encoding: 47 47 72
+Width: 438
+Flags: HW
+LayerCount: 2
+Fore
+SplineSet
+335 654 m 0
+ 347.921875 683.49609375 416.662109375 676.196289062 402 648 c 0
+ 285 423 216 294 89 86 c 0
+ 75.5517578125 63.974609375 12.1982421875 78.43359375 25 100 c 0
+ 155 319 243 444 335 654 c 0
+EndSplineSet
+EndChar
+
+StartChar: quotedbl
+Encoding: 34 34 73
+Width: 1000
+Flags: H
+LayerCount: 2
+Fore
+SplineSet
+509 643 m 0
+ 514 616 530 594 534 567 c 0
+ 535.770507812 555.047851562 564.650390625 564.647460938 564 577 c 0
+ 563 596 543 629 536 646 c 0
+ 532.594726562 654.270507812 507.321289062 652.065429688 509 643 c 0
+405 634 m 0
+ 411 611 422 589 429 565 c 0
+ 431.7578125 555.544921875 457.151367188 558.03515625 455 567 c 0
+ 449 592 446.5703125 612.336914062 436 637 c 0
+ 433 644 403.21484375 640.842773438 405 634 c 0
 EndSplineSet
 EndChar
 EndChars
