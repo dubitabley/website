@@ -1,6 +1,6 @@
 import { createContext, type Snippet } from "svelte";
 
 export const [getFootnoteContext, setFootnoteContext] =
-    createContext<FootnoteContext>();
+    createContext<FootnoteContextClosure>();
 
-type FootnoteContext = Snippet[];
+export type FootnoteContextClosure = Array<() => Snippet>;

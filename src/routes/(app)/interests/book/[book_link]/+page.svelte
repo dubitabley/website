@@ -40,13 +40,11 @@
 
 <div>
     <h2>Quotes from the book</h2>
-    {#if bookQuotes.length > 0}
-        {#each bookQuotes as bookQuote}
-            <Quote by={bookQuote.by} from={bookQuote.from}>
-                {bookQuote.quote}
-            </Quote>
-        {/each}
+    {#each bookQuotes as bookQuote}
+        <Quote by={bookQuote.by} from={bookQuote.from}>
+            {bookQuote.quote}
+        </Quote>
     {:else}
         <div>No quotes for books noted.</div>
-    {/if}
+    {/each}
 </div>

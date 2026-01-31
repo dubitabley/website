@@ -11,8 +11,7 @@
 
     let footnoteContext = getFootnoteContext();
     let footnoteId = footnoteContext.length;
-    // svelte-ignore state_referenced_locally
-    footnoteContext.push(children);
+    footnoteContext.push(() => children);
 
     let visible = $state(false);
     let left = $state(true);

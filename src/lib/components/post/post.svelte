@@ -1,6 +1,9 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
-    import { setFootnoteContext } from "./footnote-types";
+    import {
+        setFootnoteContext,
+        type FootnoteContextClosure,
+    } from "./footnote-types";
     import AllFootnotes from "./all-footnotes.svelte";
 
     type PostProps = {
@@ -9,11 +12,11 @@
 
     let { children } = $props();
 
-    let footnoteContext: Snippet[] = [];
+    let footnoteContext: FootnoteContextClosure = [];
 
     setFootnoteContext(footnoteContext);
 </script>
 
 {@render children?.()}
 
-<AllFootnotes footnotes={footnoteContext} />
+<AllFootnotes footnotes={footnoteContext.map((x) => x())} />

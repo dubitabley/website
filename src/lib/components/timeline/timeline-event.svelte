@@ -12,11 +12,12 @@
     let { date, children, summary, title, id }: Props = $props();
 
     let timelineContext = getTimelineContext();
-    // svelte-ignore state_referenced_locally
-    timelineContext.events.push({
-        id,
-        date,
-        title,
+    timelineContext.events.push(() => {
+        return {
+            id,
+            date,
+            title,
+        };
     });
 </script>
 

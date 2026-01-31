@@ -36,7 +36,8 @@
     </div>
     <div class="timeline-sidebar">
         <h4 class="timeline-title">Timeline</h4>
-        {#each timelineContext.events as timelineEvent}
+        {#each timelineContext.events as timelineEventClosure}
+            {@const timelineEvent = timelineEventClosure()}
             <div>
                 <a class="timeline-link" href="#{timelineEvent.id}">
                     <svg class="timeline-circle" viewBox="0 0 100 100">

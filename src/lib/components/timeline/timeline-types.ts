@@ -1,8 +1,10 @@
 import { createContext } from "svelte";
 
 export type TimelineContext = {
-    events: TimelineEvent[];
+    events: TimelineEventClosure[];
 };
+
+type TimelineEventClosure = () => TimelineEvent;
 
 export type TimelineEvent = {
     id: string;
