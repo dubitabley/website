@@ -1,7 +1,7 @@
 <h1>Now!</h1>
 
 <p>
-    Last updated: 2026-01-27 <br />
+    Last updated: 2026-02-12 <br />
     As per
     <a href="https://nownownow.com/about"> this now page </a>
     I must slavishly follow by adding a page that indicates what I'm up to. I doubt
@@ -12,7 +12,7 @@
 <p>
     Currently: <br />
 
-    Drowning in a metaphorical pool of nothingness
+    Falling down a pit of failure
 </p>
 
 <p>
@@ -29,7 +29,7 @@
 </p>
 
 <p>
-    Messed around with 3d css stuff, look at <a href="/css3d">this page lol.</a>
+    Want to set up an <a href="https://en.wikipedia.org/wiki/RSS">RSS</a> reader for
+    reading people's swag blogs. Would also be nice to setup my own RSS feed for the
+    sake of it but idk.
 </p>
-
-<p>Trying to read Asimov's Foundations books</p>
