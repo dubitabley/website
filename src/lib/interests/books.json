@@ -48,6 +48,11 @@
             "author": "Isaac Asimov",
             "rating": 4,
             "link": "foundation"
+        },
+        {
+            "book_name": "Pan's Labyrynth",
+            "author": "Cornelia Funke/Guillermo del Toro",
+            "rating": 3
         }
     ]
 }
