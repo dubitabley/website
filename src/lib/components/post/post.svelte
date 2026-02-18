@@ -10,7 +10,7 @@
         children?: Snippet;
     };
 
-    let { children } = $props();
+    let { children }: PostProps = $props();
 
     let footnoteContext: FootnoteContextClosure = [];
 

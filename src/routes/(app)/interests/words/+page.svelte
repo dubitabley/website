@@ -23,6 +23,7 @@
                     class="wiktionary-icon"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/1024px-Wiktionary-logo-en-v2.svg.png"
                     alt="Wiktionary link"
+                    title="Link to the wiktionary page for {word.word}"
                 />
             </a>
         </div>
@@ -47,6 +48,7 @@
                     class="wiktionary-icon"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/1024px-Wiktionary-logo-en-v2.svg.png"
                     alt="Wiktionary link"
+                    title="Link to the wiktionary page for {badWord.word}"
                 />
             </a>
         </div>
