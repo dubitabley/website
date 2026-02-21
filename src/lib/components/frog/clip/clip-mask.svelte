@@ -1,8 +1,9 @@
 <script module>
-    export { circle, rect };
+    export { circle, rect, ellipse };
 
     type CircleData = { cx: number; cy: number; r: number };
     type RectData = { x: number; y: number; width: number; height: number };
+    type EllipseData = { cx: number; cy: number; rx: number; ry: number };
 </script>
 
 <script lang="ts" generics="T">
@@ -22,6 +23,10 @@
 
 {#snippet rect(data: RectData)}
     <rect x={data.x} y={data.y} width={data.width} height={data.height} />
+{/snippet}
+
+{#snippet ellipse(data: EllipseData)}
+    <ellipse cx={data.cx} cy={data.cy} rx={data.rx} ry={data.ry} />
 {/snippet}
 
 <span>

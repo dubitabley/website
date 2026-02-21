@@ -25,7 +25,7 @@
     cuboid-wrapper {
         animation: cuboid-rotate 3s linear infinite;
 
-        :global(.cuboid_side) {
+        :global(.cuboid-side) {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bold;
             display: flex;

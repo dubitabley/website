@@ -1,20 +1,24 @@
 <script lang="ts">
-    import ClipMask, { circle } from "$lib/components/frog/clip/clip-mask.svelte";
+    import ClipMask, {
+        ellipse,
+    } from "$lib/components/frog/clip/clip-mask.svelte";
     import type { ClipObject } from "$lib/components/frog/clip/clip-types";
     import FrogHop from "$lib/components/frog/frog-hop.svelte";
     import type { FrogInfo } from "$lib/components/frog/frog-types";
     import { onMount } from "svelte";
     import { GameState, getFrogPageContext } from "./frog-page-types";
+    import {
+        getRandomInt,
+        getRandomNum,
+    } from "$lib/components/frog/util/random";
 
     const CIRCLE_SIZE: number = 50;
 
     type StartProps = {
-        clipObjects: ClipObject[],
+        clipObjects: ClipObject[];
     };
 
-    let {
-        clipObjects = $bindable([])
-    }: StartProps = $props();
+    let { clipObjects = $bindable([]) }: StartProps = $props();
 
     const frogPage = getFrogPageContext();
 
@@ -23,46 +27,54 @@
     });
 
     function onHopEnd(frogInfo: FrogInfo) {
-
-        let circleAttributes = $state({
+        const SIZE_OFFSET = 15;
+        let ellipseAttributes = $state({
             cx: frogInfo.x,
             cy: frogInfo.y,
-            r: CIRCLE_SIZE}
-        );
+            rx: CIRCLE_SIZE + getRandomNum(-SIZE_OFFSET, SIZE_OFFSET),
+            ry: CIRCLE_SIZE + getRandomNum(-SIZE_OFFSET, SIZE_OFFSET),
+        });
 
         // if we land on an existing clip object, just move to next state
         for (const clipObject of clipObjects) {
-            if (Math.hypot(clipObject[1].cy - frogInfo.y, clipObject[1].cx - frogInfo.x) < CIRCLE_SIZE) {
+            if (
+                Math.hypot(
+                    clipObject[1].cy - frogInfo.y,
+                    clipObject[1].cx - frogInfo.x,
+                ) < CIRCLE_SIZE
+            ) {
                 let speed = 2.0;
                 let updateFunc = () => {
-                    circleAttributes.r += speed;
+                    ellipseAttributes.rx += speed;
+                    ellipseAttributes.ry += speed;
                     speed += 0.1;
 
-                    if (circleAttributes.r > Math.max(window.innerWidth, window.innerHeight)) {
+                    if (
+                        Math.min(ellipseAttributes.rx, ellipseAttributes.ry) >
+                        Math.max(window.innerWidth, window.innerHeight)
+                    ) {
                         frogPage.setGameState(GameState.Transition);
                     } else {
                         requestAnimationFrame(updateFunc);
                     }
-                }
+                };
                 frogPage.setFrogSnippet(null);
                 requestAnimationFrame(updateFunc);
                 break;
             }
         }
 
-        clipObjects.push([circle, circleAttributes]);
+        clipObjects.push([ellipse, ellipseAttributes]);
     }
 </script>
 
 {#snippet frog()}
-    <FrogHop onHopEnd={onHopEnd} />
+    <FrogHop {onHopEnd} />
 {/snippet}
 
 <ClipMask clipSnippets={clipObjects}>
     <div class="background">
-        <div class="info-wrapper">
-
-        </div>
+        <div class="info-wrapper"></div>
         <div class="info-block">Tap on the screen!</div>
     </div>
 </ClipMask>

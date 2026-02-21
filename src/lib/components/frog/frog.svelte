@@ -1,17 +1,14 @@
 <script lang="ts">
     import FrogImage from "$lib/assets/frog/frog2.webp";
     import { getClipContext } from "./clip/clip-types";
-    import { circle } from "./clip/clip-mask.svelte";
     import { setFrogContext, type FrogContext } from "./frog-types";
     import type { Snippet } from "svelte";
 
     type FrogProps = {
-        children?: Snippet
+        children?: Snippet;
     };
 
-    let {
-        children
-    }: FrogProps = $props();
+    let { children }: FrogProps = $props();
 
     const clipContext = getClipContext();
 
@@ -25,7 +22,6 @@
     });
 
     setFrogContext(frog);
-
 </script>
 
 <div
@@ -34,7 +30,12 @@
     style:top="{frog.y - frog.size / 2}px"
     style:rotate="{frog.direction - Math.PI / 2}rad"
 >
-    <img width="{frog.size}px" height="{frog.size}px" src={FrogImage} alt="Frog" />
+    <img
+        width="{frog.size}px"
+        height="{frog.size}px"
+        src={FrogImage}
+        alt="Frog"
+    />
 </div>
 
 {@render children?.()}

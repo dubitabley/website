@@ -1,12 +1,21 @@
 <script lang="ts">
     import FrogFall from "$lib/components/frog/frog-fall.svelte";
-    import ScrollingObject, { dataBlock } from "$lib/components/frog/transition/scrolling-object.svelte";
+    import ScrollingObject, {
+        dataBlock,
+        rainbowCuboid,
+    } from "$lib/components/frog/transition/scrolling-object.svelte";
     import { onMount, type Snippet } from "svelte";
     import { getFrogPageContext } from "./frog-page-types";
-    import BackgroundObject, { generateRandomBackgroundObject } from "$lib/components/frog/transition/background-object.svelte";
+    import BackgroundObject, {
+        generateRandomBackgroundObject,
+    } from "$lib/components/frog/transition/background-object.svelte";
     import { SvelteMap } from "svelte/reactivity";
     import { ScrollingInfo } from "$lib/components/frog/transition/scrolling-info";
-    import { ScrollingObjectType, type GenericScrollingObject, type SnippetWithParams } from "$lib/components/frog/transition/scrolling-type";
+    import {
+        ScrollingObjectType,
+        type GenericScrollingObject,
+        type SnippetWithParams,
+    } from "$lib/components/frog/transition/scrolling-type";
 
     let scrollingBlocks: SnippetWithParams<any>[] = $state([]);
 
@@ -21,7 +30,6 @@
     let scrollingObjectIndex: number = 0;
 
     function generateNextScrollingObject() {
-
         if (scrollingObjectIndex < ScrollingInfo.length) {
             const objectToAdd = ScrollingInfo[scrollingObjectIndex];
             scrollingObjectIndex += 1;
@@ -35,6 +43,9 @@
         switch (scrollingObject.objectType) {
             case ScrollingObjectType.DataBlock:
                 scrollingBlocks.push([dataBlock, scrollingObject.lines]);
+                break;
+            case ScrollingObjectType.RainbowCuboid:
+                scrollingBlocks.push([rainbowCuboid, null]);
                 break;
         }
     }
@@ -50,7 +61,7 @@
             if (scrollingObjectTimerId) {
                 clearTimeout(scrollingObjectTimerId);
             }
-        }
+        };
     });
 
     function update() {
@@ -67,7 +78,6 @@
 
         updateFrameId = requestAnimationFrame(update);
     }
-
 </script>
 
 {#snippet frog()}
@@ -96,6 +106,9 @@
         min-width: 100vw;
         height: 100vh;
         background-color: black;
+    }
+
+    .scrolling-objects {
         display: flex;
         flex-direction: column;
         align-items: center;

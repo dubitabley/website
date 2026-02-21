@@ -1,9 +1,15 @@
-
 /**
  * Gets a random int between min(inclusive) and max(exclusive)
  */
 export function getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+/**
+ * Gets a random number between min and max
+ */
+export function getRandomNum(min: number, max: number): number {
+    return Math.random() * (max - min) + min;
 }
 
 export function getRandomValueInArray<T>(array: T[]): T {

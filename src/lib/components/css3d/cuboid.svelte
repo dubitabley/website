@@ -14,12 +14,12 @@
 </script>
 
 <div class="cuboid">
-    <div class="cuboid_side">{@render side1?.()}</div>
-    <div class="cuboid_side">{@render side2?.()}</div>
-    <div class="cuboid_side">{@render side3?.()}</div>
-    <div class="cuboid_side">{@render side4?.()}</div>
-    <div class="cuboid_side">{@render side5?.()}</div>
-    <div class="cuboid_side">{@render side6?.()}</div>
+    <div class="cuboid-side">{@render side1?.()}</div>
+    <div class="cuboid-side">{@render side2?.()}</div>
+    <div class="cuboid-side">{@render side3?.()}</div>
+    <div class="cuboid-side">{@render side4?.()}</div>
+    <div class="cuboid-side">{@render side5?.()}</div>
+    <div class="cuboid-side">{@render side6?.()}</div>
 </div>
 
 <style>
@@ -30,17 +30,17 @@
 
         height: var(--cuboid-height);
         width: var(--cuboid-width);
-        background-color: hsla(0, 80%, 0%, 0);
+        background-color: transparent;
         position: relative;
     }
 
-    .cuboid_side {
+    .cuboid-side {
         border: 2px solid hsl(0, 0%, 10%);
         position: absolute;
     }
 
-    .cuboid_side:nth-of-type(1),
-    .cuboid_side:nth-of-type(2) {
+    .cuboid-side:nth-of-type(1),
+    .cuboid-side:nth-of-type(2) {
         --coefficient: -0.5;
         height: var(--cuboid-height);
         width: var(--cuboid-width);
@@ -50,12 +50,12 @@
             calc(var(--cuboid-depth) * var(--coefficient))
         );
     }
-    .cuboid_side:nth-of-type(2) {
+    .cuboid-side:nth-of-type(2) {
         --coefficient: 0.5;
     }
 
-    .cuboid_side:nth-of-type(3),
-    .cuboid_side:nth-of-type(4) {
+    .cuboid-side:nth-of-type(3),
+    .cuboid-side:nth-of-type(4) {
         --rotation: 90deg;
         height: var(--cuboid-height);
         width: var(--cuboid-depth);
@@ -64,12 +64,12 @@
         transform: translate(-50%, -50%) rotateY(var(--rotation))
             translate3d(0, 0, calc(var(--cuboid-width) * -0.5));
     }
-    .cuboid_side:nth-of-type(4) {
+    .cuboid-side:nth-of-type(4) {
         --rotation: -90deg;
     }
 
-    .cuboid_side:nth-of-type(5),
-    .cuboid_side:nth-of-type(6) {
+    .cuboid-side:nth-of-type(5),
+    .cuboid-side:nth-of-type(6) {
         --rotation: -90deg;
         height: var(--cuboid-depth);
         width: var(--cuboid-width);
@@ -78,7 +78,7 @@
         transform: translate(-50%, -50%) rotateX(var(--rotation))
             translate3d(0, 0, calc(var(--cuboid-height) * -0.5));
     }
-    .cuboid_side:nth-of-type(6) {
+    .cuboid-side:nth-of-type(6) {
         --rotation: 90deg;
     }
 </style>
