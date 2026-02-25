@@ -53,6 +53,11 @@
             "book_name": "Pan's Labyrinth",
             "author": "Cornelia Funke/Guillermo del Toro",
             "rating": 3
+        },
+        {
+            "book_name": "The Mayor of Casterbridge",
+            "author": "Thomas Hardy",
+            "rating": 2
         }
     ]
 }
