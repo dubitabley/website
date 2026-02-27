@@ -14,6 +14,11 @@
             "name": "Fonts and Handwriting",
             "summary": "Ruminations on how we write our text in the world today",
             "link": "handwriting"
+        },
+        {
+            "name": "Animated Text",
+            "summary": "Some thoughts on animated text",
+            "link": "animated-text"
         }
     ]
 }

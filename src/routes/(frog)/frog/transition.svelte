@@ -34,6 +34,8 @@
             const objectToAdd = ScrollingInfo[scrollingObjectIndex];
             scrollingObjectIndex += 1;
             addScrollingObject(objectToAdd);
+        } else {
+            // move to next phase
         }
 
         scrollingObjectTimerId = setTimeout(generateNextScrollingObject, 3000);
