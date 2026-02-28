@@ -21,7 +21,7 @@
             >
                 <img
                     class="wiktionary-icon"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/1024px-Wiktionary-logo-en-v2.svg.png"
+                    src="https://www.wikimedia.org/portal/wikimedia.org/assets/img/Wiktionary-logo_sister.svg"
                     alt="Wiktionary link"
                     title="Link to the wiktionary page for {word.word}"
                 />
