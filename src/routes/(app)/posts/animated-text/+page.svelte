@@ -1,6 +1,7 @@
 <script lang="ts">
     import Footnote from "$lib/components/post/footnote.svelte";
     import Post from "$lib/components/post/post.svelte";
+    import NeonText from "$lib/components/post/text/neon-text.svelte";
     import ScrollingText from "$lib/components/post/text/scrolling-text.svelte";
     import { EffectType } from "$lib/components/post/text/text-effect-types";
     import TextEffectWrapper from "$lib/components/post/text/text-effect-wrapper.svelte";
@@ -144,8 +145,20 @@
                 You can do some interesting things with animated text and it
                 depends on the context. For example text sliding in as part of a
                 powerpoint can be cool even if it is quite generic because of it
-                being a built-in transition in most slideshow programs.
+                being a built-in transition in most slideshow programs. The key
+                to this being valuable and not a hindrance is that it's
+                triggered by user input and not just aas a result of regular
+                usage where it detracts from being able to read the text
+                clearly.
             </p>
+        </TextEffect>
+        <TextEffect>
+            <p>
+                If I come up with other cool effects I will try to add them here
+                but some examples could be some animated text to simulate neon
+                text for a header such as the following:
+            </p>
+            <NeonText>Example</NeonText>
         </TextEffect>
     </Post>
 </TextEffectWrapper>
