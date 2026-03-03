@@ -1,5 +1,5 @@
 <script module>
-    export { dataBlock, rainbowCuboid };
+    export { dataBlock, rainbowCuboid, pipe };
 </script>
 
 <script lang="ts">
@@ -7,6 +7,7 @@
     import { Tween } from "svelte/motion";
     import DataBlock from "./data-block.svelte";
     import RainbowCuboid from "./rainbow-cuboid.svelte";
+    import Pipe from "./pipe.svelte";
 
     type ScrollingObjectProps = {
         rotatePositive: boolean;
@@ -26,6 +27,9 @@
 {/snippet}
 {#snippet rainbowCuboid()}
     <RainbowCuboid />
+{/snippet}
+{#snippet pipe()}
+    <Pipe />
 {/snippet}
 
 <div class="partial-transparent">

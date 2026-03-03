@@ -8,4 +8,7 @@ export const ScrollingInfo: GenericScrollingObject[] = [
     {
         objectType: "rainbow-cuboid",
     },
+    {
+        objectType: "pipe",
+    },
 ];

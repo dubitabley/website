@@ -1,10 +1,10 @@
 <script>
-    import RainbowCuboid from "$lib/components/frog/transition/rainbow-cuboid.svelte";
+    import Pipe from "$lib/components/frog/transition/pipe.svelte";
 </script>
 
 <div>
     <p>Just a testing page</p>
     <div>
-        <RainbowCuboid />
+        <Pipe />
     </div>
 </div>

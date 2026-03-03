@@ -2,6 +2,7 @@
     import FrogFall from "$lib/components/frog/frog-fall.svelte";
     import ScrollingObject, {
         dataBlock,
+        pipe,
         rainbowCuboid,
     } from "$lib/components/frog/transition/scrolling-object.svelte";
     import { onMount, type Snippet } from "svelte";
@@ -48,6 +49,9 @@
                 break;
             case ScrollingObjectType.RainbowCuboid:
                 scrollingBlocks.push([rainbowCuboid, null]);
+                break;
+            case ScrollingObjectType.Pipe:
+                scrollingBlocks.push([pipe, null]);
                 break;
         }
     }
