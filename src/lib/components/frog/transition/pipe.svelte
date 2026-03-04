@@ -12,11 +12,11 @@
         rotate: 80deg;
         display: inline-block;
 
-        animation-name: pipe-colour;
-        animation-duration: 2s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
+        animation-name: pipe-colour, rotate-pipe;
+        animation-duration: 2s, 2s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        animation-direction: normal, alternate;
     }
 
     @keyframes pipe-colour {
@@ -50,6 +50,15 @@
 
         100% {
             text-decoration-color: red;
+        }
+    }
+
+    @keyframes rotate-pipe {
+        from {
+            rotate: 70deg;
+        }
+        to {
+            rotate: 110deg;
         }
     }
 </style>
