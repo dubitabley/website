@@ -58,6 +58,11 @@
             "book_name": "The Mayor of Casterbridge",
             "author": "Thomas Hardy",
             "rating": 2
+        },
+        {
+            "book_name": "Alice's Adventures in Wonderland/Through the Looking-Glass",
+            "author": "Lewis Carroll",
+            "rating": 3
         }
     ]
 }
