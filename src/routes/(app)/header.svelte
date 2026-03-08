@@ -24,6 +24,7 @@
         <Theming />
     </div>
 </div>
+
 {#snippet decorSvg(amount: number)}
     <svg
         class="header-decor-svg"

@@ -21,11 +21,11 @@ html {
 }
 
 a {
-    color: hsl(226, 88%, var(--secondary-lightness));
+    color: hsl(100, 30%, var(--secondary-lightness));
 }
 
 a:visited {
-    color: hsl(278, 87%, var(--secondary-lightness));
+    color: hsl(100, 100%, var(--secondary-lightness));
 }
 
 :root[data-theme="dark"] {

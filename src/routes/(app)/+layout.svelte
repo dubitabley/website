@@ -16,7 +16,7 @@
     <meta property="og:image" content="https://i.redd.it/tart0f3h1ewd1.jpg" />
 </svelte:head>
 
-<span class="header-class">
+<span class="header">
     <Header />
 </span>
 

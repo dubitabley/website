@@ -1,48 +1,36 @@
 <script lang="ts">
+    import {
+        getThemeFromLocalStorage,
+        setTheme,
+        ThemeType,
+        type Theme,
+    } from "$lib/components/theming/theme-misc";
     import { onMount } from "svelte";
+    import ThemePopup from "$lib/components/theming/theme-popup.svelte";
 
-    const THEME_STORAGE_KEY: string = "theme";
+    let theme: Theme = $state({ themeType: ThemeType.System });
+    type CheckboxTheme = typeof ThemeType.Light | typeof ThemeType.Dark;
 
-    const Theme = {
-        System: "system",
-        Light: "light",
-        Dark: "dark",
-        Purple: "purple",
-    } as const;
-
-    type ThemeType = (typeof Theme)[keyof typeof Theme];
-
-    let theme: ThemeType = $state(Theme.System);
-
-    function selectTheme(checkboxTheme: ThemeType, checkbox: HTMLInputElement) {
+    function selectTheme(
+        checkboxTheme: CheckboxTheme,
+        checkbox: HTMLInputElement,
+    ) {
         if (checkbox.checked) {
-            theme = checkboxTheme;
+            theme = { themeType: checkboxTheme };
         } else {
-            theme = Theme.System;
+            theme = { themeType: ThemeType.System };
         }
     }
 
     onMount(() => {
-        const themeValue = localStorage.getItem(THEME_STORAGE_KEY);
+        const themeValue = getThemeFromLocalStorage();
         if (themeValue) {
-            theme = <ThemeType>themeValue;
+            theme = themeValue;
         }
     });
 
     $effect(() => {
-        const rootElement = document.documentElement;
-
-        switch (theme) {
-            case Theme.System:
-                delete rootElement.dataset.theme;
-                break;
-            default:
-                rootElement.dataset.theme = theme;
-                break;
-        }
-
-        // save to localstorage
-        localStorage.setItem(THEME_STORAGE_KEY, theme);
+        setTheme(theme);
     });
 </script>
 
@@ -51,28 +39,29 @@
     <label>
         <input
             type="checkbox"
-            onclick={(e) => selectTheme(Theme.Light, e.currentTarget)}
-            checked={theme == Theme.Light}
+            onclick={(e) => selectTheme(ThemeType.Light, e.currentTarget)}
+            checked={theme.themeType == ThemeType.Light}
         />
         <span>Light</span>
     </label>
     <label>
         <input
             type="checkbox"
-            onclick={(e) => selectTheme(Theme.Dark, e.currentTarget)}
-            checked={theme == Theme.Dark}
+            onclick={(e) => selectTheme(ThemeType.Dark, e.currentTarget)}
+            checked={theme.themeType == ThemeType.Dark}
         />
         <span>Dark</span>
     </label>
     <label>
         <input
-            type="checkbox"
-            onclick={(e) => selectTheme(Theme.Purple, e.currentTarget)}
-            checked={theme == Theme.Purple}
+            class="custom-popover"
+            type="button"
+            popovertarget="theme-popover"
         />
-        <span>Purple</span>
+        <span>Custom</span>
     </label>
 </span>
+<ThemePopup bind:theme />
 
 <style>
     /* Hide inputs so we can apply custom style */
@@ -116,5 +105,10 @@
             font-weight: bold;
             font-size: 25px;
         }
+    }
+
+    .custom-popover {
+        position: absolute;
+        display: none;
     }
 </style>
