@@ -87,10 +87,6 @@ function setCustomTheme(customTheme: ThemeValues) {
         "--background-color-2",
         customTheme.backgroundColour2,
     );
-    root.style.setProperty(
-        "--background-color-3",
-        customTheme.backgroundColour3,
-    );
     root.style.setProperty("--primary-color", customTheme.primaryColour);
     root.style.setProperty("--primary-color-2", customTheme.primaryColour2);
     root.style.setProperty(
@@ -108,7 +104,6 @@ function clearCustomTheme() {
 
     root.style.removeProperty("--background-color");
     root.style.removeProperty("--background-color-2");
-    root.style.removeProperty("--background-color-3");
     root.style.removeProperty("--primary-color");
     root.style.removeProperty("--primary-color-2");
     root.style.removeProperty("--primary-lightness");
@@ -166,6 +161,7 @@ export function getThemeValues(theme: Theme): ThemeValues {
     }
 }
 
+// need to clone these values to avoid them updating the old versions
 export function shallowClone(themeValues: ThemeValues): ThemeValues {
     return Object.assign({}, themeValues);
 }
@@ -180,7 +176,6 @@ export type ThemeValues = {
 
     backgroundColour: string;
     backgroundColour2: string;
-    backgroundColour3: string;
 };
 
 /* values need to be kept in sync with global.css */
@@ -190,7 +185,6 @@ export const DARK_THEME: ThemeValues = {
 
     backgroundColour: "rgb(36, 36, 36)",
     backgroundColour2: "rgb(10, 10, 10)",
-    backgroundColour3: "rgb(80, 80, 80)",
 
     primaryLightness: 10,
     secondaryLightness: 80,
@@ -202,7 +196,6 @@ export const LIGHT_THEME: ThemeValues = {
 
     backgroundColour: "rgb(207, 207, 207)",
     backgroundColour2: "rgb(245, 245, 245)",
-    backgroundColour3: "rgb(172, 172, 172)",
 
     primaryLightness: 90,
     secondaryLightness: 20,

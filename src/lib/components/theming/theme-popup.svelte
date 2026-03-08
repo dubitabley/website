@@ -28,6 +28,10 @@
     // for resetting
     let oldTheme: Theme = $state({ themeType: ThemeType.System });
 
+    let saved = $state(false);
+
+    let popoverElement: HTMLElement;
+
     function onToggle(event: ToggleEvent) {
         if (event.newState === "open") {
             oldTheme = theme;
@@ -39,13 +43,19 @@
                 customValues: themeValues,
             };
         } else {
-            // on close, reset the theme
+            // on close, reset the theme if unsaved
+            if (!saved) {
+                resetTheme();
+            }
         }
     }
 
-    function saveTheme() {}
-
-    function closePopover() {}
+    function closePopover() {
+        // set saved so we know to not reset
+        saved = true;
+        // closes the popover without resetting the theme
+        popoverElement.hidePopover();
+    }
 
     function resetTheme() {
         const themeValues = shallowClone(getThemeValues(oldTheme));
@@ -58,10 +68,16 @@
 
     $effect(() => {
         theme = customTheme;
+        saved = false;
     });
 </script>
 
-<dialog id="theme-popover" popover onbeforetoggle={onToggle}>
+<dialog
+    id="theme-popover"
+    popover
+    onbeforetoggle={onToggle}
+    bind:this={popoverElement}
+>
     <div class="header-wrapper">
         <hgroup
             class="header"
@@ -79,8 +95,6 @@
     <ColourPicker bind:colour={customTheme.customValues.backgroundColour} />
     <div>Choose background colour 2:</div>
     <ColourPicker bind:colour={customTheme.customValues.backgroundColour2} />
-    <div>Choose background colour 3:</div>
-    <ColourPicker bind:colour={customTheme.customValues.backgroundColour3} />
     <div>Choose primary lightness:</div>
     <input
         type="number"
@@ -99,7 +113,7 @@
     />
 
     <div>
-        <button>Save and close</button>
+        <button onclick={closePopover}>Save and close</button>
         <button onclick={resetTheme}>Reset</button>
     </div>
 </dialog>

@@ -52,7 +52,9 @@
         />
         <span>Dark</span>
     </label>
-    <label>
+    <label
+        class={[theme.themeType == ThemeType.Custom ? "label-selected" : ""]}
+    >
         <input
             class="custom-popover"
             type="button"
@@ -81,7 +83,8 @@
 
         text-align: center;
 
-        &:has(input:checked) {
+        &:has(input:checked),
+        &.label-selected {
             background-color: hsl(117, 100%, var(--secondary-lightness));
             box-shadow: 3px 3px 0px 0px
                 hsl(117, 80%, var(--secondary-lightness));
