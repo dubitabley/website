@@ -8,11 +8,12 @@
         type CustomTheme,
         type Theme,
     } from "./theme-misc";
-    import ColourPicker from "./colour-picker.svelte";
+    import SimpleThemePicker from "./simple-theme-picker.svelte";
+    import AdvancedThemePicker from "./advanced-theme-picker.svelte";
 
     // for decoration
-    const randomColour1 = getRandomColour();
-    const randomColour2 = getRandomColour();
+    let randomColour1 = $state(getRandomColour());
+    let randomColour2 = $state(getRandomColour());
 
     type ThemePopupProps = {
         theme: Theme;
@@ -28,13 +29,16 @@
     // for resetting
     let oldTheme: Theme = $state({ themeType: ThemeType.System });
 
-    let saved = $state(false);
+    let simpleTheme = $state(true);
 
     let popoverElement: HTMLElement;
 
     function onToggle(event: ToggleEvent) {
         if (event.newState === "open") {
             oldTheme = theme;
+
+            randomColour1 = getRandomColour();
+            randomColour2 = getRandomColour();
 
             const themeValues = shallowClone(getThemeValues(oldTheme));
 
@@ -43,16 +47,14 @@
                 customValues: themeValues,
             };
         } else {
-            // on close, reset the theme if unsaved
-            if (!saved) {
-                resetTheme();
-            }
+            // on close, reset the theme
+            resetTheme();
         }
     }
 
     function closePopover() {
-        // set saved so we know to not reset
-        saved = true;
+        // set the old theme to the current theme so resetting doesn't override it
+        oldTheme = theme;
         // closes the popover without resetting the theme
         popoverElement.hidePopover();
     }
@@ -68,7 +70,6 @@
 
     $effect(() => {
         theme = customTheme;
-        saved = false;
     });
 </script>
 
@@ -87,32 +88,14 @@
             <p>Choose a custom theme!</p>
         </hgroup>
     </div>
-    <div>Choose primary colour:</div>
-    <ColourPicker bind:colour={customTheme.customValues.primaryColour} />
-    <div>Choose primary colour 2:</div>
-    <ColourPicker bind:colour={customTheme.customValues.primaryColour2} />
-    <div>Choose background colour:</div>
-    <ColourPicker bind:colour={customTheme.customValues.backgroundColour} />
-    <div>Choose background colour 2:</div>
-    <ColourPicker bind:colour={customTheme.customValues.backgroundColour2} />
-    <div>Choose primary lightness:</div>
-    <input
-        type="number"
-        min="0"
-        max="100"
-        step="1"
-        bind:value={customTheme.customValues.primaryLightness}
-    />
-    <div>Choose secondary lightness:</div>
-    <input
-        type="number"
-        min="0"
-        max="100"
-        step="1"
-        bind:value={customTheme.customValues.secondaryLightness}
-    />
 
-    <div>
+    {#if simpleTheme}
+        <SimpleThemePicker bind:customTheme />
+    {:else}
+        <AdvancedThemePicker bind:customTheme />
+    {/if}
+
+    <div class="button-toolbar">
         <button onclick={closePopover}>Save and close</button>
         <button onclick={resetTheme}>Reset</button>
     </div>
@@ -129,6 +112,39 @@
 
         &::backdrop {
             backdrop-filter: blur(3px);
+        }
+
+        transition: translate 0.2s;
+        translate: 0 -100%;
+
+        &:popover-open {
+            translate: 0 0;
+            @starting-style {
+                translate: 0 -100%;
+            }
+        }
+    }
+
+    .button-toolbar {
+        margin-top: 30px;
+
+        > button {
+            background-color: var(--background-color-2);
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+            border-radius: 10px;
+            margin-right: 5px;
+            padding: 8px;
+
+            font-size: 18px;
+
+            transition-property: background-color color;
+            transition-duration: 0.2s;
+
+            &:hover {
+                background-color: var(--primary-color);
+                color: var(--background-color);
+            }
         }
     }
 
