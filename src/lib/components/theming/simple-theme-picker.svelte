@@ -23,6 +23,7 @@
     const themeValues: [SimpleTheme, string][] = [
         [SimpleTheme.Purple, "purple"],
         [SimpleTheme.Blue, "blue"],
+        [SimpleTheme.Orange, "orange"],
     ];
 </script>
 
