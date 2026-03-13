@@ -52,9 +52,7 @@
         />
         <span>Dark</span>
     </label>
-    <label
-        class={[theme.themeType == ThemeType.Custom ? "label-selected" : ""]}
-    >
+    <label class={[theme.themeType == ThemeType.Custom && "label-selected"]}>
         <input
             class="custom-popover"
             type="button"

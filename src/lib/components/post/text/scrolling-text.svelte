@@ -51,11 +51,11 @@
 
     @keyframes scroll {
         from {
-            translate: calc(-100% + 10px) 0px;
+            translate: -200% 0px;
         }
 
         to {
-            translate: -200% 0px;
+            translate: calc(-100% + 10px) 0px;
         }
     }
 </style>
