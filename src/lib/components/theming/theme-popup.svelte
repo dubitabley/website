@@ -123,6 +123,13 @@
                 translate: 0 -100%;
             }
         }
+
+        @media (width < 800px) {
+            width: 90%;
+            height: 90%;
+
+            padding: 10px;
+        }
     }
 
     .button-toolbar {

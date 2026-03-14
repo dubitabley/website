@@ -159,7 +159,7 @@
         border-radius: 10px;
         padding: 10px;
         margin: 20px;
-        width: 400px;
+        width: 300px;
     }
 
     .text-bg {

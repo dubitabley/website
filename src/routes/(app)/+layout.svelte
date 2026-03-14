@@ -31,12 +31,17 @@
         margin-top: 20px;
         height: 100%;
         min-width: min(500px, 100%);
-        max-width: 1000px;
+        max-width: 800px;
     }
 
     .main-wrapper {
         display: flex;
         flex-direction: row;
         justify-content: center;
+
+        @media (width < 800px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
     }
 </style>
