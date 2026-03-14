@@ -18,7 +18,7 @@
     let appearText1 = $state(false);
     let appearText2 = $state(false);
     let appearText3 = $state(false);
-    let appearText3Speed = $state(10);
+    let appearText3Speed = $state(50);
 </script>
 
 <TextEffectWrapper {effectType}>
@@ -178,10 +178,10 @@
             <div class="outline">
                 <WritingText2
                     text={`Text that gets written using a javascript timer per character. ` +
-                        `This is very scuffed in that it allocates space as it gets drawn. ` +
-                        `Notably this results in the problem that surrounding elements have to move around. ` +
-                        `There's also a really annoying problem in that a word will wrap to the next line halfway` +
-                        `through being drawn which I really hate.`}
+                        `This is very scuffed in that it allocates space as it gets drawn which ` +
+                        `causes the problem that surrounding elements have to move around. ` +
+                        `It also results in a word wrapping to the next line halfway ` +
+                        `through being drawn which I quite despise.`}
                     appear={appearText2}
                 />
             </div>
