@@ -188,6 +188,29 @@
             to use your language/platform to get started.
         </p>
         <p>
+            Following on from the previous point, an important priority is to
+            make communities that can coalesce around technology that's
+            decentralised. Most communities for video games, tv shows, movies
+            etc. tend to be formed and grow on the big social media websites.
+            These communities do tend to have an advantage beyond the inertia of
+            convincing people to switch platforms. They're simple to use; the
+            centralised nature allows for easy discovery for new people to join.
+            In the older days of the internet what was quite common was forums.
+            For example for The Simpsons there's the forum <a
+                href="https://nohomers.net/">nohomers.net</a
+            >
+            which contains plenty of discussion related to The Simpsons and has been
+            around since 2001.<Footnote>
+                <a href="https://simpsonswiki.com/wiki/NoHomers.net"
+                    >The Simpsons wiki (non fandom one) has some interesting
+                    info on it.</a
+                > Unfortunately forums also struggle to fund themselves and many have
+                succumbed to the rot of time and gone offline as webmasters have lost
+                interest or funding. Forums are also somewhat centralised although
+                being specific to one community only can alleviate those concerns.
+            </Footnote>
+        </p>
+        <p>
             The basics have to be simple. Most people aren't HTML/CSS experts.
             They don't want to learn how flexboxes work, or make their CSS grid
             look good on all sized devices. This one might be quite tricky to
