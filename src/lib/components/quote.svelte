@@ -4,7 +4,7 @@
     type QuoteProps = {
         children: Snippet;
         by: string;
-        from: string | null;
+        from?: string | null;
     };
 
     let { children, by, from }: QuoteProps = $props();
