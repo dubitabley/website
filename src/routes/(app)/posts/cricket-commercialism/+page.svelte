@@ -85,10 +85,14 @@
 
     <p>
         The history of cricket intersecting with colonialism is also an
-        important story and many a deal has been made of the colonisers being
-        beaten at their own game. One of my favourite books ever is "Beyond a
-        Boundary" by C.L.R James; it's wonderfully written and tells the
-        fascinating tale of cricket and his life in the West Indies and England.
+        important story<Footnote>
+            After all, the ICC or Internation Cricket Council was originally
+            called the Imperial Cricket Conference, which says quite a lot about
+            what its purpose was.
+        </Footnote> and many a deal has been made of the colonisers being beaten at
+        their own game. One of my favourite books ever is "Beyond a Boundary" by C.L.R
+        James; it's wonderfully written and tells the fascinating tale of cricket
+        and his life in the West Indies and England.
     </p>
     <Quote by="C.L.R. James">
         Cricket is first and foremost a dramatic spectacle. It belongs with
@@ -126,9 +130,41 @@
         it. Other T20 leagues are also the dominant form of cricket in the
         cricket playing nations and the format essentially keeps the finances
         alive for the cricket administrations. The top players can get millions
-        of dollars for just a few months of playing. Gone were the days of
-        having amateurs playing against professionals; just a distant memory at
-        this point.
+        of dollars for just a few months of playing. The days of having amateurs
+        playing against professionals were now just a distant memory of a bygone
+        era.
+    </p>
+    <p>
+        There's also a concern about the other formats of cricket being subsumed
+        by the shortest format. There are so many leagues that are turning the
+        game away from the traditional locale based sport towards a profit based
+        sport. The old hierarchy is you would play for your town/city, then your
+        district/county then your country as a clear progression chain towards
+        the top level and you would feel a sense of loyalty to each stage. The
+        modern cut-throat leagues mean that players go to wherever there is the
+        most money on offer. I don't begrudge them that, there's no doubt that
+        players can earn much more than they ever could dream of previously
+        which benefits them on a personal level. It does tend to make the money
+        very top heavy though as the money chases the top players and the rest
+        can get scraps. The leagues being around the world and in different
+        times also has implications around players not really getting time off
+        and there being a neverending dose of mediocre cricket being played,
+        including in odd places such as the UAE, the USA and Canada where
+        Cricket is mostly sustained from the immigrant populations, especially
+        from South Asia. This isn't necessarily a bad thing but it does have
+        some odd dynamics with how they're viewed and funded and how it grows
+        the sport locally in those places.
+    </p>
+    <p>
+        There have been some experiments with trying to trying to make the games
+        even shorter to make them more appealing for TV audiences. It almost
+        feels like it should be 3 different games; one for each format as the
+        skills and tactics for each one diverge significantly and more players
+        choose to specialise rather than try to play all of them. This situation
+        where the T20 cricket essentially subsidises the longer formats doesn't
+        feel sustainable in the long term but there's certainly enough purists
+        out there <Footnote>Including me, I think</Footnote> to keep the status quo
+        in place for now.
     </p>
     <h3>Spirit of Cricket</h3>
     <Quote by="George Orwell">
@@ -174,6 +210,51 @@
         off to foreign investors with lots of money and it will essentially be controlled
         by those investors. England have followed a similar model in moving the teams
         away from the historic counties and forming their own league and recently
-        selling off the teams.
+        selling off the teams. This does provide a massive one off cash injection
+        into the game and counties which can be used to invest into the grassroots
+        of the game and be beneficial in that way. However once it's spent there's
+        no getting it back and you're locked in to running these events at the whims
+        of the investors. I also struggle to see how this can be profitable. The current
+        NZ T20 competition, called the Super Smash, is run on a pretty cheap budget
+        but is still a fun and enjoyable experience. The NZ timezone isn't great for
+        any significant TV market outside of NZ and cricket probably doesn't have
+        enough interest within to be able to draw large crowds to the matches. Of
+        couse that is malleable to some extent but it's going to be difficult to make
+        the finances of this add up.
+    </p>
+    <p>
+        Unfortunately I don't think there was a 'good' choice to make, all the
+        decisions come with their own risks and trade-offs. One option would be
+        to continue as is, which would result in the top NZ T20 players rarely
+        playing for NZ in the summer since they can make much more playing
+        overseas in Australia or South Africa. That would be hugely
+        dissatisfying to the local audience and may result in dwindling interest
+        among fans except for a few. Another alternative option would be to try
+        to merge with Australia and form a combined league, which is similar to
+        how it works in Rugby League, Football or Basketball where NZ has a team
+        or two in the Australian leagues. The difference there is that Australia
+        has a much larger interest in those sports so it's nice to have one NZ
+        team in their competition but in Cricket's case it would mean giving up
+        significant control to Cricket Australia and having to manage scheduling
+        around their events as well as NZ's.
+    </p>
+
+    <p>
+        Ultimately this is simply the natural progression of sports with how our
+        economy works. The premier league in England was started in 1992,
+        breaking away from the older leagues to bring more money into the game.
+        USA sports have always been a gaudy overproduced mess, whether it's the
+        Super Bowl or the NBA. I don't really have a solution to this; perhaps
+        it's to take pleasure in the small things. However in many ways these
+        offer a fundamentally different experience from following top levels of
+        sports so aren't really a substitute. I don't have a larger point to
+        make, this is mostly just a rant and a way to get out the words I've
+        been feeling about this in general. This could be many, many times
+        longer but I'm trying to keep it reasonably succinct and condensed to a
+        few points.
+    </p>
+    <p>
+        Finally I will say that cricket is a strange game for stranger people
+        and it would be disappointing for that to be lost.
     </p>
 </Post>
