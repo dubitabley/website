@@ -3,3 +3,10 @@
 </script>
 
 <Text3d text="Epic 3d text" />
+
+<p>
+    Adapted from this page:
+    <a href="https://css-tricks.com/3d-layered-text-the-basics/"
+        >https://css-tricks.com/3d-layered-text-the-basics/</a
+    >
+</p>

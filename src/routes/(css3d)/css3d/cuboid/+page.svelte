@@ -12,6 +12,14 @@
     </cuboid-wrapper>
 </div>
 
+<p>
+    Adapted from this page:
+    <a
+        href="https://css-tricks.com/css-in-3d-learning-to-think-in-cubes-instead-of-boxes/"
+        >https://css-tricks.com/css-in-3d-learning-to-think-in-cubes-instead-of-boxes/</a
+    >
+</p>
+
 <style>
     .centre {
         display: flex;
