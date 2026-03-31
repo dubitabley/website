@@ -63,6 +63,11 @@
             "book_name": "Alice's Adventures in Wonderland/Through the Looking-Glass",
             "author": "Lewis Carroll",
             "rating": 3
+        },
+        {
+            "book_name": "Glitch",
+            "author": "Lee Rourke",
+            "rating": 2
         }
     ]
 }

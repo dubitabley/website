@@ -5,6 +5,17 @@
     let { data }: PageProps = $props();
 </script>
 
+{#snippet wiktionaryIcon(word: string)}
+    <a class="wiktionary-link" href="https://en.wiktionary.org/wiki/{word}">
+        <img
+            class="wiktionary-icon"
+            src="https://www.wikimedia.org/portal/wikimedia.org/assets/img/Wiktionary-logo_sister.svg"
+            alt="Wiktionary link"
+            title="Link to the wiktionary page for {word}"
+        />
+    </a>
+{/snippet}
+
 <h2>Random words</h2>
 
 <div>
@@ -15,17 +26,7 @@
     {#each Words.words as word}
         <div class="word-info">
             <p class="word">{word.word}</p>
-            <a
-                class="wiktionary-link"
-                href="https://en.wiktionary.org/wiki/{word.word}"
-            >
-                <img
-                    class="wiktionary-icon"
-                    src="https://www.wikimedia.org/portal/wikimedia.org/assets/img/Wiktionary-logo_sister.svg"
-                    alt="Wiktionary link"
-                    title="Link to the wiktionary page for {word.word}"
-                />
-            </a>
+            {@render wiktionaryIcon(word.word)}
         </div>
     {/each}
 </div>
@@ -40,17 +41,7 @@
                 <p>{badWord.reason}</p>
             </div>
 
-            <a
-                class="wiktionary-link"
-                href="https://en.wiktionary.org/wiki/{badWord.word}"
-            >
-                <img
-                    class="wiktionary-icon"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/1024px-Wiktionary-logo-en-v2.svg.png"
-                    alt="Wiktionary link"
-                    title="Link to the wiktionary page for {badWord.word}"
-                />
-            </a>
+            {@render wiktionaryIcon(badWord.word)}
         </div>
     {/each}
 </div>
