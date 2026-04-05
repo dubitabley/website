@@ -1,31 +1,131 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="128" height="128" version="1.1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+    width="128"
+    height="128"
+    version="1.1"
+    viewBox="0 0 128 128"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
  <defs>
-  <linearGradient id="linearGradient514" x1="366.86" x2="247.04" y1="-75.349" y2="135.87" gradientUnits="userSpaceOnUse">
-   <stop stop-color="#2a1ad9" offset="0"/>
-   <stop stop-color="#2a1ad9" stop-opacity="0" offset="1"/>
+  <linearGradient
+            id="linearGradient514"
+            x1="366.86"
+            x2="247.04"
+            y1="-75.349"
+            y2="135.87"
+            gradientUnits="userSpaceOnUse"
+        >
+   <stop stop-color="#2a1ad9" offset="0" />
+   <stop stop-color="#2a1ad9" stop-opacity="0" offset="1" />
   </linearGradient>
  </defs>
  <title>favicon</title>
  <g class="letter" stroke-width="17.482">
-  <ellipse cx="68.485" cy="80.697" rx="28.757" ry="28.625" fill="none" stroke="#000adb"/>
-  <path d="m97.358 7.1559 0.18012 75.831" fill="#2a1ad9" stop-color="#000000" stroke="#0a00e0" style="font-variation-settings:normal"/>
-  <ellipse transform="scale(-1,1)" cx="-302.78" cy="75.536" rx="28.757" ry="28.625" fill="none" stroke="#000adb"/>
-  <path d="m273.91 1.9947-0.18012 75.831" fill="url(#linearGradient514)" stop-color="#000000" stroke="#0a00e0" style="font-variation-settings:normal"/>
-  <ellipse transform="scale(-1,1)" cx="-674.58" cy="78.006" rx="28.757" ry="28.625" fill="none" stroke="#000adb"/>
-  <path d="m645.71 4.4652-0.18012 75.831" fill="#2a1ad9" stop-color="#000000" stroke="#0a00e0" style="font-variation-settings:normal"/>
+  <ellipse
+            cx="68.485"
+            cy="80.697"
+            rx="28.757"
+            ry="28.625"
+            fill="none"
+            stroke="#000adb"
+        />
+  <path
+            d="m97.358 7.1559 0.18012 75.831"
+            fill="#2a1ad9"
+            stop-color="#000000"
+            stroke="#0a00e0"
+            style="font-variation-settings:normal"
+        />
+  <ellipse
+            transform="scale(-1,1)"
+            cx="-302.78"
+            cy="75.536"
+            rx="28.757"
+            ry="28.625"
+            fill="none"
+            stroke="#000adb"
+        />
+  <path
+            d="m273.91 1.9947-0.18012 75.831"
+            fill="url(#linearGradient514)"
+            stop-color="#000000"
+            stroke="#0a00e0"
+            style="font-variation-settings:normal"
+        />
+  <ellipse
+            transform="scale(-1,1)"
+            cx="-674.58"
+            cy="78.006"
+            rx="28.757"
+            ry="28.625"
+            fill="none"
+            stroke="#000adb"
+        />
+  <path
+            d="m645.71 4.4652-0.18012 75.831"
+            fill="#2a1ad9"
+            stop-color="#000000"
+            stroke="#0a00e0"
+            style="font-variation-settings:normal"
+        />
  </g>
- <path class="letter" d="m752.65 6.5527 0.43749 104.24" fill="#2a1ad9" stop-color="#000000" stroke="#0a00e0" stroke-width="17.482" style="font-variation-settings:normal"/>
+ <path
+        class="letter"
+        d="m752.65 6.5527 0.43749 104.24"
+        fill="#2a1ad9"
+        stop-color="#000000"
+        stroke="#0a00e0"
+        stroke-width="17.482"
+        style="font-variation-settings:normal"
+    />
  <g class="letter" fill="#2a1ad9" stroke="#0a00e0" stroke-width="17.482">
-  <path d="m475.03 6.2439 0.43749 104.24" stop-color="#000000" style="font-variation-settings:normal"/>
-  <path d="m508.69 41.757-66.882 0.48202" stop-color="#000000" style="font-variation-settings:normal"/>
-  <path d="m390.42 52.874-0.18012 56.685" stop-color="#000000" style="font-variation-settings:normal"/>
-  <path d="m389.19 16.126 1.0551 16.54" stop-color="#000000" style="font-variation-settings:normal"/>
+  <path
+            d="m475.03 6.2439 0.43749 104.24"
+            stop-color="#000000"
+            style="font-variation-settings:normal"
+        />
+  <path
+            d="m508.69 41.757-66.882 0.48202"
+            stop-color="#000000"
+            style="font-variation-settings:normal"
+        />
+  <path
+            d="m390.42 52.874-0.18012 56.685"
+            stop-color="#000000"
+            style="font-variation-settings:normal"
+        />
+  <path
+            d="m389.19 16.126 1.0551 16.54"
+            stop-color="#000000"
+            style="font-variation-settings:normal"
+        />
  </g>
- <path class="letter" d="m150.61 46.08c-0.56411 15.79 1.673 59.351 30.531 60.416 26.406 0.97485 35.357-31.586 35.116-58.699" fill="none" stop-color="#000000" stroke="#0a00e0" stroke-width="17.482" style="font-variation-settings:normal"/>
+ <path
+        class="letter"
+        d="m150.61 46.08c-0.56411 15.79 1.673 59.351 30.531 60.416 26.406 0.97485 35.357-31.586 35.116-58.699"
+        fill="none"
+        stop-color="#000000"
+        stroke="#0a00e0"
+        stroke-width="17.482"
+        style="font-variation-settings:normal"
+    />
  <g class="letter" stroke="#0a00e0" stroke-width="17.482">
-  <path d="m591.18 34.678 0.87421 77.329" fill="#2a1ad9" stop-color="#000000" style="font-variation-settings:normal"/>
-  <path d="m563.42 45.284c-13.87 1.1015-25.186 12.851-24.178 27.083 0.96272 13.593 10.024 29.699 24.446 29.01 18.377-0.87798 25.475-11.205 27.704-32.142 0 0-11.297-23.951-27.973-23.951z" fill="none" stop-color="#000000" style="font-variation-settings:normal"/>
+  <path
+            d="m591.18 34.678 0.87421 77.329"
+            fill="#2a1ad9"
+            stop-color="#000000"
+            style="font-variation-settings:normal"
+        />
+  <path
+            d="m563.42 45.284c-13.87 1.1015-25.186 12.851-24.178 27.083 0.96272 13.593 10.024 29.699 24.446 29.01 18.377-0.87798 25.475-11.205 27.704-32.142 0 0-11.297-23.951-27.973-23.951z"
+            fill="none"
+            stop-color="#000000"
+            style="font-variation-settings:normal"
+        />
  </g>
  <metadata>
   <rdf:RDF>
@@ -34,7 +134,15 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <path class="letter" d="m800.72 67.844 64.295-0.43672s-7.0797-31.823-31.105-31.061c-26.24 0.83124-32.449 16.706-32.934 29.682-1.0543 28.255 19.086 34.726 34.524 34.967 16.788 0.26225 31.436-15.877 31.436-15.877" fill="none" stop-color="#000000" stroke="#0a00e0" stroke-width="17.482" style="font-variation-settings:normal"/>
+ <path
+        class="letter"
+        d="m800.72 67.844 64.295-0.43672s-7.0797-31.823-31.105-31.061c-26.24 0.83124-32.449 16.706-32.934 29.682-1.0543 28.255 19.086 34.726 34.524 34.967 16.788 0.26225 31.436-15.877 31.436-15.877"
+        fill="none"
+        stop-color="#000000"
+        stroke="#0a00e0"
+        stroke-width="17.482"
+        style="font-variation-settings:normal"
+    />
 
  <style>
     .letter {
@@ -47,7 +155,7 @@
 
     @keyframes move-left {
         from {
-            translate: 0px;
+            translate: -10px;
         }
 
         to {

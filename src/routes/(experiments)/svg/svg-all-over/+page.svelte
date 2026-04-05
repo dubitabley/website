@@ -43,3 +43,10 @@
         things in SMIL that aren't doable in CSS animations.
     </p>
 </div>
+
+<div>
+    <p>
+        Note that the favicon (icon for the site in the browser) also is using
+        an SVG
+    </p>
+</div>
