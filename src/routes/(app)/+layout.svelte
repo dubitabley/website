@@ -1,5 +1,5 @@
 <script lang="ts">
-    import favicon from "$lib/assets/favicon.svg";
+    import favicon from "$lib/assets/favicon.svg?no-inline";
     import "./global.css";
     import Header from "./header.svelte";
 
@@ -8,7 +8,7 @@
 
 <svelte:head>
     <title>dubitable</title>
-    <link rel="icon" href={favicon} />
+    <link rel="icon" href={favicon} type="svg/xml" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dubitable.xyz/" />
     <meta property="og:title" content="dubitable's website" />

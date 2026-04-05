@@ -47,7 +47,7 @@
 
     @keyframes move-left {
         from {
-            translate: 100px;
+            translate: 0px;
         }
 
         to {

@@ -32,7 +32,7 @@
     .layer {
         transform: translateZ(calc(var(--i) * var(--layer-offset)));
         --n: calc(var(--i) / var(--layers-count));
-        color: hsl(190 80% calc(var(--n) * 100%));
+        color: hsl(20 100% calc(var(--n) * 80%));
 
         &::before {
             content: var(--text);
@@ -69,9 +69,5 @@
         * {
             transform-style: preserve-3d;
         }
-    }
-
-    :global(html) {
-        background-color: grey;
     }
 </style>

@@ -6,12 +6,10 @@
     const OUTER_SIZE = 45;
 
     type StarProps = {
-        enabled: boolean
+        enabled: boolean;
     };
 
-    const {
-        enabled
-    }: StarProps = $props();
+    const { enabled }: StarProps = $props();
 
     type Coord = [number, number];
 
@@ -20,8 +18,10 @@
 
         for (let i = 0; i < NUM_POINTS * 2; i++) {
             const size = i % 2 == 0 ? INNER_SIZE : OUTER_SIZE;
-            const x = size * Math.cos(2 * Math.PI * i / (NUM_POINTS * 2)) + CENTRE;
-            const y = size * Math.sin(2 * Math.PI * i / (NUM_POINTS * 2)) + CENTRE;
+            const x =
+                size * Math.cos((2 * Math.PI * i) / (NUM_POINTS * 2)) + CENTRE;
+            const y =
+                size * Math.sin((2 * Math.PI * i) / (NUM_POINTS * 2)) + CENTRE;
             coords[i] = [x, y];
         }
 
@@ -44,6 +44,23 @@
         return pathString;
     }
 </script>
+
+<div class="star-wrapper">
+    <svg
+        class="star-svg"
+        width="{STAR_SIZE}mm"
+        height="{STAR_SIZE}mm"
+        viewBox="0 0 {STAR_SIZE} {STAR_SIZE}"
+    >
+        <g>
+            <path
+                fill-rule="nonzero"
+                class={["star", enabled ? "filled-star" : "empty-star"]}
+                d={getStarPath(generateCoords())}
+            />
+        </g>
+    </svg>
+</div>
 
 <style>
     .star-wrapper {
@@ -68,20 +85,3 @@
         fill: transparent;
     }
 </style>
-
-<div class="star-wrapper">
-    <svg
-        class="star-svg"
-        width="{STAR_SIZE}mm"
-        height="{STAR_SIZE}mm"
-        viewBox="0 0 {STAR_SIZE} {STAR_SIZE}">
-
-        <g>
-            <path 
-                fill-rule="nonzero"
-                class={["star", enabled ? "filled-star" : "empty-star"]}
-                d={getStarPath(generateCoords())}  
-            />
-        </g>
-    </svg>
-</div>

@@ -6,6 +6,7 @@
     This works without javascript!
 {/snippet}
 
+<div class="background"></div>
 <div class="centre">
     <cuboid-wrapper>
         <Cuboid --width="300px" --height="300px" side2={side} />
@@ -67,9 +68,5 @@
     :global(*) {
         box-sizing: border-box;
         transform-style: preserve-3d;
-    }
-
-    :global(html) {
-        background-color: grey;
     }
 </style>
