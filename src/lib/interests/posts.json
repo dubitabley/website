@@ -24,6 +24,11 @@
             "name": "Cricket and Commercialism",
             "summary": "Contemplations on cricket and where it's coming and going",
             "link": "cricket-commercialism"
+        },
+        {
+            "name": "Animated Favicons",
+            "summary": "How Firefox broke my favicon and why that's okay",
+            "link": "animated-favicons"
         }
     ]
 }
