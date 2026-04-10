@@ -68,6 +68,11 @@
             "book_name": "Glitch",
             "author": "Lee Rourke",
             "rating": 2
+        },
+        {
+            "book_name": "Nations and Nationalism since 1780",
+            "author": "Eric Hobsbawm",
+            "rating": 3
         }
     ]
 }
