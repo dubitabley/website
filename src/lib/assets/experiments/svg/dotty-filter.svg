@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+    <defs>
+        <filter id="filter">
+            <feTurbulence baseFrequency="0.2" />
+            <feColorMatrix
+                values="0 0 2 10 -4
+                                0 2 0 9 -4
+                                0 0 6 9 -4
+                                0 0 0 0 1"
+            />
+            <feGaussianBlur />
+        </filter>
+    </defs>
+    <rect width="100%" height="100%" filter="url(#filter)" />
+</svg>

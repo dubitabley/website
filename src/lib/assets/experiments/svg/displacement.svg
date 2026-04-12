@@ -1,0 +1,29 @@
+<!-- Yoinked from https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/baseFrequency -->
+<svg
+  width="200"
+  height="200"
+  viewBox="0 0 220 220"
+  xmlns="http://www.w3.org/2000/svg">
+  <filter id="displacementFilter">
+    <feTurbulence
+      type="turbulence"
+      baseFrequency="0.05"
+      numOctaves="2"
+      result="turbulence" />
+    <feDisplacementMap
+      in2="turbulence"
+      in="SourceGraphic"
+      scale="20"
+      xChannelSelector="B"
+      yChannelSelector="G">
+      <animate
+        attributeName="scale"
+        values="20;60;20"
+        dur="2s"
+        repeatCount="indefinite"
+        />
+    </feDisplacementMap>
+  </filter>
+
+  <circle cx="100" cy="100" r="100" filter="url(#displacementFilter)" />
+</svg>
