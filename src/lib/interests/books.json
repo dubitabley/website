@@ -73,6 +73,12 @@
             "book_name": "Nations and Nationalism since 1780",
             "author": "Eric Hobsbawm",
             "rating": 3
+        },
+        {
+            "book_name": "Value(s)",
+            "author": "Mark Carney",
+            "rating": 2,
+            "link": "values"
         }
     ]
 }
