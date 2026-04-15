@@ -1,3 +1,4 @@
 # dubitable's website!
 
-To run `deno task dev`
+Run `deno task dev` to run locally
+Run `deno task test` to run tests locally

@@ -8,17 +8,19 @@
         "build": "vite build",
         "preview": "vite preview",
         "prepare": "svelte-kit sync || echo ''",
+        "test": "vitest",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
     },
     "dependencies": {},
     "devDependencies": {
         "@sveltejs/adapter-static": "^3.0.10",
-        "@sveltejs/kit": "^2.55.0",
+        "@sveltejs/kit": "^2.57.1",
         "@sveltejs/vite-plugin-svelte": "^7.0.0",
-        "svelte": "^5.54.1",
-        "svelte-check": "^4.4.5",
+        "svelte": "^5.55.4",
+        "svelte-check": "^4.4.6",
         "typescript": "^5.9.3",
-        "vite": "^8.0.1"
+        "vite": "^8.0.8",
+        "vitest": "^4.1.4"
     }
 }
