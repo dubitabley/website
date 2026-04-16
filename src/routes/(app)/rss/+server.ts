@@ -5,6 +5,8 @@ import Poems from "$lib/interests/poems.json";
 
 const domain = "https://dubitable.xyz";
 
+export const prerender = true;
+
 export function GET(): Response {
     const postItems: Item[] = Posts.posts.map((post) => {
         return {
