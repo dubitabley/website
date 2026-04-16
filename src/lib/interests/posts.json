@@ -29,6 +29,11 @@
             "name": "Animated Favicons",
             "summary": "How Firefox broke my favicon and why that's okay",
             "link": "animated-favicons"
+        },
+        {
+            "name": "An RSS Feed",
+            "summary": "RSS: I get round to fulfilling my webmaster obligation",
+            "link": "rss"
         }
     ]
 }
