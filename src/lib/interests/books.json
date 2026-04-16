@@ -4,13 +4,15 @@
             "book_name": "The French Lieutenant's Woman",
             "author": "John Fowles",
             "link": "french-lieutenants-woman",
-            "rating": 5
+            "rating": 5,
+            "date": "2025-08-31"
         },
         {
             "book_name": "Watership Down",
             "author": "Richard Adams",
             "link": "watership-down",
-            "rating": 3
+            "rating": 3,
+            "date": "2025-09-16"
         },
         {
             "book_name": "Senlin Ascends",
@@ -26,7 +28,8 @@
             "book_name": "Utopia",
             "author": "Thomas More",
             "rating": 4,
-            "link": "utopia"
+            "link": "utopia",
+            "date": "2025-10-16"
         },
         {
             "book_name": "Arm of the Sphinx",
@@ -47,7 +50,8 @@
             "book_name": "Foundation Trilogy",
             "author": "Isaac Asimov",
             "rating": 4,
-            "link": "foundation"
+            "link": "foundation",
+            "date": "2026-01-31"
         },
         {
             "book_name": "Pan's Labyrinth",
@@ -78,7 +82,8 @@
             "book_name": "Value(s)",
             "author": "Mark Carney",
             "rating": 2,
-            "link": "values"
+            "link": "values",
+            "date": "2026-04-13"
         }
     ]
 }

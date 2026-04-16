@@ -13,6 +13,7 @@ export function GET(): Response {
             title: post.name,
             link: `${domain}/posts/${post.link}`,
             description: post.summary,
+            pubDate: post.date,
         };
     });
     const postsChannel: Channel = {
@@ -24,12 +25,13 @@ export function GET(): Response {
     };
 
     const bookItems: Item[] = Books.books
-        .filter((book) => book.link)
+        .filter((book) => book.link && book.date)
         .map((book) => {
             return {
                 title: book.book_name,
                 description: `My review of the book ${book.book_name}`,
                 link: `${domain}/interests/book/${book.link}`,
+                pubDate: book.date,
             };
         });
 
@@ -46,6 +48,7 @@ export function GET(): Response {
             title: poem.name,
             description: `A ramble about the poem ${poem.name}`,
             link: `${domain}/poems/${poem.link}`,
+            pubDate: poem.date,
         };
     });
 

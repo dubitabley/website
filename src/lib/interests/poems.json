@@ -2,11 +2,13 @@
     "poems": [
         {
             "name": "The Law of the Yukon",
-            "link": "law-of-the-yukon"
+            "link": "law-of-the-yukon",
+            "date": "2025-10-29"
         },
         {
             "name": "The Dominion of the Sword",
-            "link": "dominion-of-the-sword"
+            "link": "dominion-of-the-sword",
+            "date": "2026-02-19"
         }
     ]
 }

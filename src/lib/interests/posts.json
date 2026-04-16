@@ -3,37 +3,44 @@
         {
             "name": "A web log",
             "summary": "In which I admit to succumbing to web logging and discuss the ramifications of this",
-            "link": "weblog"
+            "link": "weblog",
+            "date": "2025-10-29"
         },
         {
             "name": "The web",
             "summary": "Lamentations of an internet tragic",
-            "link": "web"
+            "link": "web",
+            "date": "2025-12-14"
         },
         {
             "name": "Fonts and Handwriting",
             "summary": "Ruminations on how we write our text in the world today",
-            "link": "handwriting"
+            "link": "handwriting",
+            "date": "2026-01-16"
         },
         {
             "name": "Animated Text",
             "summary": "Some thoughts on animated text",
-            "link": "animated-text"
+            "link": "animated-text",
+            "date": "2026-02-28"
         },
         {
             "name": "Cricket and Commercialism",
             "summary": "Contemplations on cricket and where it's coming and going",
-            "link": "cricket-commercialism"
+            "link": "cricket-commercialism",
+            "date": "2026-03-24"
         },
         {
             "name": "Animated Favicons",
             "summary": "How Firefox broke my favicon and why that's okay",
-            "link": "animated-favicons"
+            "link": "animated-favicons",
+            "date": "2026-04-07"
         },
         {
             "name": "An RSS Feed",
             "summary": "RSS: I get round to fulfilling my webmaster obligation",
-            "link": "rss"
+            "link": "rss",
+            "date": "2026-04-16"
         }
     ]
 }
