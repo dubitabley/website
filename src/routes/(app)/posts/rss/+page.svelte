@@ -70,4 +70,4 @@
     try to avoid having dependencies if I can avoid it so I just do it manually.
 </p>
 
-<a href="/rss">RSS Feed is here</a>
+<a href="/feed.xml">RSS Feed is here</a>
