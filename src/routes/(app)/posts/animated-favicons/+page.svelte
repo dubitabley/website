@@ -114,7 +114,9 @@
         >
         to scroll the text. What caused my one to stop animating? I tracked this one
         down to
-        <a href="phabricator.services.mozilla.com/D273423">this change</a>
+        <a href="https://phabricator.services.mozilla.com/D273423"
+            >this change</a
+        >
         related to
         <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1999468"
             >this bug</a
