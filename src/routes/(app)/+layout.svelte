@@ -9,6 +9,30 @@
 <svelte:head>
     <title>dubitable</title>
     <link rel="icon" href={favicon} type="svg/xml" />
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        href="/feed/posts.xml"
+        title="My weblog posts"
+    />
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        href="/feed/all.xml"
+        title="Everything I post"
+    />
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        href="/feed/books.xml"
+        title="Stuff I post about books"
+    />
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        href="/feed/poems.xml"
+        title="When I have the poetry itch"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dubitable.xyz/" />
     <meta property="og:title" content="dubitable's website" />

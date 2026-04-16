@@ -1,13 +1,11 @@
+export const domain = "https://dubitable.xyz";
+
 export type Rss = {
-    channels: Channel[];
+    channel: Channel;
 };
 
 export function stringifyRss(rss: Rss): string {
-    return (
-        `<rss version="2.0">` +
-        rss.channels.map((channel) => stringifyChannel(channel)).join("") +
-        `</rss>`
-    );
+    return `<rss version="2.0">` + stringifyChannel(rss.channel) + `</rss>`;
 }
 
 export type Channel = {

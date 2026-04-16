@@ -69,5 +69,10 @@
     >I wanted to use an XML serialiser but there weren't any built-in ones and I
     try to avoid having dependencies if I can avoid it so I just do it manually.
 </p>
-
-<a href="/feed.xml">RSS Feed is here</a>
+<p>I have a bunch of different feeds:</p>
+<ul>
+    <li><a href="/feed/all.xml">RSS Feed for everything</a></li>
+    <li><a href="/feed/posts.xml">RSS Feed for weblog posts</a></li>
+    <li><a href="/feed/books.xml">RSS Feed for book reviews</a></li>
+    <li><a href="/feed/poems.xml">RSS Feed for poetry rambles</a></li>
+</ul>
