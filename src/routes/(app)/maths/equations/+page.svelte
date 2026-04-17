@@ -34,14 +34,11 @@
 {@render EquationDemonstration("a^2+b^2=c^2")}
 {@render EquationDemonstration("3^3^3^3")}
 {@render EquationDemonstration("9*5a/(5*(9+6)^4)")}
+{@render EquationDemonstration("e^(i{pi})=-1")}
 
 <h3>Still to do:</h3>
 
 <ul>
     <li>Roots - especially square root</li>
-    <li>Integrals</li>
-    <li>
-        Special symbols such as pi - could just copy paste the symbol in
-        currently but want a short code for convenience
-    </li>
+    <li>Integrals/Sums</li>
 </ul>

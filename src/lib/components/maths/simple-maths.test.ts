@@ -165,3 +165,15 @@ test("chain fraction", () => {
         },
     );
 });
+
+test("special identifiers", () => {
+    const equation = "{pi} + {sigma} + {test}";
+    const tokens = parseEquation(equation);
+
+    expect(tokens.length).toEqual(5);
+    expectIdentifier(tokens[0], "π");
+    expectOperator(tokens[1], "+");
+    expectIdentifier(tokens[2], "σ");
+    expectOperator(tokens[3], "+");
+    expectIdentifier(tokens[4], "test");
+});
