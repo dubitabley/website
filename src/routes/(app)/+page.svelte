@@ -1,6 +1,7 @@
 <script lang="ts">
     import StarRating from "$lib/components/star-rating.svelte";
     import Books from "$lib/interests/books.json";
+    import Maths from "$lib/interests/maths.json";
     import Quotes from "$lib/interests/quotes.json";
     import Songs from "$lib/interests/songs.json";
     import Words from "$lib/interests/words.json";
@@ -13,6 +14,7 @@
     }
 
     const latestBook = getLatest(Books.books);
+    const latestMathsPost = getLatest(Maths.maths_posts);
     const latestQuote = getLatest(Quotes.quotes);
     const latestSong = getLatest(Songs.songs);
     const latestWord = getLatest(Words.words);
@@ -54,6 +56,25 @@
             </div>
             <div>
                 <a href="./misc">All misc pages</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel text-bg">
+        <span class="panel-title">Latest maths post</span>
+        <div>
+            <div>
+                <span><b>Post:</b></span>
+                <span
+                    ><a href="/maths/{latestMathsPost.link}"
+                        >{latestMathsPost.post_name}</a
+                    ></span
+                >
+            </div>
+            <div>
+                <p>
+                    {latestMathsPost.description}
+                </p>
             </div>
         </div>
     </div>
