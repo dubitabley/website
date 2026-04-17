@@ -77,7 +77,7 @@
         is <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=111373"
             >this one from 2001</a
         >, staggeringly from 24 years ago. Sharp-eyed readers will notice that
-        (as of 2024-04-07 at least) the bug is still open though and hasn't been
+        (as of 2026-04-07 at least) the bug is still open though and hasn't been
         updated in over a year. So what happened? Where did it get changed? I
         went looking through the source code of Firefox to see how and why it
         was changed. For GIFs not animating, I found
@@ -123,12 +123,13 @@
         > which is doing a similar thing to the raster image change but for SVG images.
         Note that you can change browser.tabs.remoteSVGIconDecoding in Firefox's about:config
         to false and still see the wonder of my animated favicon. At least unless
-        I change it.
+        either that gets changed or my favicon gets changed.
     </p>
     <p>
-        Some other people have noticed this change, I did find this thread: <a
+        Some other people have noticed this change, I did find <a
             href="https://www.reddit.com/r/neocities/comments/1r6xlg3/how_do_i_get_my_favicon_to_remain_animated/"
-            >https://www.reddit.com/r/neocities/comments/1r6xlg3/how_do_i_get_my_favicon_to_remain_animated/</a
+            >this reddit thread where someone is confused why their favicon
+            isn't animated/</a
         > so I'm not totally alone. It would be nice if Mozilla had mentioned somewhere
         that they were changing this feature, including on that original bug report
         from 2001 since it shows up fairly high on search. Here's a few reflections
