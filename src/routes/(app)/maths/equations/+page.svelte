@@ -6,14 +6,16 @@
 <h1>Maths!</h1>
 
 {#snippet EquationDemonstration(equation: string)}
-    <CodeDemonstration>
-        {#snippet code()}
-            <p>{equation}</p>
-        {/snippet}
-        {#snippet output()}
-            <SimpleMaths {equation} />
-        {/snippet}
-    </CodeDemonstration>
+    <div class="equation">
+        <CodeDemonstration>
+            {#snippet code()}
+                <p>{equation}</p>
+            {/snippet}
+            {#snippet output()}
+                <SimpleMaths {equation} />
+            {/snippet}
+        </CodeDemonstration>
+    </div>
 {/snippet}
 
 <p>
@@ -39,6 +41,7 @@
 {@render EquationDemonstration("n \\root x = x^(1/n)")}
 {@render EquationDemonstration("\\integral9*6x{dx}")}
 {@render EquationDemonstration("b \\defintegral a {f'}(t){dt}=f(b)-f(a)")}
+{@render EquationDemonstration("n \\sum (i=1) i = (n(n+1))/2")}
 
 <h3>Syntax Notes</h3>
 <p>
@@ -63,5 +66,12 @@
     identifier before \root is the root of the radical and the identifier
     afterwards is the value inside the root. There's also \integral which shows
     the integral symbol, while \definteral has the upper bound before it and the
-    lower bound after it.
+    lower bound after it. There's also \sum and \product for summation and
+    products similarly.
 </p>
+
+<style>
+    .equation {
+        font-size: 1.2em;
+    }
+</style>

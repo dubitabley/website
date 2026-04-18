@@ -52,6 +52,9 @@ specialIdentifierMap.set("u_chi", "Χ");
 specialIdentifierMap.set("u_psi", "Ψ");
 specialIdentifierMap.set("u_omega", "Ω");
 
+// others
+specialIdentifierMap.set("infinity", "∞");
+
 export function getSpecialValue(value: string): string | null {
     if (specialIdentifierMap.has(value)) {
         return specialIdentifierMap.get(value)!;

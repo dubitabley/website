@@ -19,8 +19,8 @@ export const TokenType = {
     SquareRoot: 5,
     /** General Root operator */
     Root: 6,
-    /** Definite integral */
-    DefiniteIntegral: 7,
+    /** Identifier with super and sub, e.g. definite integral */
+    SubSuperIdentifier: 7,
 } as const;
 export type TokenType = typeof TokenType;
 
@@ -61,10 +61,11 @@ export type RootToken = {
     tokens: Token[];
 };
 
-export type DefiniteIntegralToken = {
-    type: typeof TokenType.DefiniteIntegral;
-    upperBounds: Token[];
-    lowerBounds: Token[];
+export type SubSuperIdentifierToken = {
+    type: typeof TokenType.SubSuperIdentifier;
+    identifier: string;
+    superTokens: Token[];
+    subTokens: Token[];
 };
 
 export type Token =
@@ -75,7 +76,7 @@ export type Token =
     | BracketToken
     | SquareRootToken
     | RootToken
-    | DefiniteIntegralToken;
+    | SubSuperIdentifierToken;
 
 export function parseEquation(equation: string): Token[] {
     const rawTokens = parseToTokens(equation);
@@ -165,13 +166,20 @@ const Step2TokenType = {
     SingleType: 3,
 } as const;
 
+type Step2SubSuperElement = {
+    type: typeof Step2TokenType.DoubleType;
+    actualType: typeof RawMathsTokenType.SubSuperElement;
+    identifier: string;
+    first: Step2Token;
+    second: Step2Token;
+};
+
 type Step2Double = {
     type: typeof Step2TokenType.DoubleType;
     actualType:
         | typeof RawMathsTokenType.Divide
         | typeof RawMathsTokenType.Exponent
-        | typeof RawMathsTokenType.Root
-        | typeof RawMathsTokenType.DefiniteIntegral;
+        | typeof RawMathsTokenType.Root;
     first: Step2Token;
     second: Step2Token;
 };
@@ -186,6 +194,7 @@ type Step2Token =
           tokens: Step2Token[];
       }
     | Step2Double
+    | Step2SubSuperElement
     | Step2Single
     | {
           type: typeof Step2TokenType.Other;
@@ -210,7 +219,8 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
 
     let tokens: Step2Token[] = [];
     let lastIndex = 0;
-    let previousEnd: Step2Double | Step2Single | null = null;
+    let previousEnd: Step2Double | Step2SubSuperElement | Step2Single | null =
+        null;
     for (let index = 0; index < step1Tokens.length; index++) {
         const step1Token = step1Tokens[index];
 
@@ -222,7 +232,7 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
                 tokenType === RawMathsTokenType.Divide ||
                 tokenType === RawMathsTokenType.Exponent ||
                 tokenType === RawMathsTokenType.Root ||
-                tokenType === RawMathsTokenType.DefiniteIntegral
+                tokenType === RawMathsTokenType.SubSuperElement
             ) {
                 // append this onto previous
                 // add previous tokens
@@ -241,12 +251,23 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
                 if (!nextToken) {
                     throw new Error("Missing token after double");
                 }
-                const doubleToken = {
-                    type: Step2TokenType.DoubleType,
-                    actualType: tokenType,
-                    first: mapToken(previousToken),
-                    second: mapToken(nextToken),
-                };
+                let doubleToken: Step2Token;
+                if (tokenType === RawMathsTokenType.SubSuperElement) {
+                    doubleToken = {
+                        type: Step2TokenType.DoubleType,
+                        actualType: tokenType,
+                        identifier: step1Token.token.identifier,
+                        first: mapToken(previousToken),
+                        second: mapToken(nextToken),
+                    };
+                } else {
+                    doubleToken = {
+                        type: Step2TokenType.DoubleType,
+                        actualType: tokenType,
+                        first: mapToken(previousToken),
+                        second: mapToken(nextToken),
+                    };
+                }
                 // if we just had a double, then append this one on to the previous
                 if (previousEnd != null) {
                     if (previousEnd.type === Step2TokenType.DoubleType) {
@@ -364,12 +385,13 @@ function parseStep3(step2Tokens: Step2Token[]): Token[] {
                     tokens: convertTokenToArray(subSecond),
                 };
             } else if (
-                step2Token.actualType === RawMathsTokenType.DefiniteIntegral
+                step2Token.actualType === RawMathsTokenType.SubSuperElement
             ) {
                 return {
-                    type: TokenType.DefiniteIntegral,
-                    upperBounds: convertTokenToArray(subFirst),
-                    lowerBounds: convertTokenToArray(subSecond),
+                    type: TokenType.SubSuperIdentifier,
+                    identifier: step2Token.identifier,
+                    superTokens: convertTokenToArray(subFirst),
+                    subTokens: convertTokenToArray(subSecond),
                 };
             } else {
                 throw new Error("invalid double type");

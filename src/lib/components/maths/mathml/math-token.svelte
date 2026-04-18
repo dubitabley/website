@@ -57,10 +57,10 @@
             <MathToken token={childToken} />
         {/each}
     </msqrt>
-{:else if token.type === TokenType.DefiniteIntegral}
+{:else if token.type === TokenType.SubSuperIdentifier}
     <msubsup>
-        <mo>&#x222B;</mo>
-        {@render collapse(token.lowerBounds)}
-        {@render collapse(token.upperBounds)}
+        <mo>{token.identifier}</mo>
+        {@render collapse(token.subTokens)}
+        {@render collapse(token.superTokens)}
     </msubsup>
 {/if}

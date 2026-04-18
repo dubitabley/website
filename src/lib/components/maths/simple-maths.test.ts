@@ -79,17 +79,17 @@ function expectRoot(
     children(token.tokens);
 }
 
-function expectDefiniteIntegral(
+function expectSubSuperIdentifier(
     token: Token,
-    upperBound: ExpectTokenFunction,
-    lowerBound: ExpectTokenFunction,
+    superTokens: ExpectTokenFunction,
+    subTokens: ExpectTokenFunction,
 ) {
-    if (token.type !== TokenType.DefiniteIntegral) {
+    if (token.type !== TokenType.SubSuperIdentifier) {
         throw new Error("unexpected token type");
     }
 
-    upperBound(token.upperBounds);
-    lowerBound(token.lowerBounds);
+    superTokens(token.superTokens);
+    subTokens(token.subTokens);
 }
 
 test("basic addition", () => {
@@ -259,18 +259,42 @@ test("definite integral", () => {
     const tokens = parseEquation(equation);
 
     expect(tokens.length).toEqual(4);
-    expectDefiniteIntegral(
+    expectSubSuperIdentifier(
         tokens[0],
-        (upperTokens) => {
-            expect(upperTokens.length).toEqual(1);
-            expectIdentifier(upperTokens[0], "6");
+        (superTokens) => {
+            expect(superTokens.length).toEqual(1);
+            expectIdentifier(superTokens[0], "6");
         },
-        (lowerTokens) => {
-            expect(lowerTokens.length).toEqual(1);
-            expectIdentifier(lowerTokens[0], "3");
+        (subTokens) => {
+            expect(subTokens.length).toEqual(1);
+            expectIdentifier(subTokens[0], "3");
         },
     );
     expectIdentifier(tokens[1], "3");
     expectIdentifier(tokens[2], "y");
     expectIdentifier(tokens[3], "dy");
+});
+
+test("product", () => {
+    const equation = "5 \\product (i=3) 2i = 120";
+    const tokens = parseEquation(equation);
+
+    expect(tokens.length).toEqual(5);
+    expectSubSuperIdentifier(
+        tokens[0],
+        (superTokens) => {
+            expect(superTokens.length).toEqual(1);
+            expectIdentifier(superTokens[0], "5");
+        },
+        (subTokens) => {
+            expect(subTokens.length).toEqual(3);
+            expectIdentifier(subTokens[0], "i");
+            expectIdentifier(subTokens[1], "=");
+            expectIdentifier(subTokens[2], "3");
+        },
+    );
+    expectIdentifier(tokens[1], "2");
+    expectIdentifier(tokens[2], "i");
+    expectIdentifier(tokens[3], "=");
+    expectIdentifier(tokens[4], "120");
 });

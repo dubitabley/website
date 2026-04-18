@@ -10,7 +10,7 @@ export const RawMathsTokenType = {
     Divide: 5,
     SquareRoot: 6,
     Root: 7,
-    DefiniteIntegral: 8,
+    SubSuperElement: 8,
 } as const;
 export type RawMathsTokenType =
     (typeof RawMathsTokenType)[keyof typeof RawMathsTokenType];
@@ -46,14 +46,19 @@ type BasicMathsToken = {
         | typeof RawMathsTokenType.OpenBracket
         | typeof RawMathsTokenType.CloseBracket
         | typeof RawMathsTokenType.SquareRoot
-        | typeof RawMathsTokenType.Root
-        | typeof RawMathsTokenType.DefiniteIntegral;
+        | typeof RawMathsTokenType.Root;
+};
+
+type SubSuperIdentifier = {
+    type: typeof RawMathsTokenType.SubSuperElement;
+    identifier: string;
 };
 
 export type RawMathsToken =
     | RawMathsIdentifier
     | RawMathsOperator
-    | BasicMathsToken;
+    | BasicMathsToken
+    | SubSuperIdentifier;
 
 const PartialTokenType = {
     None: 0,
@@ -205,7 +210,20 @@ export function parseToTokens(equationString: string): RawMathsToken[] {
                             break;
                         case SpecialOperator.DefiniteIntegral:
                             rawToken = {
-                                type: RawMathsTokenType.DefiniteIntegral,
+                                type: RawMathsTokenType.SubSuperElement,
+                                identifier: "∫",
+                            };
+                            break;
+                        case SpecialOperator.Sum:
+                            rawToken = {
+                                type: RawMathsTokenType.SubSuperElement,
+                                identifier: "Σ",
+                            };
+                            break;
+                        case SpecialOperator.Product:
+                            rawToken = {
+                                type: RawMathsTokenType.SubSuperElement,
+                                identifier: "Π",
                             };
                             break;
                         default:

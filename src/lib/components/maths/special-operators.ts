@@ -3,6 +3,8 @@ export const SpecialOperator = {
     Root: 1,
     Integral: 2,
     DefiniteIntegral: 3,
+    Sum: 4,
+    Product: 5,
 } as const;
 export type SpecialOperator =
     (typeof SpecialOperator)[keyof typeof SpecialOperator];
@@ -12,6 +14,8 @@ specialOperatorMap.set("sqrt", SpecialOperator.SquareRoot);
 specialOperatorMap.set("root", SpecialOperator.Root);
 specialOperatorMap.set("integral", SpecialOperator.Integral);
 specialOperatorMap.set("defintegral", SpecialOperator.DefiniteIntegral);
+specialOperatorMap.set("sum", SpecialOperator.Sum);
+specialOperatorMap.set("product", SpecialOperator.Product);
 
 export function getSpecialOperator(value: string): SpecialOperator | null {
     if (specialOperatorMap.has(value)) {
