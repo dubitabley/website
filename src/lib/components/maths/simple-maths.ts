@@ -15,8 +15,12 @@ export const TokenType = {
     Exponent: 3,
     /** Brackets around some operators */
     Bracket: 4,
+    /** Square Root operator */
+    SquareRoot: 5,
+    /** General Root operator */
+    Root: 6,
 } as const;
-export type TokenType = (typeof TokenType)[keyof typeof TokenType];
+export type TokenType = typeof TokenType;
 
 export type IdentifierToken = {
     type: typeof TokenType.Identifier;
@@ -45,12 +49,24 @@ export type BracketToken = {
     tokens: Token[];
 };
 
+export type SquareRootToken = {
+    type: typeof TokenType.SquareRoot;
+    tokens: Token[];
+};
+export type RootToken = {
+    type: typeof TokenType.Root;
+    rootTokens: Token[];
+    tokens: Token[];
+};
+
 export type Token =
     | IdentifierToken
     | OperatorToken
     | FractionToken
     | ExponentToken
-    | BracketToken;
+    | BracketToken
+    | SquareRootToken
+    | RootToken;
 
 export function parseEquation(equation: string): Token[] {
     const rawTokens = parseToTokens(equation);
@@ -137,15 +153,22 @@ const Step2TokenType = {
     Bracket: 0,
     DoubleType: 1,
     Other: 2,
+    SingleType: 3,
 } as const;
 
 type Step2Double = {
     type: typeof Step2TokenType.DoubleType;
     actualType:
         | typeof RawMathsTokenType.Divide
-        | typeof RawMathsTokenType.Exponent;
+        | typeof RawMathsTokenType.Exponent
+        | typeof RawMathsTokenType.Root;
     first: Step2Token;
     second: Step2Token;
+};
+type Step2Single = {
+    type: typeof Step2TokenType.SingleType;
+    actualType: typeof RawMathsTokenType.SquareRoot;
+    child: Step2Token;
 };
 type Step2Token =
     | {
@@ -153,6 +176,7 @@ type Step2Token =
           tokens: Step2Token[];
       }
     | Step2Double
+    | Step2Single
     | {
           type: typeof Step2TokenType.Other;
           rawToken: RawMathsToken;
@@ -176,7 +200,7 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
 
     let tokens: Step2Token[] = [];
     let lastIndex = 0;
-    let previousEnd: Step2Double | null = null;
+    let previousEnd: Step2Double | Step2Single | null = null;
     for (let index = 0; index < step1Tokens.length; index++) {
         const step1Token = step1Tokens[index];
 
@@ -186,7 +210,8 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
             // if it's a double sided function then handle it here
             if (
                 tokenType === RawMathsTokenType.Divide ||
-                tokenType === RawMathsTokenType.Exponent
+                tokenType === RawMathsTokenType.Exponent ||
+                tokenType === RawMathsTokenType.Root
             ) {
                 // append this onto previous
                 // add previous tokens
@@ -199,6 +224,12 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
                 // get previous token and next token
                 const previousToken = step1Tokens[index - 1];
                 const nextToken = step1Tokens[index + 1];
+                if (!previousToken) {
+                    throw new Error("Missing token after double");
+                }
+                if (!nextToken) {
+                    throw new Error("Missing token after double");
+                }
                 const doubleToken = {
                     type: Step2TokenType.DoubleType,
                     actualType: tokenType,
@@ -207,11 +238,48 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
                 };
                 // if we just had a double, then append this one on to the previous
                 if (previousEnd != null) {
-                    previousEnd.second = doubleToken;
+                    if (previousEnd.type === Step2TokenType.DoubleType) {
+                        previousEnd.second = doubleToken;
+                    } else if (previousEnd.type === Step2TokenType.SingleType) {
+                        previousEnd.child = doubleToken;
+                    }
                 } else {
                     tokens.push(doubleToken);
                 }
                 previousEnd = doubleToken;
+
+                lastIndex = index + 2;
+                // skip checking next index
+                index += 1;
+            } else if (tokenType === RawMathsTokenType.SquareRoot) {
+                // append this onto previous
+                // add previous tokens
+                if (lastIndex < index) {
+                    const previousTokens = step1Tokens
+                        .slice(lastIndex, index)
+                        .map(mapToken);
+                    tokens.push(...previousTokens);
+                }
+                const nextToken = step1Tokens[index + 1];
+                if (!nextToken) {
+                    throw new Error("Missing token after single");
+                }
+                const singleToken: Step2Single = {
+                    type: Step2TokenType.SingleType,
+                    actualType: tokenType,
+                    child: mapToken(nextToken),
+                };
+                // if we just had a double, then append this one on to the previous
+                if (previousEnd != null) {
+                    if (previousEnd.type === Step2TokenType.DoubleType) {
+                        previousEnd.second = singleToken;
+                    } else if (previousEnd.type === Step2TokenType.SingleType) {
+                        previousEnd.child = singleToken;
+                    }
+                } else {
+                    tokens.push(singleToken);
+                }
+                previousEnd = singleToken;
 
                 lastIndex = index + 2;
                 // skip checking next index
@@ -278,8 +346,24 @@ function parseStep3(step2Tokens: Step2Token[]): Token[] {
                     base: subFirst,
                     power: convertTokenToArray(subSecond),
                 };
+            } else if (step2Token.actualType === RawMathsTokenType.Root) {
+                return {
+                    type: TokenType.Root,
+                    rootTokens: convertTokenToArray(subFirst),
+                    tokens: convertTokenToArray(subSecond),
+                };
             } else {
                 throw new Error("invalid double type");
+            }
+        } else if (step2Token.type === Step2TokenType.SingleType) {
+            const child = parseSingle(step2Token.child);
+            if (step2Token.actualType === RawMathsTokenType.SquareRoot) {
+                return {
+                    type: TokenType.SquareRoot,
+                    tokens: convertTokenToArray(child),
+                };
+            } else {
+                throw new Error("invalid single type");
             }
         } else if (step2Token.type === Step2TokenType.Other) {
             const rawToken = step2Token.rawToken;

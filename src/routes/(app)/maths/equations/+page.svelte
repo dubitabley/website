@@ -35,10 +35,10 @@
 {@render EquationDemonstration("3^3^3^3")}
 {@render EquationDemonstration("9*5a/(5*(9+6)^4)")}
 {@render EquationDemonstration("e^(i{pi})=-1")}
+{@render EquationDemonstration("\\sqrt(2+3)+3\\root8")}
 
 <h3>Still to do:</h3>
 
 <ul>
-    <li>Roots - especially square root</li>
     <li>Integrals/Sums</li>
 </ul>

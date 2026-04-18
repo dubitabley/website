@@ -46,4 +46,15 @@
         <MathToken token={childToken} />
     {/each}
     <mo>)</mo>
+{:else if token.type === TokenType.Root}
+    <mroot>
+        {@render collapse(token.tokens)}
+        {@render collapse(token.rootTokens)}
+    </mroot>
+{:else if token.type === TokenType.SquareRoot}
+    <msqrt>
+        {#each token.tokens as childToken}
+            <MathToken token={childToken} />
+        {/each}
+    </msqrt>
 {/if}

@@ -1,3 +1,6 @@
+import { getSpecialValue } from "./special-identifiers";
+import { getSpecialOperator, SpecialOperator } from "./special-operators";
+
 export const RawMathsTokenType = {
     Identifier: 0,
     Operator: 1,
@@ -5,11 +8,13 @@ export const RawMathsTokenType = {
     CloseBracket: 3,
     Exponent: 4,
     Divide: 5,
+    SquareRoot: 6,
+    Root: 7,
 } as const;
 export type RawMathsTokenType =
     (typeof RawMathsTokenType)[keyof typeof RawMathsTokenType];
 
-type RawMathsIdentifier = {
+export type RawMathsIdentifier = {
     type: typeof RawMathsTokenType.Identifier;
     identifier: string;
 };
@@ -20,32 +25,6 @@ function newIdentifier(identifier: string): RawMathsIdentifier {
         identifier,
     };
 }
-
-const specialIdentifierMap = new Map();
-specialIdentifierMap.set("alpha", "α");
-specialIdentifierMap.set("beta", "β");
-specialIdentifierMap.set("gamma", "γ");
-specialIdentifierMap.set("delta", "δ");
-specialIdentifierMap.set("epsilon", "ε");
-specialIdentifierMap.set("zeta", "ζ");
-specialIdentifierMap.set("eta", "η");
-specialIdentifierMap.set("theta", "θ");
-specialIdentifierMap.set("iota", "ι");
-specialIdentifierMap.set("kappa", "κ");
-specialIdentifierMap.set("lambda", "λ");
-specialIdentifierMap.set("mu", "μ");
-specialIdentifierMap.set("nu", "ν");
-specialIdentifierMap.set("xi", "ξ");
-specialIdentifierMap.set("omicron", "ο");
-specialIdentifierMap.set("pi", "π"); // important
-specialIdentifierMap.set("rho", "ρ");
-specialIdentifierMap.set("sigma", "σ");
-specialIdentifierMap.set("tau", "τ");
-specialIdentifierMap.set("upsilon", "υ");
-specialIdentifierMap.set("phi", "φ");
-specialIdentifierMap.set("chi", "χ");
-specialIdentifierMap.set("psi", "ψ");
-specialIdentifierMap.set("omega", "ω");
 
 export type RawMathsOperator = {
     type: typeof RawMathsTokenType.Operator;
@@ -67,15 +46,26 @@ type BasicMathsToken = {
         | typeof RawMathsTokenType.CloseBracket;
 };
 
+type SquareRootToken = {
+    type: typeof RawMathsTokenType.SquareRoot;
+};
+
+type RootToken = {
+    type: typeof RawMathsTokenType.Root;
+};
+
 export type RawMathsToken =
     | RawMathsIdentifier
     | RawMathsOperator
-    | BasicMathsToken;
+    | BasicMathsToken
+    | SquareRootToken
+    | RootToken;
 
 const PartialTokenType = {
     None: 0,
     Number: 1,
     SpecialIdentifier: 2,
+    SpecialOperator: 3,
 } as const;
 
 type PartialNone = {
@@ -90,7 +80,16 @@ type SpecialPartialIdentifier = {
     type: typeof PartialTokenType.SpecialIdentifier;
     currentValue: string;
 };
-type PartialToken = PartialNone | PartialNumber | SpecialPartialIdentifier;
+
+type SpecialPartialOperator = {
+    type: typeof PartialTokenType.SpecialOperator;
+    currentValue: string;
+};
+type PartialToken =
+    | PartialNone
+    | PartialNumber
+    | SpecialPartialIdentifier
+    | SpecialPartialOperator;
 
 export function parseToTokens(equationString: string): RawMathsToken[] {
     const rawTokens: RawMathsToken[] = [];
@@ -104,6 +103,12 @@ export function parseToTokens(equationString: string): RawMathsToken[] {
             currentPartial = {
                 type: PartialTokenType.None,
             };
+        }
+        if (currentPartial.type === PartialTokenType.SpecialIdentifier) {
+            throw new Error("invalid special identifier - interrupted");
+        }
+        if (currentPartial.type === PartialTokenType.SpecialOperator) {
+            throw new Error("invalid special operator - interrupted");
         }
     };
     for (let index = 0; index < equationString.length; index++) {
@@ -162,9 +167,9 @@ export function parseToTokens(equationString: string): RawMathsToken[] {
             // close special identifier
             if (currentPartial.type === PartialTokenType.SpecialIdentifier) {
                 let value = currentPartial.currentValue;
-                if (specialIdentifierMap.has(value)) {
-                    value = specialIdentifierMap.get(value);
-                }
+                // map to special value
+                value = getSpecialValue(value) ?? value;
+
                 rawTokens.push({
                     type: RawMathsTokenType.Identifier,
                     identifier: value,
@@ -175,9 +180,39 @@ export function parseToTokens(equationString: string): RawMathsToken[] {
             } else {
                 throw new Error("Closed special identifier without opening it");
             }
+        } else if (currentValue === "\\") {
+            finishCurrentValue();
+            currentPartial = {
+                type: PartialTokenType.SpecialOperator,
+                currentValue: "",
+            };
         } else {
             if (currentPartial.type === PartialTokenType.SpecialIdentifier) {
                 currentPartial.currentValue += currentValue;
+            } else if (
+                currentPartial.type === PartialTokenType.SpecialOperator
+            ) {
+                currentPartial.currentValue += currentValue;
+                const operator = getSpecialOperator(
+                    currentPartial.currentValue,
+                );
+                if (operator != null) {
+                    let rawToken: RawMathsToken;
+                    switch (operator) {
+                        case SpecialOperator.SquareRoot:
+                            rawToken = { type: RawMathsTokenType.SquareRoot };
+                            break;
+                        case SpecialOperator.Root:
+                            rawToken = { type: RawMathsTokenType.Root };
+                            break;
+                        default:
+                            throw new Error("invalid special operator");
+                    }
+                    rawTokens.push(rawToken);
+                    currentPartial = {
+                        type: PartialTokenType.None,
+                    };
+                }
             } else {
                 finishCurrentValue();
                 rawTokens.push(newIdentifier(currentValue));

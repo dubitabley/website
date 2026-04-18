@@ -58,6 +58,27 @@ function expectBracket(token: Token, children: ExpectTokenFunction) {
     children(token.tokens);
 }
 
+function expectSquareRoot(token: Token, children: ExpectTokenFunction) {
+    if (token.type !== TokenType.SquareRoot) {
+        throw new Error("unexpected token type");
+    }
+
+    children(token.tokens);
+}
+
+function expectRoot(
+    token: Token,
+    roots: ExpectTokenFunction,
+    children: ExpectTokenFunction,
+) {
+    if (token.type !== TokenType.Root) {
+        throw new Error("unexpected token type");
+    }
+
+    roots(token.rootTokens);
+    children(token.tokens);
+}
+
 test("basic addition", () => {
     const equation = "2+4";
     const tokens = parseEquation(equation);
@@ -176,4 +197,35 @@ test("special identifiers", () => {
     expectIdentifier(tokens[2], "σ");
     expectOperator(tokens[3], "+");
     expectIdentifier(tokens[4], "test");
+});
+
+test("square root", () => {
+    const equation = "\\sqrt5";
+    const tokens = parseEquation(equation);
+
+    expect(tokens.length).toEqual(1);
+    expectSquareRoot(tokens[0], (tokens) => {
+        expect(tokens.length).toEqual(1);
+        expectIdentifier(tokens[0], "5");
+    });
+});
+
+test("general root", () => {
+    const equation = "4\\root(5*4)";
+    const tokens = parseEquation(equation);
+
+    expect(tokens.length).toEqual(1);
+    expectRoot(
+        tokens[0],
+        (roots) => {
+            expect(tokens.length).toEqual(1);
+            expectIdentifier(roots[0], "4");
+        },
+        (tokens) => {
+            expect(tokens.length).toEqual(3);
+            expectIdentifier(tokens[0], "5");
+            expectOperator(tokens[1], "×");
+            expectIdentifier(tokens[2], "4");
+        },
+    );
 });
