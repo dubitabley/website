@@ -19,6 +19,8 @@ export const TokenType = {
     SquareRoot: 5,
     /** General Root operator */
     Root: 6,
+    /** Definite integral */
+    DefiniteIntegral: 7,
 } as const;
 export type TokenType = typeof TokenType;
 
@@ -59,6 +61,12 @@ export type RootToken = {
     tokens: Token[];
 };
 
+export type DefiniteIntegralToken = {
+    type: typeof TokenType.DefiniteIntegral;
+    upperBounds: Token[];
+    lowerBounds: Token[];
+};
+
 export type Token =
     | IdentifierToken
     | OperatorToken
@@ -66,7 +74,8 @@ export type Token =
     | ExponentToken
     | BracketToken
     | SquareRootToken
-    | RootToken;
+    | RootToken
+    | DefiniteIntegralToken;
 
 export function parseEquation(equation: string): Token[] {
     const rawTokens = parseToTokens(equation);
@@ -161,7 +170,8 @@ type Step2Double = {
     actualType:
         | typeof RawMathsTokenType.Divide
         | typeof RawMathsTokenType.Exponent
-        | typeof RawMathsTokenType.Root;
+        | typeof RawMathsTokenType.Root
+        | typeof RawMathsTokenType.DefiniteIntegral;
     first: Step2Token;
     second: Step2Token;
 };
@@ -211,7 +221,8 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
             if (
                 tokenType === RawMathsTokenType.Divide ||
                 tokenType === RawMathsTokenType.Exponent ||
-                tokenType === RawMathsTokenType.Root
+                tokenType === RawMathsTokenType.Root ||
+                tokenType === RawMathsTokenType.DefiniteIntegral
             ) {
                 // append this onto previous
                 // add previous tokens
@@ -351,6 +362,14 @@ function parseStep3(step2Tokens: Step2Token[]): Token[] {
                     type: TokenType.Root,
                     rootTokens: convertTokenToArray(subFirst),
                     tokens: convertTokenToArray(subSecond),
+                };
+            } else if (
+                step2Token.actualType === RawMathsTokenType.DefiniteIntegral
+            ) {
+                return {
+                    type: TokenType.DefiniteIntegral,
+                    upperBounds: convertTokenToArray(subFirst),
+                    lowerBounds: convertTokenToArray(subSecond),
                 };
             } else {
                 throw new Error("invalid double type");

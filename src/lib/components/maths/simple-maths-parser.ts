@@ -10,6 +10,7 @@ export const RawMathsTokenType = {
     Divide: 5,
     SquareRoot: 6,
     Root: 7,
+    DefiniteIntegral: 8,
 } as const;
 export type RawMathsTokenType =
     (typeof RawMathsTokenType)[keyof typeof RawMathsTokenType];
@@ -28,10 +29,10 @@ function newIdentifier(identifier: string): RawMathsIdentifier {
 
 export type RawMathsOperator = {
     type: typeof RawMathsTokenType.Operator;
-    operator: "+" | "-" | "×";
+    operator: "+" | "-" | "×" | "∫";
 };
 
-function newOperator(operator: "+" | "-" | "×"): RawMathsOperator {
+function newOperator(operator: "+" | "-" | "×" | "∫"): RawMathsOperator {
     return {
         type: RawMathsTokenType.Operator,
         operator,
@@ -43,23 +44,16 @@ type BasicMathsToken = {
         | typeof RawMathsTokenType.Exponent
         | typeof RawMathsTokenType.Divide
         | typeof RawMathsTokenType.OpenBracket
-        | typeof RawMathsTokenType.CloseBracket;
-};
-
-type SquareRootToken = {
-    type: typeof RawMathsTokenType.SquareRoot;
-};
-
-type RootToken = {
-    type: typeof RawMathsTokenType.Root;
+        | typeof RawMathsTokenType.CloseBracket
+        | typeof RawMathsTokenType.SquareRoot
+        | typeof RawMathsTokenType.Root
+        | typeof RawMathsTokenType.DefiniteIntegral;
 };
 
 export type RawMathsToken =
     | RawMathsIdentifier
     | RawMathsOperator
-    | BasicMathsToken
-    | SquareRootToken
-    | RootToken;
+    | BasicMathsToken;
 
 const PartialTokenType = {
     None: 0,
@@ -204,6 +198,15 @@ export function parseToTokens(equationString: string): RawMathsToken[] {
                             break;
                         case SpecialOperator.Root:
                             rawToken = { type: RawMathsTokenType.Root };
+                            break;
+                        case SpecialOperator.Integral:
+                            // integral symbol
+                            rawToken = newOperator("∫");
+                            break;
+                        case SpecialOperator.DefiniteIntegral:
+                            rawToken = {
+                                type: RawMathsTokenType.DefiniteIntegral,
+                            };
                             break;
                         default:
                             throw new Error("invalid special operator");

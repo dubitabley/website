@@ -35,10 +35,33 @@
 {@render EquationDemonstration("3^3^3^3")}
 {@render EquationDemonstration("9*5a/(5*(9+6)^4)")}
 {@render EquationDemonstration("e^(i{pi})=-1")}
-{@render EquationDemonstration("\\sqrt(2+3)+3\\root8")}
+{@render EquationDemonstration("\\sqrt(2+3)")}
+{@render EquationDemonstration("n \\root x = x^(1/n)")}
+{@render EquationDemonstration("\\integral9*6x{dx}")}
+{@render EquationDemonstration("b \\defintegral a {f'}(t){dt}=f(b)-f(a)")}
 
-<h3>Still to do:</h3>
-
-<ul>
-    <li>Integrals/Sums</li>
-</ul>
+<h3>Syntax Notes</h3>
+<p>
+    Basic operators are `+`, `-` and `*`. `*` will translate to a multiplication
+    symbol. Whitespace is only used to separate numbers/elements, it doesn't get
+    used in the output. Brackets have a dual purpose, they're either just
+    brackets output but if they're used in a special part of another operator
+    then they combine elements within the brackets for the operator. For example
+    in 5^(7+9) then the brackets are used to put all of the 7+9 in the exponent.
+    Speaking of which, `^` is an exponent symbol for powers and `/` is used for
+    fractions/dividing.
+</p>
+<p>
+    Normally every letter is used as an individual identifier but if you use
+    `&lbrace;` and `&rbrace;` around them then it's treated as a single
+    identifier. This is also used for special identifiers, so
+    `&lbrace;pi&rbrace;` translates to the π symbol. This works for all greek
+    letters and `&lbrace;u_pi&rbrace;` would do an upper case pi: Π.
+</p>
+<p>
+    For special operators, we have \sqrt for square root, \root for general. The
+    identifier before \root is the root of the radical and the identifier
+    afterwards is the value inside the root. There's also \integral which shows
+    the integral symbol, while \definteral has the upper bound before it and the
+    lower bound after it.
+</p>

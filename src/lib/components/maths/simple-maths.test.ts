@@ -79,6 +79,19 @@ function expectRoot(
     children(token.tokens);
 }
 
+function expectDefiniteIntegral(
+    token: Token,
+    upperBound: ExpectTokenFunction,
+    lowerBound: ExpectTokenFunction,
+) {
+    if (token.type !== TokenType.DefiniteIntegral) {
+        throw new Error("unexpected token type");
+    }
+
+    upperBound(token.upperBounds);
+    lowerBound(token.lowerBounds);
+}
+
 test("basic addition", () => {
     const equation = "2+4";
     const tokens = parseEquation(equation);
@@ -228,4 +241,36 @@ test("general root", () => {
             expectIdentifier(tokens[2], "4");
         },
     );
+});
+
+test("basic integral", () => {
+    const equation = "\\integral 5x{dx}";
+    const tokens = parseEquation(equation);
+
+    expect(tokens.length).toEqual(4);
+    expectOperator(tokens[0], "∫");
+    expectIdentifier(tokens[1], "5");
+    expectIdentifier(tokens[2], "x");
+    expectIdentifier(tokens[3], "dx");
+});
+
+test("definite integral", () => {
+    const equation = "6\\defintegral3 3y{dy}";
+    const tokens = parseEquation(equation);
+
+    expect(tokens.length).toEqual(4);
+    expectDefiniteIntegral(
+        tokens[0],
+        (upperTokens) => {
+            expect(upperTokens.length).toEqual(1);
+            expectIdentifier(upperTokens[0], "6");
+        },
+        (lowerTokens) => {
+            expect(lowerTokens.length).toEqual(1);
+            expectIdentifier(lowerTokens[0], "3");
+        },
+    );
+    expectIdentifier(tokens[1], "3");
+    expectIdentifier(tokens[2], "y");
+    expectIdentifier(tokens[3], "dy");
 });
