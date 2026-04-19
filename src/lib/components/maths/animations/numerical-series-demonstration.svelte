@@ -170,12 +170,14 @@
     <!-- controls -->
     <div class="controls-wrapper">
         <div class="controls">
-            <button class="control" onclick={toggleRunning}>
+            <button class="control button" onclick={toggleRunning}>
                 {running ? "Pause" : "Start"}
             </button>
-            <button class="control" onclick={reset}>Reset</button>
+            <button class="control button" onclick={reset}>Reset</button>
             {#if skipAhead}
-                <button class="control" onclick={skipAheadFunc}>Skip</button>
+                <button class="control button" onclick={skipAheadFunc}
+                    >Skip</button
+                >
             {/if}
         </div>
     </div>
@@ -195,16 +197,6 @@
             flex-grow: 1;
             height: 2.5em;
             font-weight: bold;
-            background-color: inherit;
-            border: 3px solid var(--primary-color);
-            border-radius: 5px;
-            transition: all 0.2s;
-            text-align: center;
-
-            &:hover {
-                background-color: var(--primary-color);
-                color: var(--background-color);
-            }
         }
     }
 

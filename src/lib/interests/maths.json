@@ -5,6 +5,12 @@
             "description": "I talk about posting mathematics and how I setup a system for writing equations easily",
             "link": "equations",
             "date": "2026-04-16"
+        },
+        {
+            "post_name": "The Basel Problem",
+            "description": "Discussing the Basel problem and how Euler showed what value it is",
+            "link": "basel",
+            "date": "2026-04-20"
         }
     ]
 }
