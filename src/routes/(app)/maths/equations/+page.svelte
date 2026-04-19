@@ -1,6 +1,6 @@
 <script lang="ts">
     import CodeDemonstration from "$lib/components/code-demonstration.svelte";
-    import SimpleMaths from "$lib/components/maths/simple-maths.svelte";
+    import SimpleMaths from "$lib/components/maths/equation/simple-maths.svelte";
 </script>
 
 <h1>Maths!</h1>
@@ -36,11 +36,11 @@
 {@render EquationDemonstration("a^2+b^2=c^2")}
 {@render EquationDemonstration("3^3^3^3")}
 {@render EquationDemonstration("9*5a/(5*(9+6)^4)")}
-{@render EquationDemonstration("e^(i{pi})=-1")}
+{@render EquationDemonstration("e^(i[pi])=-1")}
 {@render EquationDemonstration("\\sqrt(2+3)")}
 {@render EquationDemonstration("n \\root x = x^(1/n)")}
-{@render EquationDemonstration("\\integral9*6x{dx}")}
-{@render EquationDemonstration("b \\defintegral a {f'}(t){dt}=f(b)-f(a)")}
+{@render EquationDemonstration("\\integral9*6x[dx]")}
+{@render EquationDemonstration("b \\defintegral a [f'](t)[dt]=f(b)-f(a)")}
 {@render EquationDemonstration("n \\sum (i=1) i = (n(n+1))/2")}
 
 <h3>Syntax Notes</h3>
@@ -55,11 +55,12 @@
     fractions/dividing.
 </p>
 <p>
-    Normally every letter is used as an individual identifier but if you use
-    `&lbrace;` and `&rbrace;` around them then it's treated as a single
-    identifier. This is also used for special identifiers, so
-    `&lbrace;pi&rbrace;` translates to the π symbol. This works for all greek
-    letters and `&lbrace;u_pi&rbrace;` would do an upper case pi: Π.
+    Normally every letter is used as an individual identifier but if you use `[`
+    and `]` around them then it's treated as a single identifier. This is also
+    used for special identifiers, so `[pi]` translates to the π symbol. This
+    works for all greek letters and `[u_pi]` would do an upper case pi: Π. I was
+    using the curly braces &lbrace; &rbrace; but since they're used Svelte for
+    expressions it wasn't easy to use so just using square brackets instead.
 </p>
 <p>
     For special operators, we have \sqrt for square root, \root for general. The

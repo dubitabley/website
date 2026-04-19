@@ -201,7 +201,7 @@ test("chain fraction", () => {
 });
 
 test("special identifiers", () => {
-    const equation = "{pi} + {sigma} + {test}";
+    const equation = "[pi] + [sigma] + [test]";
     const tokens = parseEquation(equation);
 
     expect(tokens.length).toEqual(5);
@@ -244,7 +244,7 @@ test("general root", () => {
 });
 
 test("basic integral", () => {
-    const equation = "\\integral 5x{dx}";
+    const equation = "\\integral 5x[dx]";
     const tokens = parseEquation(equation);
 
     expect(tokens.length).toEqual(4);
@@ -255,7 +255,7 @@ test("basic integral", () => {
 });
 
 test("definite integral", () => {
-    const equation = "6\\defintegral3 3y{dy}";
+    const equation = "6\\defintegral3 3y[dy]";
     const tokens = parseEquation(equation);
 
     expect(tokens.length).toEqual(4);

@@ -155,14 +155,14 @@ export function parseToTokens(equationString: string): RawMathsToken[] {
         } else if (currentValue === ")") {
             finishCurrentValue();
             rawTokens.push({ type: RawMathsTokenType.CloseBracket });
-        } else if (currentValue === "{") {
+        } else if (currentValue === "[") {
             // syntax for special identifiers
             finishCurrentValue();
             currentPartial = {
                 type: PartialTokenType.SpecialIdentifier,
                 currentValue: "",
             };
-        } else if (currentValue === "}") {
+        } else if (currentValue === "]") {
             // close special identifier
             if (currentPartial.type === PartialTokenType.SpecialIdentifier) {
                 let value = currentPartial.currentValue;

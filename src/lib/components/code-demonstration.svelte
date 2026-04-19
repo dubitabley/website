@@ -8,18 +8,25 @@
     type Props = {
         code: Snippet;
         output: Snippet;
+        codeText?: string;
+        outputText?: string;
     };
 
-    let { code, output }: Props = $props();
+    let {
+        code,
+        output,
+        codeText = "Code",
+        outputText = "Output",
+    }: Props = $props();
 </script>
 
 <div class="demonstration">
     <div class="box">
-        <span class="box-overlay">Code</span>
+        <span class="box-overlay">{codeText}</span>
         {@render code()}
     </div>
     <div class="box">
-        <span class="box-overlay">Output</span>
+        <span class="box-overlay">{outputText}</span>
         <div>
             {@render output()}
         </div>
@@ -36,6 +43,7 @@
     .box {
         border: 3px solid var(--primary-color);
         display: flex;
+        overflow: hidden;
         align-items: center;
         justify-content: center;
 
@@ -45,6 +53,7 @@
     .box-overlay {
         position: absolute;
         position-anchor: --box-anchor;
+        z-index: 10;
         left: anchor(left, 5px);
         margin-left: 10px;
         top: anchor(top, 5px);
