@@ -106,14 +106,36 @@
 
     .header-char {
         --saturation: 100%;
-        color: hsl(var(--hue), var(--saturation), var(--secondary-lightness));
+        /*color: hsl(var(--hue), var(--saturation), var(--secondary-lightness));*/
         animation-name: rainbow-color;
         animation-duration: 1s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
 
-        background-color: transparent;
+        background:
+            linear-gradient(
+                to right,
+                hsl(
+                    var(--hue),
+                    var(--saturation),
+                    var(--secondary-lightness),
+                    60%
+                ),
+                hsl(
+                    var(--hue),
+                    var(--saturation),
+                    var(--secondary-lightness),
+                    60%
+                )
+            ),
+            url("$lib/assets/experiments/svg/grain-filter.svg");
+        background-clip: text;
+        color: transparent;
+
+        font-size: var(--large-font-size);
+        text-shadow: 4px 4px
+            hsl(var(--hue), var(--saturation), var(--secondary-lightness), 20%);
 
         --small-font-size: 30px;
         --large-font-size: 50px;
@@ -132,6 +154,7 @@
     .header-rotate-char {
         display: inline-block;
         background-color: transparent;
+        transform-origin: center;
 
         &:hover {
             animation-name: rotate;
@@ -162,13 +185,11 @@
         0% {
             --hue: 0;
             --saturation: 100%;
-            font-size: var(--small-font-size);
         }
 
         100% {
             --hue: 360;
             --saturation: 100%;
-            font-size: var(--large-font-size);
         }
     }
 
