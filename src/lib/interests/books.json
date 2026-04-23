@@ -84,6 +84,11 @@
             "rating": 2,
             "link": "values",
             "date": "2026-04-13"
+        },
+        {
+            "book_name": "Cakes, Custard and Category Theory",
+            "author": "Eugenia Chang",
+            "rating": 3
         }
     ]
 }
