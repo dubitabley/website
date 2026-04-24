@@ -89,6 +89,11 @@
             "book_name": "Cakes, Custard and Category Theory",
             "author": "Eugenia Chang",
             "rating": 3
+        },
+        {
+            "book_name": "We Are the Light",
+            "author": "Matthew Quick",
+            "rating": 2
         }
     ]
 }
