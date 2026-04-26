@@ -94,6 +94,11 @@
             "book_name": "We Are the Light",
             "author": "Matthew Quick",
             "rating": 2
+        },
+        {
+            "book_name": "The Shadow Weaver",
+            "author": "Ivy Cliffwater",
+            "rating": 1
         }
     ]
 }
