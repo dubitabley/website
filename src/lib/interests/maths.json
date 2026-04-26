@@ -11,6 +11,12 @@
             "description": "Discussing the Basel problem and how Euler showed what value it is",
             "link": "basel",
             "date": "2026-04-20"
+        },
+        {
+            "post_name": "Farey Sequences",
+            "description": "Adapting a chapter from a number theory book on Farey Sequences",
+            "link": "farey",
+            "date": "2026-04-26"
         }
     ]
 }

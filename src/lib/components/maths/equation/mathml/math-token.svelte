@@ -63,4 +63,9 @@
         {@render collapse(token.subTokens)}
         {@render collapse(token.superTokens)}
     </msubsup>
+{:else if token.type === TokenType.Sub}
+    <msub>
+        <MathToken token={token.identifierToken} />
+        {@render collapse(token.subTokens)}
+    </msub>
 {/if}

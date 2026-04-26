@@ -92,6 +92,19 @@ function expectSubSuperIdentifier(
     subTokens(token.subTokens);
 }
 
+function expectSub(
+    token: Token,
+    main: (token: Token) => void,
+    children: ExpectTokenFunction,
+) {
+    if (token.type !== TokenType.Sub) {
+        throw new Error("unexpected token type");
+    }
+
+    main(token.identifierToken);
+    children(token.subTokens);
+}
+
 test("basic addition", () => {
     const equation = "2+4";
     const tokens = parseEquation(equation);
@@ -297,4 +310,21 @@ test("product", () => {
     expectIdentifier(tokens[2], "i");
     expectIdentifier(tokens[3], "=");
     expectIdentifier(tokens[4], "120");
+});
+
+test("subscript", () => {
+    const equation = "F\\sub5";
+    const tokens = parseEquation(equation);
+
+    expect(tokens.length).toEqual(1);
+    expectSub(
+        tokens[0],
+        (token) => {
+            expectIdentifier(token, "F");
+        },
+        (tokens) => {
+            expect(tokens.length).toEqual(1);
+            expectIdentifier(tokens[0], "5");
+        },
+    );
 });

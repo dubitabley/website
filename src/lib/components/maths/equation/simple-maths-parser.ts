@@ -11,6 +11,7 @@ export const RawMathsTokenType = {
     SquareRoot: 6,
     Root: 7,
     SubSuperElement: 8,
+    Sub: 9,
 } as const;
 export type RawMathsTokenType =
     (typeof RawMathsTokenType)[keyof typeof RawMathsTokenType];
@@ -46,7 +47,8 @@ type BasicMathsToken = {
         | typeof RawMathsTokenType.OpenBracket
         | typeof RawMathsTokenType.CloseBracket
         | typeof RawMathsTokenType.SquareRoot
-        | typeof RawMathsTokenType.Root;
+        | typeof RawMathsTokenType.Root
+        | typeof RawMathsTokenType.Sub;
 };
 
 type SubSuperIdentifier = {
@@ -224,6 +226,11 @@ export function parseToTokens(equationString: string): RawMathsToken[] {
                             rawToken = {
                                 type: RawMathsTokenType.SubSuperElement,
                                 identifier: "Π",
+                            };
+                            break;
+                        case SpecialOperator.Sub:
+                            rawToken = {
+                                type: RawMathsTokenType.Sub,
                             };
                             break;
                         default:

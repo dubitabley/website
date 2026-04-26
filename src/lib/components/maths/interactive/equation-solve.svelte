@@ -42,7 +42,9 @@
                 in:fly={{ y: direction * 20, duration: 300 }}
                 out:fly={{ y: -direction * 20, duration: 300 }}
             >
-                {@render equations[currentIndex]()}
+                {#if currentIndex < equations.length}
+                    {@render equations[currentIndex]()}
+                {/if}
             </div>
         {/key}
     </div>
@@ -51,6 +53,8 @@
             <div>
                 {explanations[currentIndex]}
             </div>
+        {:else if currentIndex >= equations.length}
+            <div>Our final state</div>
         {/if}
     </div>
     <div class="controls">
@@ -60,7 +64,7 @@
         <button
             class="button"
             onclick={next}
-            disabled={currentIndex + 1 >= equations.length}>Next</button
+            disabled={currentIndex >= equations.length}>Next</button
         >
     </div>
 </div>
@@ -73,6 +77,7 @@
     .controls {
         display: flex;
         flex-direction: column;
+        gap: 5px;
 
         button {
             flex-grow: 1;

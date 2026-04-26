@@ -5,6 +5,7 @@ export const SpecialOperator = {
     DefiniteIntegral: 3,
     Sum: 4,
     Product: 5,
+    Sub: 6,
 } as const;
 export type SpecialOperator =
     (typeof SpecialOperator)[keyof typeof SpecialOperator];
@@ -16,6 +17,7 @@ specialOperatorMap.set("integral", SpecialOperator.Integral);
 specialOperatorMap.set("defintegral", SpecialOperator.DefiniteIntegral);
 specialOperatorMap.set("sum", SpecialOperator.Sum);
 specialOperatorMap.set("product", SpecialOperator.Product);
+specialOperatorMap.set("sub", SpecialOperator.Sub);
 
 export function getSpecialOperator(value: string): SpecialOperator | null {
     if (specialOperatorMap.has(value)) {

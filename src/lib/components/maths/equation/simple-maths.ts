@@ -21,6 +21,8 @@ export const TokenType = {
     Root: 6,
     /** Identifier with super and sub, e.g. definite integral */
     SubSuperIdentifier: 7,
+    /** Subscript for identifier */
+    Sub: 8,
 } as const;
 export type TokenType = typeof TokenType;
 
@@ -68,6 +70,12 @@ export type SubSuperIdentifierToken = {
     subTokens: Token[];
 };
 
+export type SubIdentifierToken = {
+    type: typeof TokenType.Sub;
+    identifierToken: Token;
+    subTokens: Token[];
+};
+
 export type Token =
     | IdentifierToken
     | OperatorToken
@@ -76,7 +84,8 @@ export type Token =
     | BracketToken
     | SquareRootToken
     | RootToken
-    | SubSuperIdentifierToken;
+    | SubSuperIdentifierToken
+    | SubIdentifierToken;
 
 export function parseEquation(equation: string): Token[] {
     const rawTokens = parseToTokens(equation);
@@ -179,7 +188,8 @@ type Step2Double = {
     actualType:
         | typeof RawMathsTokenType.Divide
         | typeof RawMathsTokenType.Exponent
-        | typeof RawMathsTokenType.Root;
+        | typeof RawMathsTokenType.Root
+        | typeof RawMathsTokenType.Sub;
     first: Step2Token;
     second: Step2Token;
 };
@@ -232,7 +242,8 @@ function parseStep2(step1Tokens: Step1Token[]): Step2Token[] {
                 tokenType === RawMathsTokenType.Divide ||
                 tokenType === RawMathsTokenType.Exponent ||
                 tokenType === RawMathsTokenType.Root ||
-                tokenType === RawMathsTokenType.SubSuperElement
+                tokenType === RawMathsTokenType.SubSuperElement ||
+                tokenType === RawMathsTokenType.Sub
             ) {
                 // append this onto previous
                 // add previous tokens
@@ -391,6 +402,12 @@ function parseStep3(step2Tokens: Step2Token[]): Token[] {
                     type: TokenType.SubSuperIdentifier,
                     identifier: step2Token.identifier,
                     superTokens: convertTokenToArray(subFirst),
+                    subTokens: convertTokenToArray(subSecond),
+                };
+            } else if (step2Token.actualType === RawMathsTokenType.Sub) {
+                return {
+                    type: TokenType.Sub,
+                    identifierToken: subFirst,
                     subTokens: convertTokenToArray(subSecond),
                 };
             } else {
