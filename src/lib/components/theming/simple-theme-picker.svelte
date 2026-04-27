@@ -21,9 +21,9 @@
     }
 
     const themeValues: [SimpleTheme, string][] = [
-        [SimpleTheme.Purple, "purple"],
-        [SimpleTheme.Blue, "blue"],
-        [SimpleTheme.Orange, "orange"],
+        [SimpleTheme.Purple, "#28083f"],
+        [SimpleTheme.Blue, "#82d9e5"],
+        [SimpleTheme.Orange, "#d88117"],
     ];
 </script>
 

@@ -8,7 +8,7 @@
 
 <p>
     To be more serious, I do have some social media but I've never been a
-    Poster.
+    Poster™.
 </p>
 
 <p>

@@ -75,7 +75,10 @@
 
     .splodge-children {
         grid-area: 1 / 1;
-        text-shadow: 2px 2px var(--background-color-2);
+        --negative-fill: rgb(
+            from var(--fill-colour) calc(255 - r) calc(255 - g) calc(255 - b)
+        );
+        text-shadow: 1px 1px var(--negative-fill);
 
         width: 100%;
         height: 100%;
@@ -90,8 +93,6 @@
         height: 100%;
 
         /* set to opposite colour so text is legible */
-        color: rgb(
-            from var(--fill-colour) calc(255 - r) calc(255 - g) calc(255 - b)
-        );
+        color: var(--negative-fill);
     }
 </style>

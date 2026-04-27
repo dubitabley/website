@@ -37,6 +37,15 @@
             "written": "Emilíana Torrini",
             "rendition": "https://youtu.be/_uwLbjzWV10",
             "links": ["https://en.wikipedia.org/wiki/Emil%C3%ADana_Torrini"]
+        },
+        {
+            "song_name": "Friday Morning",
+            "singer": "Robert Johnson",
+            "written": "Sydney Carter",
+            "rendition": "https://youtu.be/JkbESgapBfE",
+            "links": [
+                "https://en.wikipedia.org/wiki/It_Was_on_a_Friday_Morning"
+            ]
         }
     ]
 }
