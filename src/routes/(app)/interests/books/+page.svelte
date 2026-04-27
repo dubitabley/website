@@ -3,12 +3,14 @@
     import Books from "$lib/interests/books.json";
     import StarRating from "$lib/components/star-rating.svelte";
     import ConfusionRating from "$lib/components/confusion-rating.svelte";
+    import BookRatingExplanation from "$lib/components/books/book-rating-explanation.svelte";
 
     let { data }: PageProps = $props();
 </script>
 
 <h2 class="book-header">Books I've read</h2>
-<div>This is what I do instead of using goodreads I guess.</div>
+<p>This is what I do instead of using goodreads I guess.</p>
+<BookRatingExplanation />
 <br />
 <div class="book-all">
     {#each Books.books.reverse() as book}
@@ -41,15 +43,9 @@
     }
 
     .book-all {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
-    }
-
-    .main-book-info {
-        min-width: 300px;
-        margin-bottom: 10px;
     }
 
     .book-info {

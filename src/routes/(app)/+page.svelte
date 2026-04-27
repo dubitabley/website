@@ -8,6 +8,8 @@
     import Poems from "$lib/interests/poems.json";
     import Posts from "$lib/interests/posts.json";
     import Misc from "$lib/interests/misc.json";
+    import Tooltip from "$lib/components/misc/tooltip.svelte";
+    import BookRatingExplanation from "$lib/components/books/book-rating-explanation.svelte";
 
     function getLatest<T>(array: T[]): T {
         return array[array.length - 1];
@@ -92,7 +94,11 @@
             </div>
             {#if latestBook.rating}
                 <div>
-                    <span>Rating: </span>
+                    <span
+                        >Rating<Tooltip>
+                            <div><BookRatingExplanation /></div>
+                        </Tooltip>:
+                    </span>
                     <StarRating rating={latestBook.rating} />
                 </div>
             {/if}

@@ -287,5 +287,5 @@
         This is a bit handwavy and I don't formalise it much but there are other
         proofs given in the book chapter I'm basing this off which I may return
         to.
-        </p>
+    </p>
 </div>
