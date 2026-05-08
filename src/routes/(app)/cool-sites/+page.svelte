@@ -47,3 +47,17 @@
         avoiding the bland colours of most tech adjacent websites these days.
     </p>
 </div>
+
+<div>
+    <a href="https://www.webdesignmuseum.org/"
+        >https://www.webdesignmuseum.org/</a
+    >
+    <p>
+        The web design museum. A museum for the web seems kinda interesting and
+        I believe the most engaging parts of this are the web design history
+        timeline and the flash games. I grew up on flash games like <a
+            href="https://www.webdesignmuseum.org/flash-games/stick-cricket-in-2003"
+            >Stick Cricket</a
+        > so this is a massive dose of nostalgia.
+    </p>
+</div>
