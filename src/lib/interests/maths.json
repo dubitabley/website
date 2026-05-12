@@ -17,6 +17,12 @@
             "description": "Adapting a chapter from a number theory book on Farey Sequences",
             "link": "farey",
             "date": "2026-04-26"
+        },
+        {
+            "post_name": "Ye Olde Fractions",
+            "description": "Talking about how fractions used to be done",
+            "link": "ye-olde-fractions",
+            "date": "2026-05-13"
         }
     ]
 }

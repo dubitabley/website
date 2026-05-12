@@ -99,6 +99,18 @@
             "book_name": "The Shadow Weaver",
             "author": "Ivy Cliffwater",
             "rating": 1
+        },
+        {
+            "book_name": "Prime Obsession",
+            "author": "John Derbyshire",
+            "rating": 4,
+            "date": "2026-05-02"
+        },
+        {
+            "book_name": "The Man of Numbers",
+            "author": "Keith Devlin",
+            "rating": 2,
+            "date": "2026-05-11"
         }
     ]
 }
