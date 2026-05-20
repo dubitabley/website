@@ -111,6 +111,12 @@
             "author": "Keith Devlin",
             "rating": 2,
             "date": "2026-05-11"
+        },
+        {
+            "book_name": "The Tapestry of Time",
+            "author": "Kate Heartfield",
+            "rating": 3,
+            "date": "2026-05-15"
         }
     ]
 }
