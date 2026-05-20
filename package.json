@@ -15,12 +15,12 @@
     "dependencies": {},
     "devDependencies": {
         "@sveltejs/adapter-static": "^3.0.10",
-        "@sveltejs/kit": "^2.57.1",
-        "@sveltejs/vite-plugin-svelte": "^7.0.0",
-        "svelte": "^5.55.4",
-        "svelte-check": "^4.4.6",
-        "typescript": "^5.9.3",
-        "vite": "^8.0.8",
-        "vitest": "^4.1.4"
+        "@sveltejs/kit": "^2.60.1",
+        "@sveltejs/vite-plugin-svelte": "^7.1.2",
+        "svelte": "^5.55.8",
+        "svelte-check": "^4.4.8",
+        "typescript": "^6.0.3",
+        "vite": "^8.0.13",
+        "vitest": "^4.1.6"
     }
 }
