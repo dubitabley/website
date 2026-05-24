@@ -5,10 +5,12 @@
     import { fly } from "svelte/transition";
     import Draft1 from "./draft-1.svelte";
     import Final from "./final.svelte";
+    import Draft2 from "./draft-2.svelte";
 
     const CurrentPage = {
         Final: 0,
         Draft1: 1,
+        Draft2: 2,
     } as const;
     type CurrentPage = (typeof CurrentPage)[keyof typeof CurrentPage];
 
@@ -18,6 +20,8 @@
                 return "Final";
             case CurrentPage.Draft1:
                 return "Draft 1";
+            case CurrentPage.Draft2:
+                return "Draft 2";
             default:
                 throw new Error(`Invalid page`);
         }
@@ -44,6 +48,13 @@
     >
         <Draft1 />
     </div>
+{:else if currentPage === CurrentPage.Draft2}
+    <div
+        in:fly={{ x: -200, duration: 300 }}
+        out:fly={{ x: 200, duration: 300 }}
+    >
+        <Draft2 />
+    </div>
 {/if}
 
 <div class="final-section">
@@ -58,6 +69,7 @@
         values={[
             buttonLabel(CurrentPage.Final),
             buttonLabel(CurrentPage.Draft1),
+            buttonLabel(CurrentPage.Draft2),
         ]}
         bind:value={currentPage}
     />

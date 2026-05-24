@@ -16,7 +16,7 @@
 </script>
 
 <div>
-    This is a draft. Enable criticism here:
+    This is a draft. View criticisms by ticking:
     <input type="checkbox" bind:checked={enabled} />
 </div>
 {@render children()}
