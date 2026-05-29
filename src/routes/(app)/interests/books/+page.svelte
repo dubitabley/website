@@ -16,7 +16,7 @@
     {#each Books.books.reverse() as book}
         <div class="book-info">
             <div class="main-book-info">
-                <span>
+                <span class="book-name">
                     {book.book_name}
                 </span>
                 <br />
@@ -61,5 +61,9 @@
 
     .rating-wrapper {
         padding: 2px;
+    }
+
+    .book-name {
+        font-size: 1.4em;
     }
 </style>

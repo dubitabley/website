@@ -16,7 +16,7 @@
             I love Minecraft. I played it back around 2009-10 and <Criticism
                 >{#snippet criticism()}
                     Fix this up a little
-                {/snippet}occassionally pick it up</Criticism
+                {/snippet}occasionally pick it up</Criticism
             >. Recently I went for another bout to distract myself from
             <i>life</i> and have some thoughts on the game, its balancing and future.
             Minecraft is a sandbox game and there's many different ways to enjoy it

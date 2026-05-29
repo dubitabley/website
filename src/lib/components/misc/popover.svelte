@@ -66,6 +66,8 @@
 
         margin-bottom: calc(2 * var(--size));
         padding: 10px;
+
+        max-width: 20em;
     }
 
     .popover {
