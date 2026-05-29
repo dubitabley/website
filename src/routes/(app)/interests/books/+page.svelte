@@ -23,10 +23,14 @@
                 <span>by&nbsp;</span><span>{book.author}</span>
             </div>
             {#if book.rating}
-                <StarRating rating={book.rating} />
+                <div class="rating-wrapper">
+                    <StarRating rating={book.rating} />
+                </div>
             {/if}
             {#if book.confusion}
-                <ConfusionRating amount={book.confusion} />
+                <div class="rating-wrapper">
+                    <ConfusionRating amount={book.confusion} />
+                </div>
             {/if}
             {#if book.link}
                 <div>
@@ -53,5 +57,9 @@
         padding: 20px;
         border: 4px inset var(--primary-color-2);
         margin-bottom: 4px;
+    }
+
+    .rating-wrapper {
+        padding: 2px;
     }
 </style>

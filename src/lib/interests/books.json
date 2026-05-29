@@ -135,6 +135,13 @@
             "author": "Andrea Stewart",
             "rating": 2,
             "date": "2026-05-26"
+        },
+        {
+            "book_name": "The Broom of the System",
+            "author": "David Foster Wallace",
+            "rating": 3,
+            "confusion": 3,
+            "date": "2026-05-29"
         }
     ]
 }
