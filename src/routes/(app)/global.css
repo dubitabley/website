@@ -22,10 +22,6 @@ html {
     &[data-background="flat"] {
         background: var(--background-color-2);
     }
-
-    &[data-background="spiral"] {
-        
-    }
 }
 
 a {
