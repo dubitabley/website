@@ -1,13 +1,19 @@
 <script lang="ts">
+    import CustomRadio from "../misc/custom-radio.svelte";
+    import { BackgroundType, getAllBackgroundTypes } from "./background-misc";
     import { getThemeFromSimple, SimpleTheme } from "./simple-theme-misc";
     import { type CustomTheme } from "./theme-misc";
     import ThemeSplodge from "./theme-splodge.svelte";
 
     type AdvancedThemeProps = {
         customTheme: CustomTheme;
+        background: BackgroundType;
     };
 
-    let { customTheme = $bindable() }: AdvancedThemeProps = $props();
+    let {
+        customTheme = $bindable(),
+        background = $bindable(),
+    }: AdvancedThemeProps = $props();
 
     let simpleTheme: SimpleTheme | null = $state(null);
 
@@ -29,7 +35,7 @@
 
 <div>Pick from a selection of colours for a pre-defined colour scheme!</div>
 
-<h3>Theme:</h3>
+<h3>Colour Theme:</h3>
 <div class="theme-wrapper">
     {#each themeValues as [theme, colour], index}
         <ThemeSplodge
@@ -41,6 +47,14 @@
             {theme}
         </ThemeSplodge>
     {/each}
+</div>
+<h3>Background Style:</h3>
+<div class="theme-wrapper">
+    <CustomRadio
+        name="background"
+        values={getAllBackgroundTypes()}
+        bind:value={background}
+    />
 </div>
 
 <style>

@@ -100,6 +100,10 @@
         );
     }
 
+    :root[data-background="flat"] .header {
+        background: var(--background-color-2);
+    }
+
     .header-theming {
         justify-content: end;
     }

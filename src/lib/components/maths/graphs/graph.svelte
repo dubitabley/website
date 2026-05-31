@@ -2,7 +2,7 @@
     import type { Snippet } from "svelte";
     import { setGraphContext, type GraphObject } from "./graph-types";
     import { SvelteSet } from "svelte/reactivity";
-    import { getCurrentTheme } from "$lib/components/misc/theme";
+    import { getCurrentTheme } from "$lib/components/theming/theme";
 
     type Dims = {
         left: number;

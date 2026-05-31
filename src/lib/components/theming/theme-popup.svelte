@@ -10,6 +10,7 @@
     } from "./theme-misc";
     import SimpleThemePicker from "./simple-theme-picker.svelte";
     import AdvancedThemePicker from "./advanced-theme-picker.svelte";
+    import { BackgroundType } from "./background-misc";
 
     // for decoration
     let randomColour1 = $state(getRandomColour());
@@ -17,9 +18,11 @@
 
     type ThemePopupProps = {
         theme: Theme;
+        background: BackgroundType;
     };
 
-    let { theme = $bindable() }: ThemePopupProps = $props();
+    let { theme = $bindable(), background = $bindable() }: ThemePopupProps =
+        $props();
 
     let customTheme: CustomTheme = $state({
         themeType: ThemeType.Custom,
@@ -28,6 +31,7 @@
 
     // for resetting
     let oldTheme: Theme = $state({ themeType: ThemeType.System });
+    let oldBackground: BackgroundType = $state(BackgroundType.Default);
 
     let simpleTheme = $state(true);
 
@@ -36,6 +40,7 @@
     function onToggle(event: ToggleEvent) {
         if (event.newState === "open") {
             oldTheme = theme;
+            oldBackground = background;
 
             randomColour1 = getRandomColour();
             randomColour2 = getRandomColour();
@@ -55,6 +60,7 @@
     function closePopover() {
         // set the old theme to the current theme so resetting doesn't override it
         oldTheme = theme;
+        oldBackground = background;
         // closes the popover without resetting the theme
         popoverElement.hidePopover();
     }
@@ -66,6 +72,7 @@
             themeType: ThemeType.Custom,
             customValues: themeValues,
         };
+        background = oldBackground;
     }
 
     $effect(() => {
@@ -90,7 +97,7 @@
     </div>
 
     {#if simpleTheme}
-        <SimpleThemePicker bind:customTheme />
+        <SimpleThemePicker bind:customTheme bind:background />
     {:else}
         <AdvancedThemePicker bind:customTheme />
     {/if}

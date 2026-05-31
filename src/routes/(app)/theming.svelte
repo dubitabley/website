@@ -7,9 +7,16 @@
     } from "$lib/components/theming/theme-misc";
     import { onMount } from "svelte";
     import ThemePopup from "$lib/components/theming/theme-popup.svelte";
+    import {
+        BackgroundType,
+        getBackgroundFromLocalStorage,
+        setBackground,
+    } from "$lib/components/theming/background-misc";
 
     let theme: Theme = $state({ themeType: ThemeType.System });
     type CheckboxTheme = typeof ThemeType.Light | typeof ThemeType.Dark;
+
+    let background: BackgroundType = $state(BackgroundType.Default);
 
     function selectTheme(
         checkboxTheme: CheckboxTheme,
@@ -27,10 +34,18 @@
         if (themeValue) {
             theme = themeValue;
         }
+
+        const backgroundValue = getBackgroundFromLocalStorage();
+        if (backgroundValue) {
+            background = backgroundValue;
+        }
     });
 
     $effect(() => {
         setTheme(theme);
+    });
+    $effect(() => {
+        setBackground(background);
     });
 </script>
 
@@ -61,7 +76,7 @@
         <span>Custom</span>
     </label>
 </span>
-<ThemePopup bind:theme />
+<ThemePopup bind:theme bind:background />
 
 <style>
     /* Hide inputs so we can apply custom style */

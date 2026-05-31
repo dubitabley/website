@@ -18,6 +18,14 @@ html {
     );
 
     min-height: 100dvh;
+
+    &[data-background="flat"] {
+        background: var(--background-color-2);
+    }
+
+    &[data-background="spiral"] {
+        
+    }
 }
 
 a {
