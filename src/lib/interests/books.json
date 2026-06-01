@@ -122,7 +122,8 @@
             "book_name": "The Murdstone Trilogy",
             "author": "Mal Peet",
             "rating": 4,
-            "date": "2026-05-22"
+            "date": "2026-05-22",
+            "link": "murdstone-trilogy"
         },
         {
             "book_name": "Poincaré's Prize",
