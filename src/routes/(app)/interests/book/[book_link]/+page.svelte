@@ -10,11 +10,13 @@
 
     let BookComponent: Component | null = $state(null);
 
-    import(`$lib/interests/books/${bookInfo().link}.svelte`)
-        .then((component) => {
-            BookComponent = component.default;
-        })
-        .catch(() => {});
+    $effect(() => {
+        import(`$lib/interests/books/${bookInfo().link}.svelte`)
+            .then((component) => {
+                BookComponent = component.default;
+            })
+            .catch(() => {});
+    });
 
     const bookQuotes = Quotes.quotes.filter(
         (x) => x.bookLink === bookInfo().link,
