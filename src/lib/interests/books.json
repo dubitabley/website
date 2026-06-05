@@ -149,6 +149,13 @@
             "author": "Elizabeth Strout",
             "rating": 2,
             "date": "2026-06-03"
+        },
+        {
+            "book_name": "The Pope's Daughter",
+            "author": "Dario Fo",
+            "date": "2026-06-05",
+            "rating": 3,
+            "link": "popes-daughter"
         }
     ]
 }
