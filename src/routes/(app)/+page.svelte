@@ -28,11 +28,10 @@
 <div class="summary">
     Hello and welcome to dubitable's website!
     <br />
-    Idk what to put here.
+    Idk what to put here but
+    <a href="/slashes">here's a link to the slash pages for the site</a>.
     <br />
     <a href="/about">About me</a>
-    <br />
-    <a href="/socials">Socials</a>
     <br />
     Some things I'm interested in I guess:
 </div>

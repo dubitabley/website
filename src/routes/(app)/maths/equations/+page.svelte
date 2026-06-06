@@ -21,15 +21,15 @@
 <p>
     I want to write some maths posts on this website, mainly for fun and also
     for personal notes. Perhaps someone else could find them useful too. However
-    I want to be able to write equations in these posts easily. The way to do
+    I want to be able to write equations in these posts easily and the way to do
     this natively on the web is to use <a
         href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a
-    > but this is a bit laborious to do by hand. Most solutions use LateX formatting
+    > but this is quite laborious to do by hand. Most solutions use LateX formatting
     for maths equations which is neat but I find it a little heavy on the syntax and
-    I don't want to use a library for parsing so I wrote my own for my own custom
-    format designed to be dead simple and intuitive. It's using a custom parsing and
-    transforming system written in typescript that then uses a Svelte component for
-    outputting as MathML.
+    I don't want to use an external library for handling this so I wrote my own for
+    my own custom format designed to be dead simple and (mostly) intuitive. It's using
+    a custom parsing and transforming system written in typescript that then uses
+    a Svelte component for outputting as MathML.
 </p>
 <h3>Examples:</h3>
 {@render EquationDemonstration("5+4")}
@@ -63,12 +63,12 @@
     expressions it wasn't easy to use so just using square brackets instead.
 </p>
 <p>
-    For special operators, we have \sqrt for square root, \root for general. The
-    identifier before \root is the root of the radical and the identifier
-    afterwards is the value inside the root. There's also \integral which shows
-    the integral symbol, while \definteral has the upper bound before it and the
-    lower bound after it. There's also \sum and \product for summation and
-    products similarly.
+    For special operators, we have \sqrt for a square root, \root for general
+    roots. The identifier before \root is the root of the radical and the
+    identifier afterwards is the value inside the root. There's also \integral
+    which shows the integral symbol, while \definteral has the upper bound
+    before it and the lower bound after it. There's also \sum and \product for
+    summation and products similarly.
 </p>
 
 <style>

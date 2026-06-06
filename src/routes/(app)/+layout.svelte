@@ -12,25 +12,25 @@
     <link
         rel="alternate"
         type="application/rss+xml"
-        href="/feed/posts.xml"
+        href="/feeds/posts.xml"
         title="My weblog posts"
     />
     <link
         rel="alternate"
         type="application/rss+xml"
-        href="/feed/all.xml"
+        href="/feeds/all.xml"
         title="Everything I post"
     />
     <link
         rel="alternate"
         type="application/rss+xml"
-        href="/feed/books.xml"
+        href="/feeds/books.xml"
         title="Stuff I post about books"
     />
     <link
         rel="alternate"
         type="application/rss+xml"
-        href="/feed/poems.xml"
+        href="/feeds/poems.xml"
         title="When I have the poetry itch"
     />
     <meta property="og:type" content="website" />
