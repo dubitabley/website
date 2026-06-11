@@ -12,7 +12,7 @@
     <h4>Footnotes</h4>
     {#each footnotes as footnote, index}
         <div>
-            [{index}] - {@render footnote()}
+            <a href="#footnote-{index}">[{index}]</a> - {@render footnote()}
         </div>
     {/each}
 {/if}

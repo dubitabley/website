@@ -35,7 +35,7 @@
     but they're not supported in firefox currently so can't
 -->
 
-<sup class="footnote">
+<sup class="footnote" id="footnote-{footnoteId}">
     <button onclick={(e) => toggleVisible(<HTMLElement>e.target)}>
         [{footnoteId}]
     </button>

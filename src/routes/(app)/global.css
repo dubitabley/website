@@ -32,6 +32,10 @@ a:visited {
     color: hsl(100, 100%, var(--secondary-lightness));
 }
 
+img {
+    max-width: 100%;
+}
+
 .button {
     background-color: inherit;
     border: 3px solid var(--primary-color);
