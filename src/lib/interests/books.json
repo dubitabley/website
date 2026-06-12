@@ -156,6 +156,12 @@
             "date": "2026-06-05",
             "rating": 3,
             "link": "popes-daughter"
+        },
+        {
+            "book_name": "The Kingdom of Liars",
+            "author": "Nick Martell",
+            "date": "2026-06-11",
+            "rating": 4
         }
     ]
 }
