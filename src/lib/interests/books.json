@@ -162,6 +162,24 @@
             "author": "Nick Martell",
             "date": "2026-06-11",
             "rating": 4
+        },
+        {
+            "book_name": "Momenticon",
+            "author": "Andrew Caldecott",
+            "date": "2026-06-17",
+            "rating": 2
+        },
+        {
+            "book_name": "The Two-Faced Queen",
+            "author": "Nick Martell",
+            "date": "2026-06-18",
+            "rating": 3
+        },
+        {
+            "book_name": "The Voyage of the Forgotten",
+            "author": "Nick Martell",
+            "date": "2026-06-19",
+            "rating": 3
         }
     ]
 }
