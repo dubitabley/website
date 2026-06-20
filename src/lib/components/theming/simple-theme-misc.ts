@@ -1,4 +1,4 @@
-import type { ThemeValues } from "./theme-misc";
+import { ColourScheme, type ThemeValues } from "./theme-misc";
 
 export const SimpleTheme = {
     Purple: "purple",
@@ -28,6 +28,8 @@ const PURPLE_THEME: ThemeValues = {
 
     backgroundColour: "#28083f",
     backgroundColour2: "#1b012d",
+
+    colourScheme: ColourScheme.Dark,
 };
 
 const BLUE_THEME: ThemeValues = {
@@ -39,6 +41,8 @@ const BLUE_THEME: ThemeValues = {
 
     backgroundColour: "#82d9e5",
     backgroundColour2: "#7184e2",
+
+    colourScheme: ColourScheme.Light,
 };
 
 const ORANGE_THEME: ThemeValues = {
@@ -50,4 +54,6 @@ const ORANGE_THEME: ThemeValues = {
 
     backgroundColour: "#080f08",
     backgroundColour2: "#0e161c",
+
+    colourScheme: ColourScheme.Dark,
 };

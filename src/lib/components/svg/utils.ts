@@ -1,5 +1,3 @@
-import type { CrossfadeParams, TransitionConfig } from "svelte/transition";
-
 /**
  * Generates an SVG path for a regular polygon
  * @param radius The radius of the polygon

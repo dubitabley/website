@@ -97,6 +97,8 @@ function setCustomTheme(customTheme: ThemeValues) {
         "--secondary-lightness",
         `${customTheme.secondaryLightness}%`,
     );
+
+    root.style.setProperty("--color-scheme", customTheme.colourScheme);
 }
 
 function clearCustomTheme() {
@@ -108,6 +110,7 @@ function clearCustomTheme() {
     root.style.removeProperty("--primary-color-2");
     root.style.removeProperty("--primary-lightness");
     root.style.removeProperty("--secondary-lightness");
+    root.style.removeProperty("--color-scheme");
 }
 
 export function getThemeFromLocalStorage(): Theme | null {
@@ -166,6 +169,13 @@ export function shallowClone(themeValues: ThemeValues): ThemeValues {
     return Object.assign({}, themeValues);
 }
 
+export const ColourScheme = {
+    Normal: "normal",
+    Light: "light",
+    Dark: "dark",
+} as const;
+export type ColourScheme = (typeof ColourScheme)[keyof typeof ColourScheme];
+
 export type ThemeValues = {
     primaryColour: string;
     primaryColour2: string;
@@ -176,6 +186,8 @@ export type ThemeValues = {
 
     backgroundColour: string;
     backgroundColour2: string;
+
+    colourScheme: ColourScheme;
 };
 
 /* values need to be kept in sync with global.css */
@@ -188,6 +200,8 @@ export const DARK_THEME: ThemeValues = {
 
     primaryLightness: 10,
     secondaryLightness: 80,
+
+    colourScheme: ColourScheme.Dark,
 };
 
 export const LIGHT_THEME: ThemeValues = {
@@ -199,4 +213,6 @@ export const LIGHT_THEME: ThemeValues = {
 
     primaryLightness: 90,
     secondaryLightness: 20,
+
+    colourScheme: ColourScheme.Light,
 };

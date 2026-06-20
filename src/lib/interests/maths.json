@@ -23,6 +23,12 @@
             "description": "Talking about how fractions used to be done",
             "link": "ye-olde-fractions",
             "date": "2026-05-13"
+        },
+        {
+            "post_name": "Stellation",
+            "description": "Talking about stars geometrically",
+            "link": "stellation",
+            "date": "2026-06-20"
         }
     ]
 }
