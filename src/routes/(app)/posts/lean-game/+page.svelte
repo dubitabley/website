@@ -26,7 +26,8 @@
             >Normally you denote the Natural Numbers with a <a
                 href="https://en.wikipedia.org/wiki/Blackboard_bold"
                 >Blackboard bold</a
-            > N but there's no easy way to typeset that so I'll just use a bold N</Footnote
+            > N but there's no easy way to typeset that so I'll just use a bold N.
+            There is ℕ defined in Unicode but it displays poorly.</Footnote
         >. These are called that since they're just the counting numbers, i.e.
         numbers that you can get from counting. So 0,1,2,3,etc. We define
         addition, multiplication and powers on these numbers and prove important
@@ -48,27 +49,31 @@
         into two cases; one is a base case so for the natural numbers this will be
         when the value is 0; the other case is the inductive step where we can assume
         it's true for n-1 and we have to prove that that implies it's true for n as
-        well.
+        well. Induction is immensely powerful for solving varied types of propositions,
+        especially on something basic like natural numbers since they have a start
+        point and go on forever.
     </p>
     <p>
         One aspect that's especially pleasing about the NNG is that many of the
         lemmas/theorems that you prove are then used later on so it's as if
         you're building your own foundations up as you go along. This would be
         cool to incorporate into more puzzle games to give context to the
-        puzzles. It would mean the intermediate puzzles can serve purposes of
-        both learning the mechanics and building towards the final objective.
+        puzzles. It means the intermediate puzzles can serve the purpose of both
+        learning the mechanics and building towards the final objective in a
+        meaningful way.
     </p>
     <h3>The impossible level</h3>
     <p>
-        The final level in the Power World is actually essentially impossible
-        since it asks you to prove Fermat's Last Theorem which was famously one
-        of the great unsolved problems in Mathematics for centuries before
-        finally being proven by Andrew Wiles in 1995. Solving it would require
-        millions of lines of Lean code and would be fiendishly difficult to do
-        since it uses many advanced techniques. This is kinda cool to do
-        although it does spoil my finished game a bit since there's a
-        level/world that's unbeaten. Still it demonstrates the horizon so we can
-        grasp the power of Lean as a proof assistant for proper mathematics.
+        The final level in the Power World is essentially impossible since it
+        asks you to prove Fermat's Last Theorem which was famously one of the
+        great unsolved problems in Mathematics for centuries before finally
+        being proven by Andrew Wiles in 1995. Solving it would require millions
+        of lines of Lean code and would be fiendishly difficult to do since it
+        uses many advanced techniques. This is kinda cool to have in the game
+        although it does spoil my finished playthrough somewhat since there's
+        always one level/world that's unbeaten. It functions within the game as
+        demonstrating the horizon so we can grasp the power of Lean as a proof
+        assistant for proper mathematics.
     </p>
     <h3>The Mechanics</h3>
     <p>
@@ -80,7 +85,7 @@
         purposes which made it very flexible but also hard to keep track of. The
         syntax was also a bit awkward to get used to at first, with
         <code>rw</code> being the only tactic to require square brackets. After some
-        usage I could get used to it but it added a little confusion early on. There
+        usage I did get accustomed to that but it added confusion early on. There
         are hints for the difficult levels which are very useful and it makes it more
         of a challenge to complete the levels without those hints. The main criticisms
         of the game are around it being slow to load and a bit buggy which was quite
