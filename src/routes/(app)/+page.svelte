@@ -41,7 +41,7 @@
         <span class="panel-title">Latest web log</span>
         <div>
             <div>
-                <a href="./posts/{latestPost.link}">{latestPost.summary}</a>
+                <a href="./posts/{latestPost.link}">{latestPost.name}</a>
             </div>
             <div>
                 <a href="./posts">All posts</a>
