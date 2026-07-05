@@ -35,10 +35,14 @@ export function GET(): Response {
 
 export function _getPostItems(): Item[] {
     return Posts.posts.map((post) => {
+        const icon = post.icon
+            ? `<img src="/post-images/${post.icon}" alt="Icon for the post '${post.name}'" />`
+            : "";
+        const description = `${icon}${post.summary}`;
         return {
             title: post.name,
             link: `${domain}/posts/${post.link}`,
-            description: post.summary,
+            description: description,
             pubDate: post.date,
         };
     });

@@ -56,7 +56,8 @@
         },
         {
             "name": "The Natural Numbers Game as a Video Game",
-            "summary": "<img src=\"/images/natural_numbers.png\" alt=\"hoppip\" />Analysing how a mathematical learning game functions as a conventional video game",
+            "summary": "Analysing how a mathematical learning game functions as a conventional video game",
+            "icon": "natural-numbers.png",
             "link": "lean-game",
             "date": "2026-07-05"
         }
