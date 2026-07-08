@@ -180,6 +180,24 @@
             "author": "Nick Martell",
             "date": "2026-06-19",
             "rating": 3
+        },
+        {
+            "book_name": "The Tempest",
+            "author": "William Shakespeare",
+            "date": "2026-07-02",
+            "rating": 3
+        },
+        {
+            "book_name": "The Calculus Diaries",
+            "author": "Jennifer Ouellette",
+            "date": "2026-07-04",
+            "rating": 2
+        },
+        {
+            "book_name": "The Made-Up Man",
+            "author": "Joseph Scapellato",
+            "date": "2026-07-08",
+            "rating": 4
         }
     ]
 }
