@@ -55,6 +55,7 @@ specialIdentifierMap.set("u_omega", "Ω");
 // others
 specialIdentifierMap.set("infinity", "∞");
 specialIdentifierMap.set("middot", "·"); // interpunct
+specialIdentifierMap.set("degrees", "°");
 
 export function getSpecialValue(value: string): string | null {
     if (specialIdentifierMap.has(value)) {

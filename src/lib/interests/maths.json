@@ -29,6 +29,12 @@
             "description": "Talking about stars geometrically",
             "link": "stellation",
             "date": "2026-06-20"
+        },
+        {
+            "post_name": "Trigonometric Functions",
+            "description": "Actually considering how trigonometric functions work",
+            "link": "trig-functions",
+            "date": "2026-07-18"
         }
     ]
 }

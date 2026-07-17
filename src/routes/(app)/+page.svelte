@@ -41,6 +41,7 @@
         <span class="panel-title">Latest web log</span>
         <div>
             <div>
+                <span><b>Post:</b></span>
                 <a href="./posts/{latestPost.link}">{latestPost.name}</a>
             </div>
             <div>
@@ -75,6 +76,11 @@
             <div>
                 <p>
                     {latestMathsPost.description}
+                </p>
+            </div>
+            <div>
+                <p>
+                    <a href="/maths">All maths posts</a>
                 </p>
             </div>
         </div>
@@ -134,8 +140,11 @@
         <span class="panel-title">Latest song</span>
         <div>
             <div>
-                <span><b>Title:</b></span>
-                <span>{latestSong.song_name}</span>
+                <span><b>Song:</b></span>
+                <span
+                    ><a href={latestSong.rendition}>{latestSong.song_name}</a
+                    ></span
+                >
             </div>
             <div>
                 <span>sung by </span>

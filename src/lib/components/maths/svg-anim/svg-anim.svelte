@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
     import { setSvgAnimContext, SvgAnimContext } from "./svg-anim-types.svelte";
+    import SvgBase from "./svg-base.svelte";
 
     type Props = {
         /** The SVG animations to run */
@@ -30,13 +31,7 @@
     {#if title}
         <h3>{title}</h3>
     {/if}
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 {size} {size}"
-        class="svg"
-    >
-        {@render children()}
-    </svg>
+    <SvgBase sizeX={size} sizeY={size} {children} />
     <div class="play-through">
         <button
             class={["svg-button", "reset"]}
@@ -136,13 +131,5 @@
             curve to 26.6% 69.64% with 41.94% 63.21%/28.52% 84.27%,
             close
         );
-    }
-
-    .svg {
-        background-color: light-dark(white, black);
-        stroke-width: 3px;
-        stroke: light-dark(black, white);
-        width: 100%;
-        height: 100%;
     }
 </style>

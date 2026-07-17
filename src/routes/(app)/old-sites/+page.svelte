@@ -106,11 +106,24 @@
             >
                 what's new page
             </a>
-            shows the updates to the site going all the way back to 1993 which
-            is pretty impressive. I also enjoyed some of the writing on
+            shows the updates to the site going all the way back to 1993 which is
+            pretty impressive. I also enjoyed some of the writing on
             <a href="https://www.diggers.org/digpaps68/twatdp.html">
                 this page.
             </a>
+        </p>
+    </div>
+</div>
+
+<div class="site-panel">
+    <a href="https://hypertextbook.com/">Hypertextbook</a>
+    <div>
+        <p>
+            This is a really cool and useful website with various physics and
+            mathematical related essays and stories. I found it originally
+            through <a href="https://hypertextbook.com/eworld/chords/"
+                >this page on Ptolemy's table of Chords</a
+            > but there's many more interesting stuff that might fascinate you.
         </p>
     </div>
 </div>

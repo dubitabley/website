@@ -58,7 +58,7 @@ function angleDistance(angle1: number, angle2: number): number {
  * Clamps an angle to between 0 and 2 * PI
  * @param angle
  */
-function clampAngle(angle: number): number {
+export function clampAngle(angle: number): number {
     let newAngle = angle;
     while (newAngle < 0) {
         newAngle += TAU;
@@ -69,4 +69,8 @@ function clampAngle(angle: number): number {
     }
 
     return newAngle;
+}
+
+export function radiansToDegrees(angle: number): number {
+    return (angle * 180) / Math.PI;
 }
