@@ -44,14 +44,16 @@
 
     setInteractiveSvgContext(interactiveContext);
 
-    function mouseDown(event: MouseEvent) {
+    function mouseDown(event: PointerEvent) {
         const interactiveElement = getElementFromEvent(event);
         if (interactiveElement) {
             draggedElement = interactiveElement;
         }
     }
 
-    function getElementFromEvent(event: MouseEvent): InteractiveElement | null {
+    function getElementFromEvent(
+        event: PointerEvent,
+    ): InteractiveElement | null {
         if (event.target) {
             const element = <SVGElement>event.target;
             const elementId = element?.dataset?.id;
@@ -65,7 +67,7 @@
         return null;
     }
 
-    function mouseMove(event: MouseEvent) {
+    function mouseMove(event: PointerEvent) {
         if (draggedElement) {
             const elementSize = svgElement.getBoundingClientRect();
             draggedElement.moveElement(
@@ -86,9 +88,9 @@
     class="svg"
     role="button"
     tabindex="0"
-    onmousedown={mouseDown}
-    onmouseup={mouseUp}
-    onmousemove={mouseMove}
+    onpointerdown={mouseDown}
+    onpointerup={mouseUp}
+    onpointermove={mouseMove}
     bind:this={svgElement}
 >
     {@render children()}
@@ -100,6 +102,7 @@
         stroke-width: 3px;
         stroke: light-dark(black, white);
         width: 100%;
-        height: 100%;
+        /* https://stackoverflow.com/questions/48124372/pointermove-event-not-working-with-touch-why-not */
+        touch-action: none;
     }
 </style>
