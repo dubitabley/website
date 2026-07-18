@@ -60,6 +60,12 @@
             "icon": "natural-numbers.png",
             "link": "lean-game",
             "date": "2026-07-05"
+        },
+        {
+            "name": "DRS and VAR and TMO, oh my!",
+            "summary": "Going over television reviews in some sports",
+            "link": "sports-tech",
+            "date": "2026-07-18"
         }
     ]
 }
