@@ -3,8 +3,8 @@
 
     type QuoteProps = {
         children: Snippet;
-        by: string;
-        from?: string | null;
+        by?: string;
+        from?: string;
     };
 
     let { children, by, from }: QuoteProps = $props();
@@ -14,10 +14,12 @@
     <div class="quote">
         {@render children()}
     </div>
-    <div class="quote-by">
-        - {by}
-    </div>
-    {#if from != null}
+    {#if by}
+        <div class="quote-by">
+            - {by}
+        </div>
+    {/if}
+    {#if from}
         <span>in `{from}`</span>
     {/if}
 </div>

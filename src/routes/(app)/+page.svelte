@@ -107,6 +107,13 @@
                     <StarRating rating={latestBook.rating} />
                 </div>
             {/if}
+            {#if latestBook.link}
+                <div>
+                    <a href="/interests/book/{latestBook.link}"
+                        >Link to review</a
+                    >
+                </div>
+            {/if}
             <div>
                 <a href="/interests/books">All books</a>
             </div>

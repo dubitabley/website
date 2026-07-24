@@ -198,6 +198,19 @@
             "author": "Joseph Scapellato",
             "date": "2026-07-08",
             "rating": 4
+        },
+        {
+            "book_name": "A Confederacy of Dunces",
+            "author": "John Kennedy Toole",
+            "date": "2026-07-22",
+            "rating": 4
+        },
+        {
+            "book_name": "Origins of Mathematical Words",
+            "author": "Anthony Lo Bello",
+            "date": "2026-07-23",
+            "rating": 3,
+            "link": "origins-of-mathematical-words"
         }
     ]
 }

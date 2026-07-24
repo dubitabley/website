@@ -40,13 +40,13 @@
     <div>No notes on this book found</div>
 {/if}
 
-<div>
-    <h2>Quotes from the book</h2>
-    {#each bookQuotes as bookQuote}
-        <Quote by={bookQuote.by} from={bookQuote.from}>
-            {bookQuote.quote}
-        </Quote>
-    {:else}
-        <div>No quotes for books noted.</div>
-    {/each}
-</div>
+{#if bookQuotes.length > 0}
+    <div>
+        <h2>Quotes from the book</h2>
+        {#each bookQuotes as bookQuote}
+            <Quote by={bookQuote.by} from={bookQuote.from}>
+                {bookQuote.quote}
+            </Quote>
+        {/each}
+    </div>
+{/if}
