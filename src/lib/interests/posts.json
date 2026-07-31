@@ -66,6 +66,12 @@
             "summary": "Going over television reviews in some sports",
             "link": "sports-tech",
             "date": "2026-07-18"
+        },
+        {
+            "name": "I quit my job",
+            "summary": "Welp here we are",
+            "link": "quitting-job",
+            "date": "2026-07-31"
         }
     ]
 }

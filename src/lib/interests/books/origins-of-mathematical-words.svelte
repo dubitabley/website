@@ -136,8 +136,8 @@
         language from these words creeping in such as the
         <a href="https://en.wikipedia.org/wiki/Toubon_Law">Toubon Law</a
         ><Footnote
-            >If you have 30 minutes, <a href="https://youtu.be/eH0wvkZmGKQ"
-                >this video</a
+            >If you have 20 minutes(the last 10 minutes can be skipped), <a
+                href="https://youtu.be/eH0wvkZmGKQ">this video</a
             > on the UK House of Commons debate on French words is quite amusing.</Footnote
         > passed in France in 1994. It does seem to me like the futile attempts of
         a conservative government desperate to keep alive a past that is already dying.
