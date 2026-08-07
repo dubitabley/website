@@ -72,6 +72,12 @@
             "summary": "Welp here we are",
             "link": "quitting-job",
             "date": "2026-07-31"
+        },
+        {
+            "name": "Internet Drama",
+            "summary": "Discussing a bad topic...",
+            "link": "internet-drama",
+            "date": "2026-08-07"
         }
     ]
 }
