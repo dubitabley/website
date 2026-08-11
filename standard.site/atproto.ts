@@ -18,9 +18,8 @@ export async function getAgent() {
     return agent;
 }
 
-// const publicationRecord =
-//     "at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.publication/3mspyhnkjyx2a";
-const site = "dubitable.xyz";
+const siteRecord =
+    "at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.publication/3mspyhnkjyx2a";
 
 export type Publication = {
     title: string;
@@ -62,12 +61,11 @@ export async function createPublicationRecord(
 
     const publicationRecord = {
         $type: "site.standard.document",
-        site: site,
+        site: siteRecord,
         title: publication.title,
         path: publication.path,
-        description: "A short description of your page",
-        publishedAt: "2026-01-01T00:00:00.000Z",
-        textContent: "Paste the full plain text of your page here",
+        description: publication.description,
+        publishedAt: publication.publishedAt,
     };
 
     try {

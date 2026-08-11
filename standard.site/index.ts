@@ -90,6 +90,6 @@ function postToPublication(post: Post): Publication {
         title: post.title,
         description: post.description,
         path: post.path,
-        publishedAt: post.date,
+        publishedAt: post.date + "T00:00:00+12:00", // using NZST
     };
 }

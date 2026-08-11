@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmdwncya2e"/>
+</svelte:head>
 <h1>Kubla Khan</h1>
 <h3>by Samuel Taylor Coleridge</h3>
 

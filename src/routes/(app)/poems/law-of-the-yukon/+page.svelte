@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmdwj27i2k"/>
+</svelte:head>
 <h1>The Law Of The Yukon</h1>
 <h3>by Robert W. Service</h3>
 <p>
