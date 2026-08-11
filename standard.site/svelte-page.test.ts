@@ -1,11 +1,11 @@
 import { expect, test } from "vitest";
 import {
-  addStandardSiteDocument,
-  fileTextHasStandardSiteDocument,
+    addStandardSiteDocument,
+    fileTextHasStandardSiteDocument,
 } from "./svelte-page.ts";
 
 test("working svelte head", () => {
-  const fileText = `
+    const fileText = `
         <script>console.log("test");</script>
         <svelte:head>
             <link
@@ -17,11 +17,11 @@ test("working svelte head", () => {
             <span>test</span>
         </div>
     `;
-  expect(fileTextHasStandardSiteDocument(fileText)).toEqual(true);
+    expect(fileTextHasStandardSiteDocument(fileText)).toEqual(true);
 });
 
 test("no svelte head", () => {
-  const fileText = `
+    const fileText = `
         <script>console.log("test");</script>
         <svelte:head>
             <link
@@ -33,25 +33,25 @@ test("no svelte head", () => {
             <span>test</span>
         </div>
     `;
-  expect(fileTextHasStandardSiteDocument(fileText)).toEqual(false);
+    expect(fileTextHasStandardSiteDocument(fileText)).toEqual(false);
 });
 
 test("new svelte head", () => {
-  const fileText = `
+    const fileText = `
         <script>console.log("test");</script>
         <div>
             <span>test</span>
         </div>
     `;
-  const atRecord =
-    "at://did:plc:your-did/site.standard.document/the-record-rkey";
-  const newValue = addStandardSiteDocument(fileText, atRecord);
-  expect(newValue).contains(atRecord);
-  expect(newValue).contains('rel="site.standard.document"');
+    const atRecord =
+        "at://did:plc:your-did/site.standard.document/the-record-rkey";
+    const newValue = addStandardSiteDocument(fileText, atRecord);
+    expect(newValue).contains(atRecord);
+    expect(newValue).contains('rel="site.standard.document"');
 });
 
 test("modify svelte head", () => {
-  const fileText = `
+    const fileText = `
         <script>console.log("test");</script>
         <svelte:head>
             <link rel="alternate"
@@ -63,9 +63,9 @@ test("modify svelte head", () => {
             <span>test</span>
         </div>
     `;
-  const atRecord =
-    "at://did:plc:your-did/site.standard.document/the-record-rkey";
-  const newValue = addStandardSiteDocument(fileText, atRecord);
-  expect(newValue).contains(atRecord);
-  expect(newValue).contains('rel="site.standard.document"');
+    const atRecord =
+        "at://did:plc:your-did/site.standard.document/the-record-rkey";
+    const newValue = addStandardSiteDocument(fileText, atRecord);
+    expect(newValue).contains(atRecord);
+    expect(newValue).contains('rel="site.standard.document"');
 });

@@ -2,21 +2,21 @@
 
 import { AtpAgent } from "@atproto/api";
 import {
-  createPublicationRecord,
-  getAgent,
-  Publication,
-  PublicationResultType,
+    createPublicationRecord,
+    getAgent,
+    Publication,
+    PublicationResultType,
 } from "./atproto.ts";
-import { getPoemPosts, Post } from "./posts.ts";
+import { getAllPosts, Post } from "./posts.ts";
 import {
-  fileAddStandardSiteDocument,
-  fileHasStandardSiteDocument,
+    fileAddStandardSiteDocument,
+    fileHasStandardSiteDocument,
 } from "./svelte-page.ts";
 
 const PostResultType = {
-  AlreadySetup: "already_setup",
-  AddedSuccessfully: "added_successfully",
-  ErrorOccurred: "error_occurred",
+    AlreadySetup: "already_setup",
+    AddedSuccessfully: "added_successfully",
+    ErrorOccurred: "error_occurred",
 } as const;
 type PostResultType = (typeof PostResultType)[keyof typeof PostResultType];
 
@@ -29,68 +29,67 @@ console.log(`Setup ${result.AddedSuccessfully} posts successfully`);
 console.log(`Failed to configure ${result.ErrorOccurred} posts`);
 
 type CollectPostsResult = {
-  AlreadySetupNum: number;
-  AddedSuccessfully: number;
-  ErrorOccurred: number;
+    AlreadySetupNum: number;
+    AddedSuccessfully: number;
+    ErrorOccurred: number;
 };
 
 async function collectPosts(): Promise<CollectPostsResult> {
-  const poemPostsPromise = getPoemPosts();
-  const posts = (await Promise.all([poemPostsPromise])).flat();
+    const posts = await getAllPosts();
 
-  const agent = await getAgent();
+    const agent = await getAgent();
 
-  const allResults = await Promise.all(
-    posts.map(async (x) => await checkPost(agent, x)),
-  );
+    const allResults = await Promise.all(
+        posts.map(async (x) => await checkPost(agent, x)),
+    );
 
-  const collectedResults = allResults.reduce(
-    (prev: CollectPostsResult, current) => {
-      if (current === PostResultType.AlreadySetup) {
-        prev.AlreadySetupNum += 1;
-      } else if (current === PostResultType.AddedSuccessfully) {
-        prev.AddedSuccessfully += 1;
-      } else if (current === PostResultType.ErrorOccurred) {
-        prev.ErrorOccurred += 1;
-      }
-      return prev;
-    },
-    {
-      AlreadySetupNum: 0,
-      AddedSuccessfully: 0,
-      ErrorOccurred: 0,
-    },
-  );
+    const collectedResults = allResults.reduce(
+        (prev: CollectPostsResult, current) => {
+            if (current === PostResultType.AlreadySetup) {
+                prev.AlreadySetupNum += 1;
+            } else if (current === PostResultType.AddedSuccessfully) {
+                prev.AddedSuccessfully += 1;
+            } else if (current === PostResultType.ErrorOccurred) {
+                prev.ErrorOccurred += 1;
+            }
+            return prev;
+        },
+        {
+            AlreadySetupNum: 0,
+            AddedSuccessfully: 0,
+            ErrorOccurred: 0,
+        },
+    );
 
-  return collectedResults;
+    return collectedResults;
 }
 
 async function checkPost(agent: AtpAgent, post: Post): Promise<PostResultType> {
-  if (await fileHasStandardSiteDocument(post.codePath)) {
-    return PostResultType.AlreadySetup;
-  }
+    if (await fileHasStandardSiteDocument(post.codePath)) {
+        return PostResultType.AlreadySetup;
+    }
 
-  const publication = postToPublication(post);
-  const publicationResult = await createPublicationRecord(agent, publication);
+    const publication = postToPublication(post);
+    const publicationResult = await createPublicationRecord(agent, publication);
 
-  if (publicationResult.resultType === PublicationResultType.Success) {
-    // setup on the page
-    await fileAddStandardSiteDocument(
-      post.codePath,
-      publicationResult.successUri,
-    );
+    if (publicationResult.resultType === PublicationResultType.Success) {
+        // setup on the page
+        await fileAddStandardSiteDocument(
+            post.codePath,
+            publicationResult.successUri,
+        );
 
-    return PostResultType.AddedSuccessfully;
-  } else {
-    return PostResultType.ErrorOccurred;
-  }
+        return PostResultType.AddedSuccessfully;
+    } else {
+        return PostResultType.ErrorOccurred;
+    }
 }
 
 function postToPublication(post: Post): Publication {
-  return {
-    title: post.title,
-    description: post.description,
-    path: post.path,
-    publishedAt: post.date,
-  };
+    return {
+        title: post.title,
+        description: post.description,
+        path: post.path,
+        publishedAt: post.date,
+    };
 }
