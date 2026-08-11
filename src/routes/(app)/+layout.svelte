@@ -33,10 +33,14 @@
         href="/feeds/poems.xml"
         title="When I have the poetry itch"
     />
+    <link
+        rel="site.standard.publication"
+        href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.publication/3mspyhnkjyx2a"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dubitable.xyz/" />
     <meta property="og:title" content="dubitable's website" />
-    <meta property="og:description" content="hi discord!" />
+    <meta property="og:description" content="hi there!" />
     <meta property="og:image" content="https://i.redd.it/tart0f3h1ewd1.jpg" />
 </svelte:head>
 

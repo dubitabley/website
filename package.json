@@ -1,27 +1,29 @@
 {
-    "name": "dubitable-website",
-    "private": true,
-    "version": "0.0.1",
-    "type": "module",
-    "scripts": {
-        "dev": "vite dev",
-        "build": "vite build",
-        "preview": "vite preview",
-        "prepare": "svelte-kit sync || echo ''",
-        "test": "vitest",
-        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "@sveltejs/adapter-static": "^3.0.10",
-        "@sveltejs/kit": "^2.66.0",
-        "@sveltejs/vite-plugin-svelte": "^7.1.2",
-        "lightningcss": "^1.32.0",
-        "svelte": "^5.56.3",
-        "svelte-check": "^4.6.0",
-        "typescript": "^6.0.3",
-        "vite": "^8.0.16",
-        "vitest": "^4.1.9"
-    }
+  "name": "dubitable-website",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "test": "vitest",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "standard.site": "deno --allow-read --allow-write --allow-net=bsky.social,*.bsky.network standard.site/index.ts"
+  },
+  "devDependencies": {
+    "@atproto/api": "^0.20.38",
+    "@deno/vite-plugin": "^2.0.3",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.66.0",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "lightningcss": "^1.32.0",
+    "svelte": "^5.56.3",
+    "svelte-check": "^4.6.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9"
+  }
 }
