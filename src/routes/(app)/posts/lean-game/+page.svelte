@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnaldqn2k"/>
+</svelte:head>
 <script>
     import SimpleMaths from "$lib/components/maths/equation/simple-maths.svelte";
     import Footnote from "$lib/components/post/footnote.svelte";

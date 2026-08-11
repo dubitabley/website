@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnaletb2t"/>
+</svelte:head>
 <p>
     I am a sucker for metafiction. That's when the author talks directly to the
     audience but as part of the text. I wrote my first review on this site about <a

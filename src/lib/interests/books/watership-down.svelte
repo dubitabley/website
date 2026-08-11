@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnalemv2p"/>
+</svelte:head>
 <p>
     I liked this book a bit although I'm not sure what its purpose is.
     Is it a simple novel about some rabbits adventuring around chasing and running from 

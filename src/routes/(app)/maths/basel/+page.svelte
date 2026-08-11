@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnaldty2e"/>
+</svelte:head>
 <script lang="ts">
     import NumericalSeriesDemonstration from "$lib/components/maths/animations/numerical-series-demonstration.svelte";
     import { parseEquation } from "$lib/components/maths/equation/simple-maths";

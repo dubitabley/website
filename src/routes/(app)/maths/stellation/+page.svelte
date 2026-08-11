@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnald2z2n"/>
+</svelte:head>
 <script lang="ts">
     import SimpleMaths from "$lib/components/maths/equation/simple-maths.svelte";
     import GenericStellation from "./generic-stellation.svelte";

@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnalfqr2k"/>
+</svelte:head>
 <script>
     import Footnote from "$lib/components/post/footnote.svelte";
     import Post from "$lib/components/post/post.svelte";

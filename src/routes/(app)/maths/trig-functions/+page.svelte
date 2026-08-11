@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnaldeb2e"/>
+</svelte:head>
 <script>
     import Post from "$lib/components/post/post.svelte";
     import Chord from "./chord.svelte";

@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnalfkz2a"/>
+</svelte:head>
 <h1>Quitting my job</h1>
 
 <p>

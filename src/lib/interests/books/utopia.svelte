@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnaleuz22"/>
+</svelte:head>
 <h1 class="utopia-text">Utopia.</h1>
 <p>
     I love this word. <br />

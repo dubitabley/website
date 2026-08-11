@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnaldjs2v"/>
+</svelte:head>
 <p>
     This novel was an interesting examination of Lucrezia Borgia, the daughter
     of Pope Alexander VI, who was around in the 15th and 16th century. I enjoyed

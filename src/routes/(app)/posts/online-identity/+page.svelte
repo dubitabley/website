@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnalev222"/>
+</svelte:head>
 <script lang="ts">
     import { fly } from "svelte/transition";
     import DubitableIntro from "./dubitable-intro.svelte";

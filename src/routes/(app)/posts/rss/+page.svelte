@@ -1,3 +1,6 @@
+<svelte:head>
+	<link rel="site.standard.document" href="at://did:plc:fe4gbnsn7lm6kjq3behi5t2h/site.standard.document/3mssmnaldtz2e"/>
+</svelte:head>
 <script lang="ts">
     import { getRandomValueInArray } from "$lib/components/frog/util/random";
     import { onMount } from "svelte";
