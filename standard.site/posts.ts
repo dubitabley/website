@@ -37,7 +37,7 @@ async function getPoemPosts(): Promise<Post[]> {
             title: x.name,
             description: `Discussion of the poem ${x.name}`,
             path: `/poems/${x.link}`,
-            codePath: `${appPath}/poems/${x.link}`,
+            codePath: `${appPath}/poems/${x.link}/+page.svelte`,
             date: x.date,
         };
     });
@@ -61,7 +61,7 @@ async function getBookPosts(): Promise<Post[]> {
                 title: x.book_name,
                 description: `Discussion of the book ${x.book_name}`,
                 path: `/interests/book/${x.link}`,
-                codePath: `./src/lib/interests/books/${x.link}`,
+                codePath: `./src/lib/interests/books/${x.link}.svelte`,
                 date: x.date,
             };
         });
@@ -83,7 +83,7 @@ async function getMathsPosts() {
             title: x.post_name,
             description: x.description,
             path: `/maths/${x.link}`,
-            codePath: `${appPath}/maths/${x.link}`,
+            codePath: `${appPath}/maths/${x.link}/+page.svelte`,
             date: x.date,
         };
     });
@@ -104,7 +104,7 @@ async function getPosts() {
             title: x.name,
             description: x.summary,
             path: `/posts/${x.link}`,
-            codePath: `${appPath}/posts/${x.link}`,
+            codePath: `${appPath}/posts/${x.link}/+page.svelte`,
             date: x.date,
         };
     });

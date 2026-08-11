@@ -7,7 +7,7 @@ import * as xml from "jsr:@std/xml@^0.2.0";
 export async function fileHasStandardSiteDocument(
     codePath: string,
 ): Promise<boolean> {
-    const filePath = `${codePath}/+page.svelte`;
+    const filePath = codePath;
 
     const fileText = await Deno.readTextFile(filePath);
 
@@ -55,7 +55,7 @@ export async function fileAddStandardSiteDocument(
     codePath: string,
     atStandardSiteDocumentId: string,
 ) {
-    const filePath = `${codePath}/+page.svelte`;
+    const filePath = codePath;
 
     const fileText = await Deno.readTextFile(filePath);
 
