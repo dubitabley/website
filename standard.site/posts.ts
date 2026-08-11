@@ -97,7 +97,7 @@ async function getPosts() {
         date: string;
     };
 
-    const posts: Post[] = (await getInterestJson(mathsFile)).posts;
+    const posts: Post[] = (await getInterestJson(postsFile)).posts;
 
     return posts.map((x) => {
         return {
@@ -112,15 +112,15 @@ async function getPosts() {
 
 export async function getAllPosts() {
     const poemPostsPromise = getPoemPosts();
-    // const bookPostsPromise = getBookPosts();
-    // const mathsPostsPromise = getMathsPosts();
-    // const postsPromise = getPosts();
+    const bookPostsPromise = getBookPosts();
+    const mathsPostsPromise = getMathsPosts();
+    const postsPromise = getPosts();
     return (
         await Promise.all([
             poemPostsPromise,
-            // bookPostsPromise,
-            // mathsPostsPromise,
-            // postsPromise,
+            bookPostsPromise,
+            mathsPostsPromise,
+            postsPromise,
         ])
     ).flat();
 }
