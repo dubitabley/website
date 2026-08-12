@@ -8,8 +8,8 @@ const config = {
     kit: {
         adapter: adapter(),
         prerender: {
-            // can't do this because the at:// links don't work
-            crawl: false,
+            // https://github.com/sveltejs/kit/pull/16088
+            handleInvalidUrl: "ignore",
         },
     },
 };
