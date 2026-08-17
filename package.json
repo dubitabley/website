@@ -14,15 +14,15 @@
     "standard.site": "deno --allow-read --allow-write --allow-net=bsky.social,*.bsky.network standard.site/index.ts"
   },
   "devDependencies": {
-    "@atproto/api": "^0.20.38",
+    "@atproto/api": "^0.20.41",
     "@deno/vite-plugin": "^2.0.3",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.70.2",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "lightningcss": "^1.33.0",
-    "svelte": "^5.56.8",
-    "svelte-check": "^4.7.5",
-    "typescript": "^6.0.3",
+    "svelte": "^5.56.9",
+    "svelte-check": "^4.7.6",
+    "typescript": "^7.0.2",
     "vite": "^8.2.1",
     "vitest": "^4.1.10"
   }
