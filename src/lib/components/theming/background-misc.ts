@@ -1,6 +1,7 @@
 export const BackgroundType = {
     Default: "default",
     Flat: "flat",
+    Boxes: "boxes",
 } as const;
 export type BackgroundType =
     (typeof BackgroundType)[keyof typeof BackgroundType];
@@ -12,7 +13,7 @@ export type Background = {
 const BACKGROUND_STORAGE_KEY: string = "background";
 
 export function getAllBackgroundTypes(): BackgroundType[] {
-    return [BackgroundType.Default, BackgroundType.Flat];
+    return [BackgroundType.Default, BackgroundType.Flat, BackgroundType.Boxes];
 }
 
 export function setBackground(background: BackgroundType) {
@@ -20,6 +21,7 @@ export function setBackground(background: BackgroundType) {
 
     switch (background) {
         case BackgroundType.Flat:
+        case BackgroundType.Boxes:
             rootElement.dataset.background = background;
             break;
         case BackgroundType.Default:

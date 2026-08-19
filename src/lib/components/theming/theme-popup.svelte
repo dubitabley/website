@@ -110,10 +110,11 @@
 
 <style>
     #theme-popover {
-        width: 600px;
-        height: 800px;
+        max-width: 600px;
+        max-height: min(90%, 800px);
         padding-left: 100px;
         padding-right: 100px;
+        overscroll-behavior: contain;
         color: var(--primary-color);
         background-color: var(--background-color);
 
@@ -125,6 +126,7 @@
         translate: 0 -100%;
 
         &:popover-open {
+            margin-top: 20px;
             translate: 0 0;
             @starting-style {
                 translate: 0 -100%;
@@ -176,8 +178,8 @@
 
         border-width: 20px;
         border-style: solid;
-        border-top-width: 5px;
-        border-bottom-width: 5px;
+        border-top-width: 10px;
+        border-bottom-width: 10px;
         border-image: linear-gradient(var(--colour-1), var(--colour-2)) 30;
     }
 </style>

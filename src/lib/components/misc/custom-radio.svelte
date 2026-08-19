@@ -38,7 +38,7 @@
     .radio-block {
         font-size: 30px;
         background-color: var(--background-color-2);
-        --border-color: hsl(50, 100%, var(--primary-lightness));
+        --border-color: hsl(0, 10%, var(--primary-lightness));
         border: var(--border-color) inset 3px;
         box-shadow: 0px 0px 4px 4px var(--border-color);
         --width: 100px;

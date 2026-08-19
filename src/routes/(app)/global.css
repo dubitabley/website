@@ -10,6 +10,10 @@ body {
     /* background-color: var(--background-color); */
     color: var(--primary-color);
     margin: 0;
+
+    &:has(dialog[open]) {
+        overflow: hidden;
+    }
 }
 
 html {
@@ -23,6 +27,15 @@ html {
 
     &[data-background="flat"] {
         background: var(--background-color-2);
+    }
+
+    &[data-background="boxes"] {
+        --size: 30px;
+
+        background:
+            radial-gradient(at 50% 50%, var(--background-color), transparent),
+            var(--background-color-2);
+        background-size: var(--size) var(--size);
     }
 }
 
