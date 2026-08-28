@@ -164,13 +164,16 @@
     </div>
 
     <div class="panel text-bg">
-        <span class="panel-title">Latest poem</span>
+        <span class="panel-title">Latest poem review</span>
         <div>
             <span><b>Poem name:</b></span>
             <span>{latestPoem.name}</span>
         </div>
         <div>
             <span><a href="/poems/{latestPoem.link}">Link to poem</a></span>
+        </div>
+        <div>
+            <span><a href="/poems/">All poems</a></span>
         </div>
     </div>
 
