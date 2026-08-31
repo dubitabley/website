@@ -12,6 +12,12 @@
     <a href="/profile-pics">My discord profile picture archives</a>
 </div>
 
+<div>
+    <a href="/document-pip"
+        >Messing around with the document picture in picture API</a
+    >
+</div>
+
 <style>
     h2 {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
