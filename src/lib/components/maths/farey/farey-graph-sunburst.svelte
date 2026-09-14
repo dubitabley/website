@@ -1,6 +1,6 @@
 <script lang="ts">
-    import GraphLine from "../graphs/graph-line.svelte";
     import GraphPoint from "../graphs/graph-point.svelte";
+    import GraphStraightLine from "../graphs/graph-straight-line.svelte";
     import Graph from "../graphs/graph.svelte";
     import { constructFarey } from "./farey";
 
@@ -18,7 +18,7 @@
     {#each fareyValues as fareyVal, i}
         <GraphPoint x={fareyVal[0]} y={fareyVal[1]} />
         {#if i < fareyValues.length - 1}
-            <GraphLine
+            <GraphStraightLine
                 x1={fareyVal[0]}
                 y1={fareyVal[1]}
                 x2={fareyValues[i + 1][0]}
@@ -30,7 +30,7 @@
         {#each fareyValues as fareyVal, i}
             <GraphPoint x={fareyVal[1]} y={fareyVal[0]} />
             {#if i < fareyValues.length - 1}
-                <GraphLine
+                <GraphStraightLine
                     x1={fareyVal[1]}
                     y1={fareyVal[0]}
                     x2={fareyValues[i + 1][1]}

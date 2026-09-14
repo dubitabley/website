@@ -1,5 +1,9 @@
 <script lang="ts">
-    import { getGraphContext, type GraphObject } from "./graph-types";
+    import {
+        getGraphContext,
+        type GraphInfo,
+        type GraphObject,
+    } from "./graph-types";
 
     let graphContext = getGraphContext();
 
@@ -12,14 +16,15 @@
 
     let { x1, y1, x2, y2 }: Props = $props();
 
-    class GraphLine implements GraphObject {
-        draw(ctx: CanvasRenderingContext2D, size: number): void {
+    class GraphStraightLine implements GraphObject {
+        draw(ctx: CanvasRenderingContext2D, _graphInfo: GraphInfo): void {
             ctx.beginPath();
             ctx.moveTo(x1, -y1);
             ctx.lineTo(x2, -y2);
+            ctx.closePath();
             ctx.stroke();
         }
     }
 
-    graphContext.addObject(new GraphLine());
+    graphContext.addObject(new GraphStraightLine());
 </script>

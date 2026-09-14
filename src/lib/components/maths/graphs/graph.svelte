@@ -1,15 +1,12 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
-    import { setGraphContext, type GraphObject } from "./graph-types";
+    import {
+        setGraphContext,
+        type Dims,
+        type GraphObject,
+    } from "./graph-types";
     import { SvelteSet } from "svelte/reactivity";
     import { getCurrentTheme } from "$lib/components/theming/theme";
-
-    type Dims = {
-        left: number;
-        right: number;
-        top: number;
-        bottom: number;
-    };
 
     type Translation = {
         x: number;
@@ -83,8 +80,17 @@
         // translate
         doTransform(ctx);
         drawAxes(ctx);
+        const graphInfo = {
+            dims: dims ?? {
+                left: 0,
+                right: 10,
+                bottom: 0,
+                top: 10,
+            },
+            size,
+        };
         for (const object of objects) {
-            object.draw(ctx, size);
+            object.draw(ctx, graphInfo);
         }
     });
 

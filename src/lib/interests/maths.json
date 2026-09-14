@@ -35,6 +35,12 @@
             "description": "Actually considering how trigonometric functions work",
             "link": "trig-functions",
             "date": "2026-07-18"
+        },
+        {
+            "post_name": "Newton-Raphson Method",
+            "description": "Explaining how the Newton-Raphson Method works",
+            "link": "newton-raphson",
+            "date": "2026-08-01"
         }
     ]
 }
