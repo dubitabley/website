@@ -25,6 +25,15 @@
     const latestMiscPage = getLatest(Misc.pages);
 </script>
 
+<div class="alert">
+    I am currently travelling so can't easily update this website! Why? Where?
+    How? Why? All will be revealed on my <a href="https://travel.dubitable.xyz"
+        >travel blog</a
+    >. I also kinda want to vlog so feel free to check my
+    <a href="https://www.youtube.com/@dubitable1050">youtube channel</a> to see if
+    I follow through on that.
+</div>
+
 <div class="summary">
     Hello and welcome to dubitable's website!
     <br />
@@ -217,5 +226,12 @@
 
     .summary {
         padding-left: 20px;
+    }
+
+    .alert {
+        border: 5px double orangered;
+        border-radius: 10px;
+        padding: 1em;
+        font-weight: bold;
     }
 </style>
